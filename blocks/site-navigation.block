@@ -1,10 +1,10 @@
-<nav class="site-navigation flex-center-center fade-in-fast" >
+<nav class="site-navigation flex-center-spacebetween fade-in-fast" >
     <a href="/">
   <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
   </a>
 
-  <ul class="site-navigation-list flex-center-flexend">
-
+  <ul class="site-navigation-list flex-center-spaceevenly">
+    
     {.repeated section items}
 
       <li class="site-navigation-item {.section active} active-link{.end}">
@@ -14,15 +14,65 @@
           <a href="{fullUrl}">{navigationTitle}</a>
         {.end}
 
-        <!-- external link -->
-        {.section externalLink}
-          <a href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
-          </a>
-        {.end}
+        
 
       </li>
 
     {.end}
   </ul>
+  <div class="hamburger-menu" >
+  <div id="nav-icon4">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
 </nav>
+
+
+<script>
+
+$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+    $('.site-navigation').toggleClass('open-nav')
+    $('.site-navigation-item').toggleClass('mobile-link')
+    $('.site-navigation-list').toggleClass('mobile-list ')
+    $('.hamburger-menu').css({"position": "absolute", "top": "50px", "right": "50px"})
+    
+    
+	});
+});
+
+function toggleMobile(){
+  
+}
+
+function sizeNav(){
+let windowWidth = window.innerWidth; 
+
+  let logo = document.querySelector('.logo')
+let logoWidth = logo.offsetWidth;
+
+let nav = document.querySelector('.site-navigation-list');
+let navWidth = nav.offsetWidth;
+
+  if (navWidth + logoWidth + 50 > windowWidth) {
+    $('#nav-icon4').css("display", "block")
+    $('.site-navigation-list').toggleClass("hidden")
+    console.log("too smol")
+  } else {
+    $('#nav-icon4').css("display", "none")
+    $('.site-navigation-list').removeClass('hidden')
+  }
+  console.log(windowWidth, navWidth, logoWidth)
+}
+
+
+window.addEventListener("resize", sizeNav) //call when page resizes
+
+sizeNav() //call when page loads
+
+
+
+</script>

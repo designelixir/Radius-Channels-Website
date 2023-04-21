@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
     <script src="scripts/particles.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
@@ -17,26 +17,24 @@
         <div class="hero-message flex-center-center">
             <h1><span style="color: white; font-weight: 400" class="fade-in-fast">Ready, set </span><br><span class="fade-in-slow" style="color: #E8542E">Accelerate</span> </h1>
         </div>
-        <squarespace:block-field id="hero-buttons">
+        <div class="hero-buttons flex-center-center fade-in-slow" >
+            <button class='solid-button hover'>About Us</button>
+            <button class='inverted-button hover'>Our Methodology</button>
+        </div>
+        <div class="flex-center-center" style="width: 100%; position: absolute; bottom: 5vh;"onclick="goToAnchor('main-section')" >
+        <div class="scroll-down"></div>
+        </div>
     </section>
-    <main class="content-container" role="main" data-content-field="main-content">
+    <main class="content-container" role="main" data-content-field="main-content" id="main-section">
        {squarespace.main-content}
       </main>
 
-
-    <div class="site-container">
-
-      
-      
-
-      <!-- cms content injection point -->
-      
-      <!--Footer with open block field -->
-      <footer class="site-footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
+      <footer>
+      <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
       </footer>
 
-    </div>
+
+  
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

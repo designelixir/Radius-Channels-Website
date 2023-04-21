@@ -1,0 +1,25 @@
+<nav class="site-navigation fade-in-fast" >
+    <a href="/">
+  <img src="../assets/radius-circles.png" alt="Radius Channels Logo" class="logo hover">
+  </a>
+
+  <ul class="site-navigation-list flex-center-flexend">
+
+    {.repeated section items}
+
+      <li class="site-navigation-item {.section active} active-link{.end}">
+
+       
+
+        <!-- external link -->
+        {.section externalLink}
+          <a href="{url}"{.section newWindow} target="_blank"{.end}>
+            {title}
+          </a>
+        {.end}
+
+      </li>
+
+    {.end}
+  </ul>
+</nav>
