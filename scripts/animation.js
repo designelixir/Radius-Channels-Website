@@ -6,7 +6,7 @@ var h = c.height = window.innerHeight;
 var particles = [];
 var max = 1000;
 var clearColor = "rgba(0, 0, 0, .4)";
-var fov = 15;
+var fov = 25;
 var hue = 0;
 var frame = 0;
 var start = 310;

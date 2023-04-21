@@ -3,14 +3,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <style>
 .container {
-  overflow: hidden;
-  background: white;
-  position: absolute; top: 0; left: 0; 
-  height: 100vh; width: 100vw;
+
 }
 </style>
-
-
 
 <div class="container">
 <!-- partial:index.partial.html -->
@@ -23,7 +18,7 @@ var w = c.width = window.innerWidth;
 var h = c.height = window.innerHeight;
 var particles = [];
 var max = 1000;
-var clearColor = "rgba(0, 0, 0, .4)";
+var clearColor = "rgba(0, 0, 0, .19)";
 var fov = 15;
 var hue = 0;
 var frame = 0;
@@ -50,7 +45,7 @@ P.prototype.init = function(){
 	this.vx = 0;
 	this.vy = 0;
 	this.vz = 2;
-	this.color = "white"
+	this.color = "hsla("+hue+", 100%, 50%, 1)";
 	this.size = 20;
 };
 
@@ -95,17 +90,7 @@ window.addEventListener("resize", function(){
 
 
 function anim(){
-    var gradient = ctx.createLinearGradient(0, h, 0, 0);
-    gradient.addColorStop(0.9, "rgb(19, 48, 130)");
-    gradient.addColorStop(0.28, "rgb(19, 48, 130)");
-    
-gradient.addColorStop(0, "rgb(255, 255, 255)");
-
-
-
-      
-
-	ctx.fillStyle = gradient;
+	ctx.fillStyle = clearColor;
 	ctx.globalCompositeOperation = "source-over";
 	ctx.fillRect(0,0,w,h);
 	
