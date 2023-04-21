@@ -25,16 +25,22 @@
         <div class="scroll-down"></div>
         </div>
     </section>
-    <section>
-    <main class="content-container" role="main" data-content-field="main-content" id="main-section">
-       {squarespace.main-content}
+    
 
-       <footer>
-       {squarespace-footers}
-      <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
-      </footer>
+    <div class="site-container">
+
+      <!-- cms content injection point -->
+      <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+       {squarespace.main-content}
       </main>
-      </section>
+
+      <!--Footer with open block field -->
+      <footer class="site-footer">
+        <squarespace:block-field id="footerNav" columns="12" template="footer-navigation" />
+      </footer>
+
+    </div>
+   
 
       
 
