@@ -25,13 +25,16 @@
         <div class="scroll-down"></div>
         </div>
     </section>
+    <section>
     <main class="content-container" role="main" data-content-field="main-content" id="main-section">
        {squarespace.main-content}
 
        <footer>
+       {squarespace-footers}
       <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
       </footer>
       </main>
+      </section>
 
       
 
@@ -42,7 +45,7 @@
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
-    {squarespace-footers}
+    
 
   </body>
 </html>
