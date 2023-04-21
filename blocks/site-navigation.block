@@ -58,11 +58,12 @@ let nav = document.querySelector('.site-navigation-list');
 let navWidth = nav.offsetWidth;
 
   if (navWidth + logoWidth + 50 > windowWidth) {
-    $('#nav-icon4').css("display", "block")
+    $('.hamburger-menu').css("display", "block")
     $('.site-navigation-list').toggleClass("hidden")
+    
     console.log("too smol")
   } else {
-    $('#nav-icon4').css("display", "none")
+    $('.hamburger-menu').css("display", "none")
     $('.site-navigation-list').removeClass('hidden')
   }
   console.log(windowWidth, navWidth, logoWidth)

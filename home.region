@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
-    
+    <link rel="preload" href="assets/triangle.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     {squarespace-headers}
@@ -19,7 +19,9 @@
 <header class="hero-header-container">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
-        <div style="height: 30vh;"></div>
+        <div style="height: 30vh; z-index: 2; width: 100%;">
+            <img src="assets/triangle.png" style="height: 20vh; width: 100%; filter: drop-shadow (0px 0px 5px white)">
+        </div>
         <div class="hero-message flex-center-center">
             <h1><span style="color: white; font-weight: 400; font-size: 72px;" class="fade-in-fast">Ready, set </span><br><span class="fade-in-slow" style="color: #E8542E; font-size: 82px">Accelerate</span> </h1>
         </div>
