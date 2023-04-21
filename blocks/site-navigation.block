@@ -1,5 +1,10 @@
-<nav class="site-navigation">
-  <ul class="site-navigation-list">
+<nav class="site-navigation flex-center-center" >
+    <a href="/">
+  <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
+  </a>
+
+  <ul class="site-navigation-list flex-center-flexend">
+
     {.repeated section items}
 
       <li class="site-navigation-item {.section active} active-link{.end}">
