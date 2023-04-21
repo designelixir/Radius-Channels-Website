@@ -1,4 +1,4 @@
-<nav class="site-navigation flex-center-center" >
+<nav class="site-navigation flex-center-center fade-in-fast" >
     <a href="/">
   <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
   </a>
