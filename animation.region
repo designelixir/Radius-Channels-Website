@@ -1,6 +1,25 @@
-var c = document.querySelector("canvas")
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Journey -- #Codevember</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<style>
+body {
+  overflow: hidden;
+  background: black;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="c"></canvas>
+<!-- partial -->
+  <script>
+  var c = document.getElementById("c");
 var ctx = c.getContext("2d");
-ctx.fillStyle = "white";
 var w = c.width = window.innerWidth;
 var h = c.height = window.innerHeight;
 var particles = [];
@@ -32,7 +51,7 @@ P.prototype.init = function(){
 	this.vx = 0;
 	this.vy = 0;
 	this.vz = 2;
-this.color = "orange"
+	this.color = "hsla("+hue+", 100%, 50%, .8)";
 	this.size = 20;
 };
 
@@ -40,8 +59,7 @@ P.prototype.draw = function(){
 	var scale = fov/(fov+this.z);
 	var x2d = this.x * scale + w/2;
 	var y2d = this.y * scale + h/2;
-	ctx.fillStyle = "white"
-//particle color
+	ctx.fillStyle = this.color;
 	ctx.fillRect(x2d, y2d, this.size * scale, this.size * scale);
 	
 	if(x2d < 0 || x2d > w || y2d < 0 || y2d > h){
@@ -78,12 +96,12 @@ window.addEventListener("resize", function(){
 
 
 function anim(){
-	// ctx.fillStyle = clearColor;
+	ctx.fillStyle = clearColor;
 	ctx.globalCompositeOperation = "source-over";
 	ctx.fillRect(0,0,w,h);
 	
 	for(var i in particles){
-		particles[i].draw;
+		particles[i].draw();
 	}
 	
 	hue += .1;
@@ -92,3 +110,7 @@ function anim(){
 
 
 anim();
+  </script>
+
+</body>
+</html>
