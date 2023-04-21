@@ -1,25 +1,12 @@
-<nav class="site-navigation fade-in-fast" >
+<nav class="site-navigation fade-in-fast flex-center-center-column" >
+
     <a href="/">
   <img src="../assets/radius-circles.png" alt="Radius Channels Logo" class="logo hover">
   </a>
+  <squarespace:block-field id="social-icons" columns="12" class="flex-center-center"/>
 
-  <ul class="site-navigation-list flex-center-flexend">
 
-    {.repeated section items}
+<p>©2021 by Radius Channel Management.</p>
+<a href="https://designelixir.studio" target="_blank" class="de-tag">Made with &hearts; by Design Elixir</a>
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
-
-       
-
-        <!-- external link -->
-        {.section externalLink}
-          <a href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
-          </a>
-        {.end}
-
-      </li>
-
-    {.end}
-  </ul>
 </nav>
