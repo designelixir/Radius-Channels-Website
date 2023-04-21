@@ -1,5 +1,6 @@
-var c = document.getElementById("c");
+var c = document.querySelector("canvas")
 var ctx = c.getContext("2d");
+
 var w = c.width = window.innerWidth;
 var h = c.height = window.innerHeight;
 var particles = [];
@@ -31,7 +32,7 @@ P.prototype.init = function(){
 	this.vx = 0;
 	this.vy = 0;
 	this.vz = 2;
-	this.color = "hsla("+hue+", 100%, 50%, .8)";
+this.color = "orange"
 	this.size = 20;
 };
 
@@ -39,7 +40,8 @@ P.prototype.draw = function(){
 	var scale = fov/(fov+this.z);
 	var x2d = this.x * scale + w/2;
 	var y2d = this.y * scale + h/2;
-	ctx.fillStyle = this.color;
+	ctx.fillStyle = "white"
+//particle color
 	ctx.fillRect(x2d, y2d, this.size * scale, this.size * scale);
 	
 	if(x2d < 0 || x2d > w || y2d < 0 || y2d > h){
@@ -76,12 +78,12 @@ window.addEventListener("resize", function(){
 
 
 function anim(){
-	ctx.fillStyle = clearColor;
+	// ctx.fillStyle = clearColor;
 	ctx.globalCompositeOperation = "source-over";
 	ctx.fillRect(0,0,w,h);
 	
 	for(var i in particles){
-		particles[i].draw();
+		particles[i].draw;
 	}
 	
 	hue += .1;

@@ -4,39 +4,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
-    <script src="scripts/particles.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <section class="hero">
+    <div class="hero">
         <header class="hero-header-container">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
-        <canvas></canvas>
+        <canvas id="c"></canvas>
         <div class="hero-message flex-center-center">
-            <h1><span style="color: white; font-weight: 400" class="fade-in-fast">Ready, set </span><br><span class="fade-in-slow" style="color: #E8542E">Accelerate</span> </h1>
+            <h1><span style="color: white; font-weight: 400; font-size: 56px;" class="fade-in-fast">Ready, set </span><br><span class="fade-in-slow" style="color: #E8542E; font-size: 62px">Accelerate</span> </h1>
         </div>
         <div class="hero-buttons flex-center-center fade-in-slow" >
             <button class='solid-button hover'>About Us</button>
             <button class='inverted-button hover'>Our Methodology</button>
         </div>
-        <div class="flex-center-center" style="width: 100%; position: absolute; bottom: 5vh;"onclick="goToAnchor('main-section')" >
-        <div class="scroll-down"></div>
+        <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" >
+            <div class="scroll-down"></div>
         </div>
-    </section>
+    </div>
     
 
     <div class="site-container">
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+      <h1 style="text-align: center;">360 Value to Accelerate <br>
+Technology Channel Growth </h1>
+        <div class="flex-center-center">
+            <div class="icon-container box-shadow flex-flexstart-spaceevenly">
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/expertise.png'>
+                    <h3>Expertise</h3>
+                    <p>Trained by you in your technology, programs, processes, and GTM model.</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img src="assets/icons/performance.png" class="icon-image">
+                    <h3>Performance Visibility</h3>
+                    <p>Digital tools providing you insight on Channel leverage enablement &rarr; Pipeline &rarr; Renewal</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/function.png'>
+                    <h3>Functional Capabilities</h3>
+                    <p>Providing a single point of entry to leverage functional capabilities that include Marketing, Engineering, and Services</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/dedicated.png'>
+                    <h3>Dedicated Representatives</h3>
+                    <p>Off-payroll team, regionally embedded, Channel Specialists with a singular focus on you.</p>
+                    
+                    
+                </div>
+
+            </div>
+        
+        
+        </div>
        {squarespace.main-content}
+       
       </main>
 
       <!--Footer with open block field -->
       <footer class="site-footer">
-        <squarespace:block-field id="footerNav" columns="12" template="footer-navigation" />
+      
+        <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
       </footer>
 
     </div>
@@ -49,107 +85,9 @@
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
+<squarespace:script src="animation.js" combo="true" />
     <!-- other scripts, and footer code injection -->
     
 
   </body>
 </html>
-
-<script>
-
-var c = document.getElementById("c");
-var ctx = c.getContext("2d");
-var w = c.width = window.innerWidth;
-var h = c.height = window.innerHeight;
-var particles = [];
-var max = 1000;
-var clearColor = "rgba(0, 0, 0, .4)";
-var fov = 15;
-var hue = 0;
-var frame = 0;
-var start = 310;
-
-
-function random(min, max) {
-		return (Math.random() * (max - min)) + min;
-}
-
-
-function P(){
-	this.startZ = start;
-	start+=.18;
-}
-
-
-
-P.prototype.init = function(){
-	this.x = random(-w * 4, w * 4);
-	this.y = 500;
-	this.z = this.startZ || 500;
-	this.startZ = null;
-	this.vx = 0;
-	this.vy = 0;
-	this.vz = 2;
-this.color = "orange"
-	this.size = 20;
-};
-
-P.prototype.draw = function(){
-	var scale = fov/(fov+this.z);
-	var x2d = this.x * scale + w/2;
-	var y2d = this.y * scale + h/2;
-	ctx.fillStyle = "white"
-//particle color
-	ctx.fillRect(x2d, y2d, this.size * scale, this.size * scale);
-	
-	if(x2d < 0 || x2d > w || y2d < 0 || y2d > h){
-		this.init();
-	}
-	
-	this.update();
-};
-
-
-P.prototype.update = function(){
-	this.z -= this.vz;
-	this.x += this.vx;
-	this.y += this.vy;
-	if(this.z < -fov){
-		this.init();
-	}
-};
-
-for(var i=0; i<max; i++){
-	(function(x){
-		setTimeout(function(){
-			var p = new P();
-			p.init();
-			particles.push(p);
-		}, x * 3)
-	})(i)
-}
-
-window.addEventListener("resize", function(){
-	w = c.width = window.innerWidth;
-	h = c.height = window.innerHeight;
-})
-
-
-function anim(){
-	{#  ctx.fillStyle = clearColor;  }
-	ctx.globalCompositeOperation = "source-over";
-	ctx.fillRect(0,0,w,h);
-	
-	for(var i in particles){
-		particles[i].draw();
-	}
-	
-	hue += .1;
-	frame = window.requestAnimationFrame(anim);
-}
-
-
-anim();
-
-</script>

@@ -3,7 +3,7 @@
     <a href="/">
   <img src="../assets/radius-circles.png" alt="Radius Channels Logo" class="logo hover">
   </a>
-  <squarespace:block-field id="social-icons" columns="12" class="flex-center-center"/>
+  <squarespace:block-field id="footerBlocks" columns="12" />
 
 
 <p>©2021 by Radius Channel Management.</p>
