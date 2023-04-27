@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
+    <link rel="preload" href="assets/triangle.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    {squarespace-headers}
+  </head>
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+
+  
+    <div class="hero">
+        
+        {#  space animation 
+        <div class="animation-container">
+         <iframe src="/space-animation" width="100%" height="100%" style="border: none;"></iframe> 
+        </div>  }
+        
+            {@|apply particlesAnimation.block}
+             {#  <iframe src="/hometwo" width="100%" height="100%" style="border: none;"></iframe>   }
+        
+        
+
+        <header class="hero-header-container">
+            <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+        </header>
+        
+        
+        
+
+        <div style="height: 60vh; width: 100%;">
+            {@|apply textRotation.block}
+            <squarespace:block-field id="hero-buttons" columns="12"/>
+        </div>
+
+        
+        
+    </div>
+
+    <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" >
+        <div class="scroll-down"></div>
+    </div>
+    
+
+    <div class="site-container">
+
+      <!-- cms content injection point -->
+      <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+      <h1 style="text-align: center;">360 Value to Accelerate <br>
+Technology Channel Growth </h1>
+        <div class="flex-center-center">
+            <div class="icon-container box-shadow flex-flexstart-spaceevenly">
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/expertise.png'>
+                    <h3>Expertise</h3>
+                    <p>Trained by you in your technology, programs, processes, and GTM model.</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img src="assets/icons/performance.png" class="icon-image">
+                    <h3>Performance Visibility</h3>
+                    <p>Digital tools providing you insight on Channel leverage enablement &rarr; Pipeline &rarr; Renewal</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/function.png'>
+                    <h3>Functional Capabilities</h3>
+                    <p>Providing a single point of entry to leverage functional capabilities that include Marketing, Engineering, and Services</p>
+                </div>
+
+                <div class="icon-container-item">
+                    <img class="icon-image" src='assets/icons/dedicated.png'>
+                    <h3>Dedicated Representatives</h3>
+                    <p>Off-payroll team, regionally embedded, Channel Specialists with a singular focus on you.</p>
+                    
+                    
+                </div>
+
+            </div>
+        
+        
+        </div>
+       {squarespace.main-content}
+       
+      </main>
+
+      <!--Footer with open block field -->
+      <footer class="site-footer">
+      
+        <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
+      </footer>
+
+    </div>
+   
+    <!-- combo and minify scripts when not logged in -->
+    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+
+    <!-- other scripts, and footer code injection -->
+    
+
+  </body>
+</html>
