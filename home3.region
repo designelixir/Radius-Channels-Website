@@ -13,7 +13,7 @@
 
   
     <div class="hero">
-        {@|apply particlesAnimation.block}
+        {@|apply dustAnimation.block}
         <header class="hero-header-container">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
