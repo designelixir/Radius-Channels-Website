@@ -1,18 +1,5 @@
 <nav class="site-navigation fade-in-fast flex-center-center-column" >
-{.repeated section items}
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
-
-        <!-- collection link -->
-        {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
-        {.end}
-
-        
-
-      </li>
-
-    {.end}
     <a href="/">
   <img src="../assets/radius-circles.png" alt="Radius Channels Logo" class="logo hover">
   </a>

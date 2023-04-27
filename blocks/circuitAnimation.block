@@ -1,45 +1,10 @@
+{#  https://codepen.io/NyX/pen/OydVzp  }
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<style>
-body {
-  background: #000;
-  overflow: hidden;
-}
 
-canvas {
-  width: 100%;
-  height: 100%;
-}
 
-.box {
-  
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  width: 50px;
-  height: 50px;
-  
-  background: #133082;
-  border: 1px solid cyan;
-  
-  animation: borderColor 1s ease-out infinite both;
-}
-
-@keyframes borderColor { 
-  0% { border-color: rgba(255,255,255,0.1); }
-  20% { border-color: rgba(255,255,255,0.25); }
-  40% { border-color: #38C6FA; }
-  60% { border-color: #06ACE9; }
-  80% { border-color: #10BBF9; }
-  100% { border-color: #38C6FA; }
-}
-
-</style>
-
-<div class="container">
-<div class="box"></div>
+<div class="container animation-container" >
+{#  <div class="box"></div>  }
 <canvas id="cvs"></canvas>
 
 <script>
@@ -59,8 +24,8 @@ var Line = function(x, y) {
     y: y
   };
 
-  this.width = Math.random() * 1 + 0.25;
-  this.color = 'hsla(' + (~~(Math.random() * 360)) + ', 100%, 70%, 0.90)';
+  this.width = Math.random() * 1 + 0.5;
+  this.color = 'hsla(' + (~~(Math.random() * 360)) + ', 74%, 129%, 0.90)';
 };
 
 //
@@ -72,55 +37,56 @@ var Signalz = function(element) {
   this.center = { x: null, y: null };
   this.drawNo = 0;
   
-  this.linesNo = 50;
+  this.linesNo = 20;
   this.linesSize = 20;
   this.lines = [];
   
-  // init
+  {#  // init  }
   this.init(element);
 };
 
 Signalz.prototype.init = function(element) {
-  // setup & attach to canvas
+  {#  // setup & attach to canvas  }
   this.setup(element);
+  
 
-  // create lines
+  {#  // create lines  }
   for (var i = 0; i < this.linesNo; i++)
         this.lines.push(new Line(this.center.x, this.center.y));
 
-  // animate
+  {#  // animate  }
   this.animate();
 };
 
 Signalz.prototype.setup = function(element) {
   var cvs = document.querySelector(element);
   
-  // set canvas to full window size
+  {#  // set canvas to full window size  }
   cvs.width = window.innerWidth;
   cvs.height = window.innerHeight;
 
-  // set pointers
+  {#  // set pointers  }
   this.canvas = cvs;
   this.ctx = cvs.getContext('2d');
   
-  // calc center of stage/window
+  {#  // calc center of stage/window  }
   this.center.x = Math.round(this.canvas.width / 2);
   this.center.y = Math.round(this.canvas.height / 2);
   
-  // handle window resize
+  {#  // handle window resize  }
 	window.addEventListener('resize', this.onScreenResize.bind(this));
 };
 
 Signalz.prototype.onScreenResize = function() {
-  // reset canvas to full window size
+  {#  // reset canvas to full window size  }
   this.canvas.width = window.innerWidth;
   this.canvas.height = window.innerHeight;
   
-  // recalc center of stage/window
+  {#  // recalc center of stage/window  }
   this.center.x = Math.round(this.canvas.width / 2);
   this.center.y = Math.round(this.canvas.height / 2);
   
-  // recenter lines
+  {#  // recenter lines  }
   this.lines.forEach(function(line) {
     line.location.x = this.center.x;
     line.location.y = this.center.y;
@@ -128,39 +94,47 @@ Signalz.prototype.onScreenResize = function() {
 };
 
 Signalz.prototype.animate = function() {
-  // request new frame
+  {#  // request new frame  }
   requestAnimationFrame(this.animate.bind(this));
   this.draw();
+
+  
 };
 
 Signalz.prototype.draw = function() {
-  // clear canvas
-  this.ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  {#  // clear canvas  }
+  var gradient = this.ctx.createLinearGradient(0, this.canvas.height, 0, 0);
+    gradient.addColorStop(0.9, "rgb(19, 48, 130)");
+    gradient.addColorStop(0.58, "rgb(19, 48, 130)");
+	gradient.addColorStop(0, "rgb(255, 255, 255)");
+	
+  this.ctx.fillStyle = gradient;
+  
   this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-  // update draw number
+  {#  // update draw number  }
   this.drawNo++;
-  if (this.drawNo % 2 == 1) {
+  if (this.drawNo % 5 == 1) {
     return;
   }
   
-  // draw & update lines
+  {#  // draw & update lines  }
   for (var idx = 0; idx < this.lines.length; idx++) {
-    // get line
+    {#  // get line  }
     var line = this.lines[idx];
     var lineSize = this.linesSize;
     
-    // random direction
+    {#  // random direction  }
     var dir = ~~(Math.random() * 3) * 90;
     if (idx % 4 === dir / 90) { dir = 270; }
     
-    // begin line path
+    {#  // begin line path  }
     this.ctx.lineWidth = line.width;
     this.ctx.strokeStyle = line.color;
     this.ctx.beginPath();
     this.ctx.moveTo(line.location.x, line.location.y);
     
-    // switch direction
+    {#  // switch direction  }
     switch(dir) {
       case 0:
         line.location.y -= lineSize;
@@ -178,16 +152,16 @@ Signalz.prototype.draw = function() {
         break;
     }
     
-    // move line to
+    {#  // move line to  }
     this.ctx.lineTo(line.location.x, line.location.y);
 
-    // reset line location if offscreen
+    {#  // reset line location if offscreen  }
     if (line.location.x < 0 || line.location.x > this.canvas.width || line.location.y < 0 || line.location.y > this.canvas.height) {
       line.location.x = this.center.x;
       line.location.y = this.center.y;
     }
     
-    // stroke line
+    {#  // stroke line  }
     this.ctx.stroke();
   }
 };

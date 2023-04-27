@@ -98,13 +98,7 @@ function anim(){
     var gradient = ctx.createLinearGradient(0, h, 0, 0);
     gradient.addColorStop(0.9, "rgb(19, 48, 130)");
     gradient.addColorStop(0.28, "rgb(19, 48, 130)");
-    
-gradient.addColorStop(0, "rgb(255, 255, 255)");
-
-
-
-      
-
+	gradient.addColorStop(0, "rgb(255, 255, 255)");
 	ctx.fillStyle = gradient;
 	ctx.globalCompositeOperation = "source-over";
 	ctx.fillRect(0,0,w,h);

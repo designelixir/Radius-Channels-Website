@@ -10,33 +10,39 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+
+  
     <div class="hero">
         
+        {#  space animation 
         <div class="animation-container">
          <iframe src="/space-animation" width="100%" height="100%" style="border: none;"></iframe> 
-        </div>
+        </div>  }
+        
+            {@|apply circuitAnimation.block}
+             {#  <iframe src="/hometwo" width="100%" height="100%" style="border: none;"></iframe>   }
+        
+        
 
-<header class="hero-header-container">
+        <header class="hero-header-container">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
-        <div style="height: 30vh; z-index: 2; width: 100%;">
-            <img src="assets/triangle.png" style="height: 20vh; width: 100%; filter: drop-shadow (0px 0px 5px white)">
-        </div>
-        <div class="hero-message flex-center-center">
-            <h1><span style="color: white; font-weight: 400; font-size: 72px;" class="fade-in-fast">Ready, set </span><br><span class="fade-in-slow" style="color: #E8542E; font-size: 82px">Accelerate</span> </h1>
-        </div>
+        
+        
         
 
-
-        <div class="hero-buttons flex-center-center fade-in-slow" >
-            <button class='solid-button hover'>About Us</button>
-            <button class='inverted-button hover'>Our Methodology</button>
+        <div style="height: 60vh; width: 100%;">
+            {@|apply textRotation.block}
+            <squarespace:block-field id="hero-buttons" columns="12"/>
         </div>
+
+        
         
     </div>
+
     <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" >
-            <div class="scroll-down"></div>
-        </div>
+        <div class="scroll-down"></div>
+    </div>
     
 
     <div class="site-container">
