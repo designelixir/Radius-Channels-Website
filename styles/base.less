@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'Questrial';
-  src: ("fonts/Questrial-Regular.ttf");
-  }
+  src: url("Questrial-Regular.ttf");
+}
+
 
 * {
   font-family: 'Questrial', sans-serif;
@@ -12,7 +13,7 @@ html {max-width: 100vw; overflow-x: hidden; margin: 0; padding: 0; scroll-behavi
 body { margin: 0; top: 0; left: 0;}
 a {font-size: 16px; letter-spacing: 1px;}
 p {font-weight: 100!important;}
-h1 {font-size: 48px; font-weight: 600;}
+h1 {font-size: 48px; font-weight: 600; font-family: 'Questrial', sans-serif}
 
 
 
@@ -46,15 +47,20 @@ button:hover {transform: scale(1.1)}
 .flex-center-spaceevenly {display: flex; align-items: center; justify-content: space-evenly;}
 .flex-center-center-column {display: flex; align-items: center; justify-content: center; flex-direction: column;}
 .flex-flexstart-spaceevenly {display: flex; align-items: flex-start; justify-content: space-evenly;}
-
+.flex-start-center {display: flex; align-items: flex-start; justify-content: center;}
 //Hero 
-.homepage-hero { height: 80vh;}
+.homepage-hero { height: 90vh; max-height: 700px;}
 .site-header {background: white; margin: 10px; border-radius: 12px; }
-.logo {max-height: 65px;}
+.logo {max-height: 55px;}
 .gradient {background: linear-gradient(0deg, rgba(255,255,255,1) 4%, rgba(19,48,130,0.75) 30%, rgba(19,48,130,1) 68%);}
-.hero-text-container {height: 80vh;  position: absolute; top: 0; left: 0; width: 100%; }
+.hero-text-container {height: 85vh;  position: absolute; top: 0; left: 0; width: 100%; }
 .circuit-bg {width: 100%; height: 100%;  background-image: url(../assets/circuit3.svg); background-size: cover;}
 #circuit3 {opacity: 0.3; height: 100%; width: auto; }
+.circuit-board-container {
+  
+  
+  position: absolute; z-index: -1; top: 0; left: 0; height: 90vh; width: 100%; 
+}
 
 // Navigation
 .site-navigation {
@@ -62,6 +68,21 @@ button:hover {transform: scale(1.1)}
   width: 100%;
 
 }
+
+ @media screen and (max-width: 480px) {
+  #circuit3 {
+    background-color: lightgreen;
+    min-width: 900px; left: -250px;
+  }
+}
+
+ @media screen and (min-width: 680px) {
+  #circuit3 {
+    background-color: var(--darkblue);
+     top: -30vw;
+  }
+}
+
 
 .open-nav {
   height: 100vh!important; 
@@ -74,7 +95,7 @@ button:hover {transform: scale(1.1)}
 .expanded-mobile-menu-window {background: white; width: 100vw; height: 100vh; z-index: 20000; position: absolute; top: 0; left: 0; display: none;}
 
 .mobile-site-navigation-item {font-size: 24px;}
-.site-navigation-list {list-style-type: none; padding: 15px; }
+.site-navigation-list {list-style-type: none; padding: 10px; }
 .site-navigation-item a {color: black; text-decoration: none; font-size: 16px; margin: 0px 10px; white-space: nowrap;}
 .site-navigation-item:hover {font-weight: 700;}
 .active-link {text-decoration: underline;}
@@ -112,7 +133,8 @@ canvas { width: 100%; height: 80vh; position: absolute; margin-top: -10vh; }
 }
 
 .scroll-arrow-container {
-  width: 100%; height: 10vh; margin-top: -5vh;
+  width: 100%; height: 200px; margin-top: -10vh; padding-top: 50px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.95) 43%, rgba(255,255,255,1) 100%); 
 }
 
 // icon-container block

@@ -6,11 +6,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <section class="homepage-hero ">
       
-      <div class="gradient" class="flex-center-center" style="position: absolute; vertical-align: middle; z-index: -1; top: 0; padding-top: 8vh; left: 0; height: 80vh; width: 100%; ">
+      <div class="gradient circuit-board-container">
         {@|apply circuitBoard.block}
       </div>
 
@@ -18,15 +21,15 @@
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
       <div class="hero-text-container flex-center-center">
-      <div>
-      {@|apply textRotation.block}
-      <squarespace:block-field id="heroButtonBlock" columns="12"/>
-      </div>
+        <div>
+        {@|apply textRotation.block}
+        <squarespace:block-field id="heroButtonBlock" columns="12"/>
+        </div>
       </div>
       
     </section>
-    <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" >
-        <div class="scroll-down"></div>
+    <div class="flex-start-center scroll-arrow-container" onclick="goToAnchor('main-section')" >
+        <div class="scroll-down hover"></div>
     </div>
     
 
