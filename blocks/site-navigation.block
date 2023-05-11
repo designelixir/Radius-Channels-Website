@@ -1,3 +1,4 @@
+
 <nav class="site-navigation flex-center-spacebetween fade-in-fast" >
     <a href="/">
   <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
@@ -66,7 +67,7 @@ let navWidth = nav.offsetWidth;
     $('.hamburger-menu').css("display", "none")
     $('.site-navigation-list').removeClass('hidden')
   }
-  console.log(windowWidth, navWidth, logoWidth)
+  {#  console.log(windowWidth, navWidth, logoWidth)  }
 }
 
 

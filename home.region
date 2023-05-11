@@ -3,44 +3,38 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
-    <link rel="preload" href="assets/triangle.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+    <section class="homepage-hero ">
+      
+      <div class="gradient" class="flex-center-center" style="position: absolute; vertical-align: middle; z-index: -1; top: 0; padding-top: 8vh; left: 0; height: 80vh; border: 2px solid lime; width: 100%; ">
+        {@|apply circuitBoard.block}
+      </div>
 
-  
-    <div class="hero" style="background-image: url({assetUrl}?format=original); background-size: cover;">
-        <div style="padding: 10px">
-        <header style="background: white; margin: 10px; border-radius: 22px;">
-            <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        </header>
-        </div>
-        
-        
-        
-
-        <div style="height: 60vh; width: 100%;">
-            {@|apply textRotation.block}
-            {#  <squarespace:block-field id="hero-buttons" columns="12"/>  }
-        </div>
-
-        <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" style=" background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,0) 2%, rgba(255,255,255,0.6614846622242647) 30%, rgba(255,255,255,0.8659664549413515) 51%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%); ">
+      <header class="site-header box-shadow">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+      </header>
+      <div class="hero-text-container flex-center-center">
+      <div>
+      {@|apply textRotation.block}
+      <squarespace:block-field id="heroButtonBlock" columns="12"/>
+      </div>
+      </div>
+      
+    </section>
+    <div class="flex-center-center scroll-arrow-container hover" onclick="goToAnchor('main-section')" >
         <div class="scroll-down"></div>
     </div>
-        
-    </div>
-
-    
     
 
     <div class="site-container">
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+
         <div class="flex-center-center">
             <div class="icon-container box-shadow flex-flexstart-spaceevenly">
                 <div class="icon-container-item">
@@ -76,20 +70,21 @@ background: linear-gradient(180deg, rgba(255,255,255,0) 2%, rgba(255,255,255,0.6
        {squarespace.main-content}
        
       </main>
-
+    
       <!--Footer with open block field -->
       <footer class="site-footer">
-      
-        <squarespace:navigation navigationId="footerNav" template="footer-navigation" />
+        {@|apply footer-navigation.block}
       </footer>
 
     </div>
-   
+
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
-    
+    {squarespace-footers}
 
   </body>
 </html>
+
+
