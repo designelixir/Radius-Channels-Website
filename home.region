@@ -10,7 +10,7 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <section class="homepage-hero ">
       
-      <div class="gradient" class="flex-center-center" style="position: absolute; vertical-align: middle; z-index: -1; top: 0; padding-top: 8vh; left: 0; height: 80vh; border: 2px solid lime; width: 100%; ">
+      <div class="gradient" class="flex-center-center" style="position: absolute; vertical-align: middle; z-index: -1; top: 0; padding-top: 8vh; left: 0; height: 80vh; width: 100%; ">
         {@|apply circuitBoard.block}
       </div>
 
