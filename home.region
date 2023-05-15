@@ -13,11 +13,11 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <section class="homepage-hero ">
       
-      <div class="gradient circuit-board-container">
+      <div class="circuit-board-container">
         {@|apply circuitBoard.block}
       </div>
 
-      <header class="site-header box-shadow">
+      <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
       <div class="hero-text-container flex-center-center">
@@ -26,19 +26,7 @@
         <squarespace:block-field id="heroButtonBlock" columns="12"/>
         </div>
       </div>
-      
-    </section>
-    <div class="flex-start-center scroll-arrow-container" onclick="goToAnchor('main-section')" >
-        <div class="scroll-down hover"></div>
-    </div>
-    
-
-    <div class="site-container">
-
-      <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content" id="main-section">
-
-        <div class="flex-center-center">
+      <div class="flex-center-center">
             <div class="icon-container box-shadow flex-flexstart-spaceevenly">
                 <div class="icon-container-item">
                     <img class="icon-image" src='assets/icons/expertise.png'>
@@ -70,12 +58,24 @@
         
         
         </div>
+    </section>
+    <div class="flex-start-center scroll-arrow-container" onclick="goToAnchor('main-section')" >
+        <div class="scroll-down hover"></div>
+    </div>
+    
+
+    <div class="site-container" style="height: 10vh;">
+
+      <!-- cms content injection point -->
+      <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+
+        
        {squarespace.main-content}
        
       </main>
     
       <!--Footer with open block field -->
-      <footer class="site-footer">
+      <footer class="site-footer" style="margin-top: 200px;">
         {@|apply footer-navigation.block}
       </footer>
 
