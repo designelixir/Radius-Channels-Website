@@ -11,19 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <section class="homepage-hero ">
-      
-      <div class="circuit-board-container">
-        {@|apply circuitBoard.block}
-      </div>
-
+    <section class="homepage-hero">
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <div class="hero-text-container flex-center-center">
+      {@|apply circuitBoard.block}
+      <div class="hero-text-container flex-center-start">
         <div>
         {@|apply textRotation.block}
-        <squarespace:block-field id="heroButtonBlock" columns="12"/>
+        <div class="flex-center-center flex-wrap" style="margin-top: 50px;">
+            <a class="button solid-button" href="/our-mission">Our Mission</a>
+            <a class="button solid-button" href="/our-formula">Formula</a>
+            <a class="button inverted-button" href="/our-mission">Methodology</a>
+        </div>
+        
         </div>
       </div>
       <div class="flex-center-center">
@@ -59,9 +60,7 @@
         
         </div>
     </section>
-    <div class="flex-start-center scroll-arrow-container" onclick="goToAnchor('main-section')" >
-        <div class="scroll-down hover"></div>
-    </div>
+    
     
 
     <div class="site-container" style="height: 10vh;">
@@ -75,7 +74,7 @@
       </main>
     
       <!--Footer with open block field -->
-      <footer class="site-footer" style="margin-top: 200px;">
+      <footer class="site-footer">
         {@|apply footer-navigation.block}
       </footer>
 

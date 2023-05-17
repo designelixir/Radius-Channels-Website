@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Questrial';
-  src: url("Questrial-Regular.ttf");
-}
-
 
 * {
   font-family: 'Questrial', sans-serif;
@@ -32,6 +27,8 @@ h1 {font-size: 48px; font-weight: 600; font-family: 'Questrial', sans-serif}
   .sqs-block  {padding: 0!important;}
 
 button {padding: 10px 25px; font-size: 24px; margin: 10px!important; border-radius: 8px; border: 2px solid var(--orange); cursor: pointer;}
+.button {padding: 10px 25px; font-size: 24px; text-decoration: none; margin: 10px!important; border-radius: 8px; border: 2px solid var(--orange); cursor: pointer;}
+
 button:hover {transform: scale(1.1)}
 .solid-button {background: var(--orange);  color: white;}
 .inverted-button { background-color: white; color: var(--orange)}
@@ -52,24 +49,28 @@ button:hover {transform: scale(1.1)}
 .flex-center-center-column {display: flex; align-items: center; justify-content: center; flex-direction: column;}
 .flex-flexstart-spaceevenly {display: flex; align-items: flex-start; justify-content: space-evenly;}
 .flex-start-center {display: flex; align-items: flex-start; justify-content: center;}
+.flex-wrap {flex-wrap: wrap;}
+
 //Hero 
-.homepage-hero { height: 90vh; max-height: 700px;}
+.homepage-hero { height: 100vh;}
 .site-header {background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8300186285451681) 53%, rgba(255,255,255,1) 100%); padding: 10px; border-radius: 12px; }
+.site-navigation { width: 100%; padding: 0px 12.5px;}
 .logo {max-height: 55px;}
+.mobile-site-navigation-item {font-size: 24px;}
+.site-navigation-list {list-style-type: none; padding: 10px; }
+.site-navigation-item a {color: black; text-decoration: none; font-size: 16px; margin: 0px 10px; white-space: nowrap;}
+.site-navigation-item:hover {font-weight: 700;}
+.active-link {text-decoration: underline;}
 
-.hero-text-container {height: 55vh;  top: 0; left: 0; width: 100%; }
+#heroButtonBlock {margin-top: 25px;}
+#circuit-container {position: absolute; }
 
-#circuit3 {opacity: 0.13; height: 100%; width: auto; }
-.circuit-board-container {
-  position: absolute; z-index: -1; top: 0; left: 0; height: 50vh; width: 100%; 
-}
+.hero-text-container { width: 100%; }
+
+#circuit3 {opacity: 0.13; width: 100vw; min-width: 600px;  }
+
 
 // Navigation
-.site-navigation {
-  padding: 12.5px 25px;
-  width: 100%;
-
-}
 
  @media screen and (max-width: 480px) {
   #circuit3 {
@@ -96,11 +97,6 @@ button:hover {transform: scale(1.1)}
 }
 .expanded-mobile-menu-window {background: white; width: 100vw; height: 100vh; z-index: 20000; position: absolute; top: 0; left: 0; display: none;}
 
-.mobile-site-navigation-item {font-size: 24px;}
-.site-navigation-list {list-style-type: none; padding: 10px; }
-.site-navigation-item a {color: black; text-decoration: none; font-size: 16px; margin: 0px 10px; white-space: nowrap;}
-.site-navigation-item:hover {font-weight: 700;}
-.active-link {text-decoration: underline;}
 
 .hidden {display: none;}
 .mobile-list {display: flex; align-items: center; justify-content: center; flex-direction: column;}
@@ -140,13 +136,13 @@ canvas { width: 100%; height: 80vh; position: absolute; margin-top: -10vh; }
 }
 
 // icon-container block
-.icon-container {border-radius: 20px; background: var(--darkblue); padding: 50px; width: 95vw; margin: 25px 0px 50px;}
+.icon-container {border-radius: 20px; background: var(--darkblue); padding: 2.5vw; width: 95vw; margin: 100px 0px 50px;}
 .icon-container-item { color: white; width: 100%; margin: 15px; text-align: center;}
 .icon-image {height: 75px; background-size: 75px; background-position: center center; background-repeat: no-repeat;}
 
 // Footer
 footer {text-align: center;}
-.de-tag {font-size: 10px; text-decoration: none; color: gray; text-align: center;}
+.de-tag {font-size: 10px; text-decoration: none; color: gray; text-align: center; margin-bottom: 25px;}
 
 .hamburger-menu {display: none;}
 
