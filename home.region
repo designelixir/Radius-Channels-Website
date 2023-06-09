@@ -15,7 +15,8 @@
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      {@|apply heroVideo.block}
+      <squarespace:block-field id="heroVideo" columns="12"/>
+
       <div class="hero-text-container flex-center-start">
         <div>
         {@|apply textRotation.block}
