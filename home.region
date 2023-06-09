@@ -14,6 +14,7 @@
     <section class="homepage-hero">
       <header class="site-header box-shadow">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+        <div class="overlay"></div>
       </header>
       <squarespace:block-field id="heroVideo" columns="12"/>
 
