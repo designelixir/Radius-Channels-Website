@@ -12,7 +12,7 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
     <section class="homepage-hero">
-      <header class="site-header">
+      <header class="site-header box-shadow">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
       <squarespace:block-field id="heroVideo" columns="12"/>
