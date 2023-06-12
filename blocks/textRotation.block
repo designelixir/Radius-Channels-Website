@@ -5,12 +5,12 @@
 .rotatingText { align-items: center; display: flex; text-align: center; padding: 75px 25px;}
 .rotatingText-content { position: relative; width: 100%;}
 .rotatingText-description { color: white; font-weight: 200; font-size: 48px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5)}
-.rotatingText-adjective { font-size: 6rem; left: 0; color: var(--orange); margin-bottom: 0; margin-top: 120px; opacity: 0; position: absolute; right: 0; text-align: center; top: 0; font-weight: 800;}
-#adj1 { animation: rotate-text-up 12s 0s infinite;  text-shadow: 1px 1px 2px rgba(0,0,0,0.5)}
-#adj2 { animation: rotate-text-up 12s 3s infinite; text-shadow: 1px 1px 2px rgba(0,0,0,0.5) }  
-#adj3 { animation: rotate-text-up 12s 6s infinite;  text-shadow: 1px 1px 2px rgba(0,0,0,0.5)}
-#adj4 { animation: rotate-text-up 12s 9s infinite;  text-shadow: 1px 1px 2px rgba(0,0,0,0.5)}
-#adj5 { animation: rotate-text-up 12s 12s infinite;  text-shadow: 1px 1px 2px rgba(0,0,0,0.5)}
+.rotatingText-adjective {text-shadow: 1px 1px 2px rgba(255,255,255,0.5); font-size: 6rem; left: 0; color: var(--orange); margin-bottom: 0; margin-top: 120px; opacity: 0; position: absolute; right: 0; text-align: center; top: 0; font-weight: 800;}
+#adj1 { animation: rotate-text-up 12s 0s infinite;  }
+#adj2 { animation: rotate-text-up 12s 3s infinite; }  
+#adj3 { animation: rotate-text-up 12s 6s infinite; }
+#adj4 { animation: rotate-text-up 12s 9s infinite; }
+
 
 @keyframes rotate-text-up { 
   0% {
@@ -38,12 +38,12 @@
 <section class="rotatingText">
   <div class="rotatingText-content">
     <h1 class="rotatingText-description">
-      Accelerating Next Generation Channel
+      Orchestrating Next Generation Channel
     </h1>
-      <h2 id="adj1" class="rotatingText-adjective">Growth</h2>
-      <h2 id="adj2" class="rotatingText-adjective">Reach</h2>
-      <h2 id="adj3" class="rotatingText-adjective">Scale</h2>
-      <h2 id="adj4" class="rotatingText-adjective">Velocity</h2>
+      <h2 id="adj1" class="rotatingText-adjective">Reach</h2>
+      <h2 id="adj2" class="rotatingText-adjective">Scale</h2>
+      <h2 id="adj3" class="rotatingText-adjective">Frequency</h2>
+      
   </div>
 </section>
 

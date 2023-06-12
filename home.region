@@ -22,8 +22,8 @@
         <div>
         {@|apply textRotation.block}
         <div class="flex-center-center flex-wrap" style="margin-top: 50px;">
-            <a class="button solid-button" href="/our-mission">Our Mission</a>
-            <a class="button solid-button" href="/our-formula">Formula</a>
+            <a class="button solid-button" href="/#ourMission">Our Mission</a>
+            <a class="button solid-button" href="/#ourFormula">Formula</a>
             <a class="button inverted-button" href="/our-mission">Methodology</a>
         </div>
         
@@ -39,6 +39,12 @@
 
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content" id="main-section">
+        <squarespace:block-field id="ourMission" columns="12"/>
+        <div class="flex-center-center basic-padding">
+
+        <squarespace:block-field id="ourFormula" columns="12"/>
+        {@|apply flowchart.block}
+        </div>
 
         
        {squarespace.main-content}
