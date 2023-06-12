@@ -24,7 +24,7 @@
         <div class="flex-center-center flex-wrap" style="margin-top: 50px;">
             <a class="button solid-button" href="/#ourMission">Our Mission</a>
             <a class="button solid-button" href="/#ourFormula">Formula</a>
-            <a class="button inverted-button" href="/our-mission">Methodology</a>
+            <a class="button inverted-button" href="/#ourMethodology">Methodology</a>
         </div>
         
         </div>
