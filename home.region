@@ -30,23 +30,72 @@
         </div>
       </div>
       <div class="spacer"></div>
+      <div class="spacer"></div>
       
     </section>
+    <div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px;">
+      <div style="max-width: 600px;">
+      <h2 class="orange-h2">Our <span class="thick">Mission</span> </h2>
+      <h4>Radius Channels is singularly-focused on next-generation strategies for increasing your channel reach, scale and velocity through flawless execution and timely delivery of innovative, customized support resources using our proven methodology. Simply put, we are a catalyst for accelerating growth!</h4>
+      {#  <button class="solid-button">Meet the People Behind Radius Channels &rarr;</button>  }
+      </div>
+      <img src="https://www.shutterstock.com/image-photo/digital-transformation-conceptual-next-generation-260nw-1710091141.jpg" style="max-height: 200px;"/>
+    </div>
+
+    <div id="ourFormula" class="basic-padding flex-center-spacebetween" style="margin-top: 100px; ">
+      {@|apply flowchart.block}
+      <div style="max-width: 600px;  text-align: right;">
+      <h2 class="orange-h2">Our <span class="thick">Formula</span> </h2>
+      <h4>Our formula for success is simple: Reach x Frequency x Scale leads to next-generation results.</h4>
+      </div>
+      
+    </div>
+
+    <div id="ourMethodology" class="basic-padding" style="margin-top: 100px; ">
+      <div style="text-align: center; ">
+      <h2 class="orange-h2">Our <span class="thick">Methodology</span> </h2>
+      <h4>Radius Channels provides a white-glove approach to sales, technical, marketing and operations support that is tailored to your organization.</h4>
+
+      </div>
+      <div class="flex-center-center">
+        <div class="methodology" style="text-align: center;">
+          
+          <img src="assets/10.png" style="height: 150px">
+          <h3>Vendor Specialized Staff</h3>
+        </div>    
+        <div class="methodology" style="text-align: center;">
+          
+          <img src="assets/12.png" style="height: 150px">
+          <h3>Operational Excellence</h3>
+        </div>   
+        <div class="methodology" style="text-align: center;">
+          
+          <img src="assets/11.png" style="height: 150px">
+          <h3>Marketing &amp; Demand</h3>
+        </div> 
+        <div class="methodology" style="text-align: center;">
+          
+          <img src="assets/8.png" style="height: 150px">
+          <h3>Sales Engineering</h3>
+        </div> 
+        <div class="methodology" style="text-align: center;">
+          
+          <img src="assets/9.png" style="height: 150px">
+          <h3>Customer Services</h3>
+        </div> 
     
+      
+      </div>
+      
+      
+    </div>
     
 
-    <div class="site-container" style="height: 10vh;">
-
+    
+    
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content" id="main-section">
-        <squarespace:block-field id="ourMission" columns="12"/>
-        <div class="flex-center-center basic-padding">
-
-        <squarespace:block-field id="ourFormula" columns="12"/>
-        {@|apply flowchart.block}
-        </div>
-
-        
+      <main class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
+      
        {squarespace.main-content}
        
       </main>
@@ -56,7 +105,7 @@
         {@|apply footer-navigation.block}
       </footer>
 
-    </div>
+    
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
