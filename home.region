@@ -18,7 +18,7 @@
       </header>
       <squarespace:block-field id="heroVideo" columns="12"/>
 
-      <div class="hero-text-container flex-center-start">
+      <div class="hero-text-container flex-center-center">
         <div>
         {@|apply textRotation.block}
         <div class="flex-center-center flex-wrap" style="margin-top: 50px;">
@@ -52,7 +52,7 @@
     </div>
 
     <div id="ourMethodology" class="basic-padding" style="margin-top: 100px; ">
-      <div style="text-align: center; ">
+      <div>
       <h2 class="orange-h2">Our <span class="thick">Methodology</span> </h2>
       <h4>Radius Channels provides a white-glove approach to sales, technical, marketing and operations support that is tailored to your organization.</h4>
 
