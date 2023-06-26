@@ -9,6 +9,8 @@ body { margin: 0; top: 0; left: 0;}
 a {font-size: 16px; letter-spacing: 1px;}
 p {font-weight: 100!important;}
 h1 {font-size: 48px; font-weight: 600; font-family: 'Questrial', sans-serif}
+h2 {font-size: 36px;}
+h3 {font-size: 24px}
 h4 {font-size: 24px; font-weight: 200; line-height: 30px; }
 .spacer {padding: 2.5vh;}
 .thick {font-weight: 800;}
@@ -44,6 +46,7 @@ button:hover {transform: scale(1.1)}
 .hover:hover {transform: scale(1.05); cursor: pointer;}
 
 .flex-center-center {display: flex; align-items: center; justify-content: center;}
+.flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start;}
 .flex-center-flexend {display: flex; align-items: center; justify-content: flex-end;}
 .flex-center-start {display: flex; align-items: center; justify-content: flex-start;}
 .flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between}
@@ -309,3 +312,7 @@ footer {text-align: center;}
  * ---------------------------------------------- */
 
  @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+ //Team page
+.team-card {max-width: 400px; margin: 25px;}
+ .team-photo {height: 400px; width: 400px; background-size: cover; background-position: center center;}

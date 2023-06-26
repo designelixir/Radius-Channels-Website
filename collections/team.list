@@ -1,16 +1,15 @@
-<div class="flex-center-center">
+<div class="flex-start-start flex-wrap">
 
 {.repeated section items}
 <div class="team-card">
-    {.main-image?}
-        <img {@|image-meta} alt="{title}"/>
-    {.or}
-        <img src="../assets/blank.png" alt="blank profile photo">
+    <div class="team-photo" {.main-image?}style="background-image: url({assetUrl})"{.or}style="background-image: url(../assets/blank.png)"{.end}>
 
-    {.end}
-    {title}
+    </div>
+    <div class="flex-center-spacebetween">
+    <h3>{title}</h3>
+    <a href="{sourceUrl}"><img src="../assets/linkedin.png" style="height: 25px;"></a>
+    </div>
     {body}
-
+</div>
 {.end}
 
-</div>
