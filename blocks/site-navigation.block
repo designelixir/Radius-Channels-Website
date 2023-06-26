@@ -4,28 +4,95 @@
   <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
   </a>
 
-  <ul class="site-navigation-list flex-center-spaceevenly">
+  <ul class="site-navigation-list flex-center-spaceevenly" id="site-nav-links-list">
     
     {.repeated section items}
-
       <li class="site-navigation-item {.section active} active-link{.end}">
-
         <!-- collection link -->
         {.section collection}
           <a href="{fullUrl}">{navigationTitle}</a>
         {.end}
-
-        
-
-      </li>
-
+      </li> 
     {.end}
   </ul>
-  <div class="hamburger-menu" >
+  <div class="hamburger-menu" onclick="expandDiv()">
   <div id="nav-icon4">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span id="ham1"></span>
+    <span id="ham2"></span>
+    <span id="ham3"></span>
   </div>
   </div>
 </nav>
+<div id="mobile-menu" class="box-shadow flex-center-center" style="width: calc(100% - 20px)">
+<ul class="fade-in-list flex-center-center flex-column" id="mobile-menu-list">
+{.repeated section items}
+      <li class="site-navigation-item {.section active} active-link{.end}">
+        <!-- collection link -->
+        {.section collection}
+          <a href="{fullUrl}">{navigationTitle}</a>
+        {.end}
+      </li> 
+    {.end}
+</ul>
+</div>
+
+<script>
+const mobileMenu = document.getElementById('mobile-menu');
+
+
+const mobileMenuList= document.getElementById('mobile-menu-list')
+const mobileMenuItems = document.querySelectorAll('#mobile-menu-list li')
+
+const mobileMenuHeight = mobileMenuItems.length * 50;
+console.log(mobileMenuHeight)
+function expandDiv() {
+  if (mobileMenu.style.display === "block"){
+    mobileMenu.style.display = "none"
+    document.getElementById('ham1').style.transform = "rotate(0deg)"
+    document.getElementById('ham2').style.display = "block"
+    document.getElementById('ham3').style.transform = "rotate(0deg)"
+    
+  } else {
+    document.getElementById('ham1').style.transform = "rotate(45deg)"
+    document.getElementById('ham2').style.display = "none"
+    document.getElementById('ham3').style.transform = "rotate(-45deg)"
+    
+    
+    mobileMenu.style.height = '0';
+  mobileMenu.style.display = 'block';
+  mobileMenu.style.opacity = '0'
+  
+  
+
+  let height = 0;
+  let opacity = 0;
+  const maxHeight = mobileMenuHeight; 
+  const duration = 150; 
+  const increment = (maxHeight / duration) * 10;
+
+  const interval = setInterval(() => {
+    if (height >= maxHeight) {
+      clearInterval(interval);
+      
+    } else {
+      height += increment;
+      opacity += increment;
+      mobileMenu.style.height = height + 'px';
+      mobileMenu.style.opacity = opacity
+    }
+  }, 10);
+  }
+
+  for (i = 0; i < mobileMenuItems.length; i++){
+    mobileMenuItems[i].style.animationDelay =  i * 300 + 'ms';
+    mobileMenuItems[i].classList.add('fade-in')
+    
+  }
+  
+}
+
+
+
+
+</script>
+

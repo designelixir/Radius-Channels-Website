@@ -11,23 +11,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    <section class="homepage-hero">
-     {@|apply hero.block}
-      <div class="hero-text-container flex-center-center">
-        <div>
-        {@|apply textRotation.block}
-        <div class="flex-center-center flex-wrap" style="margin-top: 50px;">
-            <a class="button solid-button" href="/#ourMission">Our Mission</a>
-            <a class="button solid-button" href="/#ourFormula">Formula</a>
-            <a class="button inverted-button" href="/#ourMethodology">Methodology</a>
+    
+    
+     
+
+      <section id="hero">
+      {@|apply hero.block}
+        <header class="site-header box-shadow">
+          <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+        </header>
+        <div class="flex-center-center" style="height: calc(100% - 150px)">
+          <div>
+            {@|apply textRotation.block}
+            <div class="flex-center-center flex-wrap" style="margin-top: 75px;">
+                <a class="button solid-button" href="/#ourMission">Our Mission</a>
+                <a class="button solid-button" href="/#ourFormula">Formula</a>
+                <a class="button inverted-button" href="/#ourMethodology">Methodology</a>
+            </div>
+          </div>
         </div>
-        
-        </div>
-      </div>
-      <div class="spacer"></div>
-      <div class="spacer"></div>
+      </section>
+      <a href="#ourMission">
+      {@|apply downArrow.block}
+      </a>
+
       
-    </section>
+    
     <div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px;">
       <div style="max-width: 600px;">
       <h2 class="orange-h2">Our <span class="thick">Mission</span> </h2>
