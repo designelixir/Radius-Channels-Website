@@ -1,5 +1,0 @@
-<div class="flex-center-start" style="position: absolute; border: 2px solid red; top: -8vh; z-index: -1; height: 60vh; width: 100%;  object-fit: cover; min-height: 900px;">
-
-<squarespace:block-field id="heroVideo" columns="12"/>
-
-</div>
