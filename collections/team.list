@@ -1,1 +1,16 @@
-egg
+<div class="flex-center-center">
+
+{.repeated section items}
+<div class="team-card">
+    {.main-image?}
+        <img {@|image-meta} alt="{title}"/>
+    {.or}
+        <img src="../assets/blank.png" alt="blank profile photo">
+
+    {.end}
+    {title}
+    {body}
+
+{.end}
+
+</div>
