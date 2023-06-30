@@ -47,9 +47,9 @@
                         <p>Event Description Event Description Event Description Event Description</p>
                     </div>
                 </div>
-                <div class="event-selected-indicator flex-center-center">
+                
                     <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
-                </div>
+                
             </div>
 
             <div class="event-container flex-center-center">
@@ -77,15 +77,15 @@
                         <p>Event Description Event Description Event Description Event Description</p>
                     </div>
                 </div>
-                <div class="event-selected-indicator flex-center-center">
-                    <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
-                </div>
+                
+                <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
+                
             </div>
         
         </div>
         <div id="eventDetail" >
-            <div class="event-detail-container">
-                <div style="background-image: url(assets/event-bg.png); " >
+            <div class="event-detail-container" style="width: calc(100%)">
+                <div style="background-image: url(assets/event-bg.png);">
                 
                     <div class="full-size-event ">
                         <div>
