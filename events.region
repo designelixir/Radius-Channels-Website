@@ -16,10 +16,16 @@
      
 
       
-      
+      <div style="border: 1px solid red" id="eventsHeader">
         <header class="site-header box-shadow">
           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
+        <div class="padding">
+            <h1 class="white-text">{collection.title}</h1>
+            <squarespace:block-field id="eventsDescription" columns="12" class="white-text"/>
+
+        </div>
+    </div>
         
       
    
