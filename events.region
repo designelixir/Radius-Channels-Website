@@ -16,15 +16,99 @@
      
 
       
-      <div style="border: 1px solid red" id="eventsHeader">
+      <div id="eventsHeader">
         <header class="site-header box-shadow">
           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
-        <div class="padding">
-            <h1 class="white-text">{collection.title}</h1>
-            <squarespace:block-field id="eventsDescription" columns="12" class="white-text"/>
-
+        <div class="basic-padding flex-spacebetween-start " style="height: 300px;">
+            <div style="width: 100%; ">
+                <h1 class="white-text">{collection.title}</h1>
+                <div style="color: white; max-width: 600px;">{collection.description}</div>
+            </div>
+            
+            <div class="flex-center-center" >
+                <div style="color: gray; background: white; border: 1px solid gray; width: 400px;" class="box-shadow">
+                    <p style="padding-left: 10px;">Email Address</p>
+                </div>
+                <button style="margin: 0 15px 0!important">Get Event Emails</button>
+            </div>
         </div>
+    </div>
+
+    <div id="eventsContainer" class="flex-start-center">
+        <div id="eventsList">
+            <div class="event-container flex-center-center active-event">
+                <div class="event flex-start-start ">
+                    <div class="event-image " style="background-image: url('assets/event-bg.png')">
+                    </div>
+                    <div>
+                        <h6>June 11th, 2023</h6>
+                        <h3>Event Title 1</h3>
+                        <p>Event Description Event Description Event Description Event Description</p>
+                    </div>
+                </div>
+                <div class="event-selected-indicator flex-center-center">
+                    <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
+                </div>
+            </div>
+
+            <div class="event-container flex-center-center">
+                <div class="event flex-start-start">
+                    <div class="event-image ">
+                    </div>
+                    <div>
+                        <h6>June 11th, 2023</h6>
+                        <h3>Event Title 2</h3>
+                        <p>Event Description Event Description Event Description Event Description</p>
+                    </div>
+                </div>
+                <div class="event-selected-indicator flex-center-center">
+                    <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
+                </div>
+            </div>
+
+            <div class="event-container flex-center-center">
+                <div class="event flex-start-start">
+                    <div class="event-image ">
+                    </div>
+                    <div>
+                        <h6>June 11th, 2023</h6>
+                        <h3>Event Title 3</h3>
+                        <p>Event Description Event Description Event Description Event Description</p>
+                    </div>
+                </div>
+                <div class="event-selected-indicator flex-center-center">
+                    <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
+                </div>
+            </div>
+        
+        </div>
+        <div id="eventDetail" >
+            <div class="event-detail-container">
+                <div style="background-image: url(assets/event-bg.png); " >
+                
+                    <div class="full-size-event ">
+                        <div>
+                            <p>Event Type</p>
+                          
+                                <h1>Event Title 1</h1>
+                                <h3>June 30th, 2023 <br> 11:30pm-1:30pm MT</h3>
+                                <h3>Denver, Colorado</h3>
+                                
+                               
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="basic-padding">
+                    <p>Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description</p>
+                     <button class="solid-button box-shadow">Register Now</button>
+                </div>
+                <squarespace:block-field id="sampleEventField" columns="12"/>
+                </div>
+        </div>
+        
     </div>
         
       
