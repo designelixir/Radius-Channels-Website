@@ -54,13 +54,20 @@ button:hover {transform: scale(1.1)}
 .flex-center-center-column {display: flex; align-items: center; justify-content: center; flex-direction: column;}
 .flex-flexstart-spaceevenly {display: flex; align-items: flex-start; justify-content: space-evenly;}
 .flex-start-center {display: flex; align-items: flex-start; justify-content: center;}
+.flex-start-spacebetween {display: flex; align-items: flex-start; justify-content: space-between;}
 .flex-wrap {flex-wrap: wrap;}
 .flex-column {flex-direction: column;}
 
 // Homepage
-#hero { height: 95vh; width: 100vw; padding: 10px; background: rgba(255,255,255,0.65)}
+#hero { height: 95vh; width: 100vw; padding: 10px; background: rgba(255,255,255,0.25)}
 .site-header {padding: 20px 10px; margin: 15px; background: white;}
 
+
+
+@media screen and (max-width: 768px) {
+  #ourMission div {flex-wrap: wrap;}
+  
+}
 // Navigation
 
 .site-navigation { width: 100%; padding: 0px 12.5px;}

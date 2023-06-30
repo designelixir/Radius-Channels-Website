@@ -1,0 +1,18 @@
+<div style="width: 40vw;">
+<div class="flex-start-start flex-wrap">
+
+{.repeated section items}
+<div style="border: 1px solid lime">
+    {title}
+</div>
+{.end}
+</div>
+<div style="width: 55vw">
+    <div style="border: 1px solid red">
+        {title}
+    </div>
+</div>
+
+
+
+

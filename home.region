@@ -38,17 +38,17 @@
       
     
     <div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px;">
-      <div style="max-width: 600px;">
-      <h2 class="orange-h2">Our <span class="thick">Mission</span> </h2>
+      <div class="flex-start-spacebetween">
+      <h2 class="orange-h2" style="padding-right: 50px; margin-top: 30px">Our <span class="thick">Mission</span> </h2>
       <h4>Radius Channels is singularly-focused on next-generation strategies for increasing your channel reach, scale and velocity through flawless execution and timely delivery of innovative, customized support resources using our proven methodology. Simply put, we are a catalyst for accelerating growth!</h4>
-      {#  <button class="solid-button">Meet the People Behind Radius Channels &rarr;</button>  }
+      
       </div>
-      <img src="https://www.shutterstock.com/image-photo/digital-transformation-conceptual-next-generation-260nw-1710091141.jpg" style="max-height: 200px;"/>
+      
     </div>
 
     <div id="ourFormula" class="basic-padding flex-center-spacebetween" style="margin-top: 100px; ">
       {@|apply flowchart.block}
-      <div style="max-width: 600px;  text-align: right;">
+      <div style="margin-left: 50px;  text-align: right;">
       <h2 class="orange-h2">Our <span class="thick">Formula</span> </h2>
       <h4>Our formula for success is simple: Reach x Frequency x Scale leads to next-generation results.</h4>
       </div>
