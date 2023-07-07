@@ -17,7 +17,7 @@
 
       <section id="hero">
       {@|apply hero.block}
-        <header class="site-header box-shadow">
+        <header class="site-header fade-in2  box-shadow">
           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
         <div class="flex-center-center" style="height: calc(100% - 150px)">

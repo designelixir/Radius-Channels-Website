@@ -24,7 +24,7 @@
 }
 </style>
 
-<div class="vimeo-wrapper flex-center-center" style="background-image: url({collection.mainImage.assetUrl}); border: 2px solid red;">
+<div class="vimeo-wrapper fade-in flex-center-center" style="background-image: url({collection.mainImage.assetUrl});">
 
    <iframe src="" id="heroIframe"
            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
