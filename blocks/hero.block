@@ -8,6 +8,9 @@
    z-index: -1;
    pointer-events: none;
    overflow: hidden;
+   background-size: cover; 
+   background-repeat: no-repeat; 
+   background-position: center center;
 }
 .vimeo-wrapper iframe {
    width: 100vw;
@@ -21,7 +24,7 @@
 }
 </style>
 
-<div class="vimeo-wrapper flex-center-center">
+<div class="vimeo-wrapper flex-center-center" style="background-image: url({website.assetUrl});">
 
    <iframe src="" id="heroIframe"
            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
