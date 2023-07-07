@@ -7,6 +7,3 @@
   {.end}
 {.end}
 
-<script>
-console.log({@|json-pretty})
-</script>
