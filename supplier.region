@@ -8,33 +8,32 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
-    <div class="site-container">
+    
       
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
       </header>
 
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content" style="padding: 25px;">
-       {.section website}
-          <h1 class="site-title-heading" data-content-field="site-title">
-            {collection.title}
-          </h1>
-        {.end}
+      <main class="content-container" role="main" data-content-field="main-content" >
+      <div class="basic-padding">
+      {.if mainImage}
+       <img src="{collection.mainImage.assetUrl}" style="height: 100px"/>
+       {.or}
+       {collection.pageTitle}
+       {.end}
+       
+        
        {squarespace.main-content}
+       </div>
       </main>
 
-      <!--Footer with open block field -->
       <footer class="site-footer">
         <squarespace:block-field id="footerBlocks" columns="12" />
       </footer>
 
-    </div>
 
-    <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
-    <!-- other scripts, and footer code injection -->
     {squarespace-footers}
 
   </body>
