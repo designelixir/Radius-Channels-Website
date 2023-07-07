@@ -7,12 +7,13 @@
         <div id="eventsList">
         {.repeated section items}
             <div class="event-container flex-center-center active-event">
-                <div>
-                <div class="event flex-start-start ">
+                <div class="event" >
+                <div class="flex-start-start ">
                     <div class="event-image " style="background-image: url({assetUrl})">
                     </div>
                     <div>
-                        <h6>{customContent.eventStartDate}</h6>
+                    <script>convertDateString({customContent.eventStartDate}, "{title}-date")</script>
+                        <h6 id="{title}-date">{customContent.eventStartDate}</h6>
                         <h3>{title}</h3>
                         
                     </div>
@@ -59,3 +60,16 @@
     </div>
 
 
+<script>
+
+function convertDateString(dateString, targetDivId) {
+  const [month, day, year] = dateString.split('/');
+  var targetDiv = document.getElementById(targetDivId)
+  const dateObject = new Date(`${month}/${day}/${year}`);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = dateObject.toLocaleDateString(undefined, options);
+  targetDiv.innerHTML = formattedDate
+  
+}
+
+</script>
