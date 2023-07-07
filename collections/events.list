@@ -11,9 +11,9 @@
                     <div class="event-image " style="background-image: url('assets/event-bg.png')">
                     </div>
                     <div>
-                        <h6>June 11th, 2023</h6>
+                        <h6>{customContent.eventStartDate}</h6>
                         <h3>{title}</h3>
-                        <p>Event Description Event Description Event Description Event Description</p>
+                        <p>{excerpt}</p>
                     </div>
                 </div>
                 
