@@ -39,10 +39,10 @@
   }
 }
 </style>
-<h1 class="rotatingText-description">
+<h1 class="rotatingText-description fade-in2">
       Orchestrating Next Generation Channel
     </h1>
-<section class="rotatingText">
+<section class="rotatingText fade-in3">
   <div class="rotatingText-content">
     
       <h2 id="adj1" class="rotatingText-adjective">Reach</h2>

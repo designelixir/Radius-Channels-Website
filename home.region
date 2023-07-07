@@ -11,15 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-    
-    
-     
 
       <section id="hero">
       {@|apply hero.block}
-        <header class="site-header fade-in2  box-shadow">
-          <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        </header>
+        <header class="site-header">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
+      </header>
         <div class="flex-center-center" style="height: calc(100% - 150px)">
           <div>
             {@|apply textRotation.block}

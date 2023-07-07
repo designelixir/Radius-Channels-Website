@@ -17,9 +17,9 @@
 
       
       <div id="eventsHeader">
-        <header class="site-header box-shadow">
-          <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        </header>
+        <header class="site-header">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
+      </header>
         <div class="basic-padding flex-spacebetween-start " style="height: 300px;">
             <div style="width: 100%; ">
                 <h1 class="white-text">{collection.title}</h1>

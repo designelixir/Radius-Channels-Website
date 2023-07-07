@@ -1,12 +1,8 @@
 {.section collection}
   {.repeated section collections}
     <div class=”index”>
-    {title}
+      {title}
       {mainContent}
     </div>
   {.end}
 {.end}
-
-<script>
-console.log({@|json-pretty})
-</script>

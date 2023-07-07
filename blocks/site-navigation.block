@@ -1,18 +1,39 @@
 
-<nav class="site-navigation flex-center-spacebetween " >
-    <a href="/">
-  <img src={website.logoImageUrl} alt="Radius Channels Logo" class="logo hover">
-  </a>
+<script>console.log({@|json-pretty})</script>
 
-  <ul class="site-navigation-list flex-center-spaceevenly" id="site-nav-links-list">
+<nav class="site-navigation flex-start-spacebetween box-shadow" >
     
+  <img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
+  <ul class="site-navigation-list flex-start-spaceevenly" id="site-nav-links-list">
     {.repeated section items}
       <li class="site-navigation-item {.section active} active-link{.end}">
         <!-- collection link -->
-        {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
-        {.end}
-      </li> 
+          {.if collection.dropdown}
+            <a onclick="expandDropDown('{collection.navigationTitle}-dropdown')">
+            {collection.navigationTitle}<span style="font-size: 10px" id="dropdown-arrow"> &#9661;</span></a>
+            <ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
+              <li class="site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.title}</a></li>
+                {.repeated section items}
+            
+                <li class="site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.navigationTitle}</a> <span style="font-size: 10px">&#9664;</span> </li>
+            
+            {.end}
+            </ul>
+          </li> 
+          {.or}
+          <li class="site-navigation-item {.section active} active-link{.end}">
+      
+          <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          </li>
+          
+          {.end}
+ <li class="site-navigation-item {.section active} active-link{.end}">
+{.section externalLink}
+          <a href="{url}">{title}</a>
+            {.end}
+            </li>
+        
+      
     {.end}
   </ul>
   <div class="hamburger-menu" onclick="expandDiv()">
@@ -37,6 +58,22 @@
 </div>
 
 <script>
+
+function expandDropDown(divName){
+  var targetDiv = document.getElementById(divName);
+  var dropdownArrow = document.getElementById('dropdown-arrow')
+  if (targetDiv.style.display === "block"){
+    targetDiv.style.display = "none"
+    dropdownArrow.innerHTML = "&nbsp; &#9661;"
+
+  } else {
+    targetDiv.style.display = "block"
+    dropdownArrow.innerHTML = "&nbsp; &#9660;"
+  }
+  
+}
+
+
 const mobileMenu = document.getElementById('mobile-menu');
 
 
