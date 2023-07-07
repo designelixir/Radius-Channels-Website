@@ -1,7 +1,19 @@
 
 
  
+<script>
 
+function convertDateString(dateString, targetDivId) {
+  const [month, day, year] = dateString.split('/');
+  var targetDiv = document.getElementById(targetDivId)
+  const dateObject = new Date(`${month}/${day}/${year}`);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = dateObject.toLocaleDateString(undefined, options);
+  targetDiv.innerHTML = formattedDate
+  
+}
+
+</script>
 
 <div id="eventsContainer" class="flex-start-center">
         <div id="eventsList">
@@ -60,16 +72,3 @@
     </div>
 
 
-<script>
-
-function convertDateString(dateString, targetDivId) {
-  const [month, day, year] = dateString.split('/');
-  var targetDiv = document.getElementById(targetDivId)
-  const dateObject = new Date(`${month}/${day}/${year}`);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = dateObject.toLocaleDateString(undefined, options);
-  targetDiv.innerHTML = formattedDate
-  
-}
-
-</script>
