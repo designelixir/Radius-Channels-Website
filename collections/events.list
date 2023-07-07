@@ -8,14 +8,15 @@
         {.repeated section items}
             <div class="event-container flex-center-center active-event">
                 <div class="event flex-start-start ">
-                    <div class="event-image " style="background-image: url('assets/event-bg.png')">
+                    <div class="event-image " style="background-image: url({assetUrl})">
                     </div>
                     <div>
                         <h6>{customContent.eventStartDate}</h6>
                         <h3>{title}</h3>
-                        <p>{excerpt}</p>
+                        
                     </div>
                 </div>
+                <p>{excerpt}</p>
                 
                     <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
                 
