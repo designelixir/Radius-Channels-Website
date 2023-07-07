@@ -1,56 +1,55 @@
 {#  https://codepen.io/keenanpayne/pen/mxjGmo  }
 <style>
-
-
-.rotatingText { align-items: center; display: flex; text-align: center; padding: 0px 25px;}
-.rotatingText-content { position: relative; width: 100%;}
-.rotatingText-description { color: white; font-weight: 200; font-size: 4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); text-align: center;}
-.rotatingText-adjective {text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-size: 6rem; left: 0; color: var(--orange); margin-bottom: 0; margin-top: -40px; opacity: 0; position: absolute; right: 0; text-align: center; top: 0; font-weight: 800;}
-#adj1 { animation: rotate-text-up 12s 0s infinite;  }
-#adj2 { animation: rotate-text-up 12s 3s infinite; }  
-#adj3 { animation: rotate-text-up 12s 6s infinite; }
-#adj4 { animation: rotate-text-up 12s 9s infinite; }
-
-@media screen and (max-width: 680px) {
-  .rotatingText-adjective {
-    font-size: 4rem; font-weight: 1000;
-  }
-  .rotatingText-description {font-size: 2.5rem; padding-bottom: 25px;}
-}
-@keyframes rotate-text-up { 
-  0% {
-    transform: translate3d(0, 80px, 0);
-    opacity: 0;
-  }
-  5%{
-    transform: translate3d(0, 0px, 0);
-    opacity: 1;
-  }
-  20% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  } 23% {
-    transform: translate3d(0, -40px, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(0, -40px, 0);
-    opacity: 0;
-  }
-}
+	.rotatingText { align-items: center; display: flex; text-align: center; padding: 0px 25px;}
+	.rotatingText-content { position: relative; width: 100%;}
+	.rotatingText-description { color: white; font-weight: 200; font-size: 4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); text-align: center;}
+	.rotatingText-adjective {text-shadow: 1px 1px 2px rgba(0,0,0,0.5); font-size: 6rem; left: 0; color: var(--orange); margin-bottom: 0; margin-top: -40px; opacity: 0; position: absolute; z-index: 3; right: 0; text-align: center; top: 0; font-weight: 800;}
+	#adj1 { animation: rotate-text-up 12s 0s infinite;  }
+	#adj2 { animation: rotate-text-up 12s 3s infinite; }  
+	#adj3 { animation: rotate-text-up 12s 6s infinite; }
+	#adj4 { animation: rotate-text-up 12s 9s infinite; }
+	@media screen and (max-width: 680px) {
+	.rotatingText-adjective {
+	font-size: 4rem; font-weight: 1000;
+	}
+	.rotatingText-description {font-size: 2.5rem; padding-bottom: 25px;}
+	}
+	@keyframes rotate-text-up { 
+	0% {
+	transform: translate3d(0, 80px, 0);
+	opacity: 0;
+	}
+	5%{
+	transform: translate3d(0, 0px, 0);
+	opacity: 1;
+	}
+	20% {
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+	} 23% {
+	transform: translate3d(0, -40px, 0);
+	opacity: 0;
+	}
+	100% {
+	transform: translate3d(0, -40px, 0);
+	opacity: 0;
+	}
+	}
 </style>
-<h1 class="rotatingText-description fade-in2">
-      Orchestrating Next Generation Channel
-    </h1>
-<section class="rotatingText fade-in3">
-  <div class="rotatingText-content">
-    
-      <h2 id="adj1" class="rotatingText-adjective">Reach</h2>
-      <h2 id="adj2" class="rotatingText-adjective">Scale</h2>
-      <h2 id="adj3" class="rotatingText-adjective">Frequency</h2>
-      
-  </div>
-</section>
-
-
-
+<div class="flex-center-center" style="height: calc(100%); z-index: 1;">
+	<div>
+		<h1 class="rotatingText-description fade-in2">Orchestrating Next Generation Channel</h1>
+		<div class="rotatingText fade-in3">
+			<div class="rotatingText-content">
+				<h2 id="adj1" class="rotatingText-adjective">Reach</h2>
+				<h2 id="adj2" class="rotatingText-adjective">Scale</h2>
+				<h2 id="adj3" class="rotatingText-adjective">Frequency</h2>
+			</div>
+		</div>
+		<div class="flex-center-center flex-wrap" style="margin-top: 75px;">
+			<a class="button solid-button" href="/#ourMission">Our Mission</a>
+			<a class="button solid-button" href="/#ourFormula">Formula</a>
+			<a class="button inverted-button" href="/#ourMethodology">Methodology</a>
+		</div>
+	</div>
+</div>

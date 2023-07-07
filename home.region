@@ -1,120 +1,80 @@
 <!doctype html>
 <html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- include system scripts, page meta, and header code injection -->
-    {squarespace-headers}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
-  </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		{squarespace-headers}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+	</head>
+	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+		{@|apply hero.block}
+		<header class="site-header">
+			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
+		</header>
+    <div id="site-wrapper">
 
       <section id="hero">
-      {@|apply hero.block}
-        <header class="site-header">
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
-      </header>
-        <div class="flex-center-center" style="height: calc(100% - 150px)">
-          <div>
-            {@|apply textRotation.block}
-            <div class="flex-center-center flex-wrap" style="margin-top: 75px;">
-                <a class="button solid-button" href="/#ourMission">Our Mission</a>
-                <a class="button solid-button" href="/#ourFormula">Formula</a>
-                <a class="button inverted-button" href="/#ourMethodology">Methodology</a>
-            </div>
-          </div>
-        </div>
+        {@|apply textRotation.block}
+        {@|apply downArrow.block}
       </section>
-      <a href="#ourMission">
-      {@|apply downArrow.block}
-      </a>
-
-      
-    
-    <div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px;">
-      <div class="flex-start-spacebetween">
-      <h2 class="orange-h2" style="padding-right: 50px; margin-top: 30px">Our <span class="thick">Mission</span> </h2>
-      <h4>Radius Channels is singularly-focused on next-generation strategies for increasing your channel reach, scale and velocity through flawless execution and timely delivery of innovative, customized support resources using our proven methodology. Simply put, we are a catalyst for accelerating growth!</h4>
-      
-      </div>
-      
+		
+		
+		
+		<div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px">
+			<div class="flex-start-spacebetween">
+				<h2 class="orange-h2" style="padding-right: 50px; margin-top: 30px">Our <span class="thick">Mission</span> </h2>
+				<h4>Radius Channels is singularly-focused on next-generation strategies for increasing your channel reach, scale and velocity through flawless execution and timely delivery of innovative, customized support resources using our proven methodology. Simply put, we are a catalyst for accelerating growth!</h4>
+			</div>
+		</div>
+		<div id="ourFormula" class="basic-padding flex-center-spacebetween" style="margin-top: 100px; ">
+			{@|apply flowchart.block}
+			<div style="margin-left: 50px;  text-align: right;">
+				<h2 class="orange-h2">Our <span class="thick">Formula</span> </h2>
+				<h4>Our formula for success is simple: Reach x Frequency x Scale leads to next-generation results.</h4>
+			</div>
+		</div>
+		<div id="ourMethodology" class="basic-padding" style="margin-top: 100px; ">
+			<div>
+				<h2 class="orange-h2">Our <span class="thick">Methodology</span> </h2>
+				<h4>Radius Channels provides a white-glove approach to sales, technical, marketing and operations support that is tailored to your organization.</h4>
+			</div>
+			<div class="flex-center-center">
+				<div class="methodology" style="text-align: center;">
+					<img src="assets/10.png" style="height: 150px">
+					<h3>Vendor Specialized Staff</h3>
+				</div>
+				<div class="methodology" style="text-align: center;">
+					<img src="assets/12.png" style="height: 150px">
+					<h3>Operational Excellence</h3>
+				</div>
+				<div class="methodology" style="text-align: center;">
+					<img src="assets/11.png" style="height: 150px">
+					<h3>Marketing &amp; Demand</h3>
+				</div>
+				<div class="methodology" style="text-align: center;">
+					<img src="assets/8.png" style="height: 150px">
+					<h3>Sales Engineering</h3>
+				</div>
+				<div class="methodology" style="text-align: center;">
+					<img src="assets/9.png" style="height: 150px">
+					<h3>Customer Services</h3>
+				</div>
+			</div>
+		</div>
+		<!-- cms content injection point -->
+		<main class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
+			{squarespace.main-content}
+		</main>
+		<!--Footer with open block field -->
+		
+			{@|apply footer.block}
+		
     </div>
-
-    <div id="ourFormula" class="basic-padding flex-center-spacebetween" style="margin-top: 100px; ">
-      {@|apply flowchart.block}
-      <div style="margin-left: 50px;  text-align: right;">
-      <h2 class="orange-h2">Our <span class="thick">Formula</span> </h2>
-      <h4>Our formula for success is simple: Reach x Frequency x Scale leads to next-generation results.</h4>
-      </div>
-      
-    </div>
-
-    <div id="ourMethodology" class="basic-padding" style="margin-top: 100px; ">
-      <div>
-      <h2 class="orange-h2">Our <span class="thick">Methodology</span> </h2>
-      <h4>Radius Channels provides a white-glove approach to sales, technical, marketing and operations support that is tailored to your organization.</h4>
-
-      </div>
-      <div class="flex-center-center">
-        <div class="methodology" style="text-align: center;">
-          
-          <img src="assets/10.png" style="height: 150px">
-          <h3>Vendor Specialized Staff</h3>
-        </div>    
-        <div class="methodology" style="text-align: center;">
-          
-          <img src="assets/12.png" style="height: 150px">
-          <h3>Operational Excellence</h3>
-        </div>   
-        <div class="methodology" style="text-align: center;">
-          
-          <img src="assets/11.png" style="height: 150px">
-          <h3>Marketing &amp; Demand</h3>
-        </div> 
-        <div class="methodology" style="text-align: center;">
-          
-          <img src="assets/8.png" style="height: 150px">
-          <h3>Sales Engineering</h3>
-        </div> 
-        <div class="methodology" style="text-align: center;">
-          
-          <img src="assets/9.png" style="height: 150px">
-          <h3>Customer Services</h3>
-        </div> 
-    
-      
-      </div>
-      
-      
-    </div>
-    
-
-    
-    
-      <!-- cms content injection point -->
-      <main class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
-      
-       {squarespace.main-content}
-       
-      </main>
-    
-      <!--Footer with open block field -->
-      <footer class="site-footer">
-        {@|apply footer-navigation.block}
-      </footer>
-
-    
-
-    <!-- combo and minify scripts when not logged in -->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
-    <!-- other scripts, and footer code injection -->
-    {squarespace-footers}
-
-  </body>
+		<!-- combo and minify scripts when not logged in -->
+		<squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+		<!-- other scripts, and footer code injection -->
+		{squarespace-footers}
+	</body>
 </html>
-
-

@@ -1,7 +1,7 @@
-<div class="flex-start-start flex-wrap">
+<div class="grid-container team-grid">
 
 {.repeated section items}
-<div class="team-card">
+<div class="team-card grid-item">
     <div class="team-photo" {.main-image?}style="background-image: url({assetUrl})"{.or}style="background-image: url(../assets/blank.png)"{.end}>
 
     </div>

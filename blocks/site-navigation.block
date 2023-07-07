@@ -1,135 +1,203 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<style>
+	.nav-icon {height: 24px;}
+	.site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
+	.site-navigation-list {list-style-type: none; margin-top: 25px; }
+	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 12px; line-height: 30px; white-space: nowrap;}
+	.site-navigation li:hover {cursor: pointer; -webkit-text-stroke: 0.75px black;}
+	.active-link {text-decoration: underline; color: black;}
+	.active-link .site-navigation-item:hover {font-weight: 700px;}
+	.drop-down-menu { display: none; position: absolute; border: 0.25px solid black; z-index: 200000; margin: 0px 0px 15px 0px; padding: 2px; background: white; list-style-type:none;}
+	.drop-down-menu li {padding: 5px 0px;  }
+	.drop-down-menu li a {color: gray; font-size: 16px!important; width: 100%;}
+	.drop-down-menu li a:hover {color: black;}
+	.open-nav {height: 100vh!important; background-color: white; z-index: 3000; position: absolute; flex-direction: column; justify-content: center;}
+.expanded-mobile-menu-window {background: white; width: 100vw; height: 100vh; z-index: 20000; position: absolute; top: 0; left: 0; display: none;}
+.hidden {display: none;}
 
-<script>console.log({@|json-pretty})</script>
+  {#  mobile menu  }
+  .hamburger-menu {display: none; margin-top: 20px;}
+  #hamburger {width: 40px; height: 35px; position: relative; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out; transition: .5s ease-in-out;}
+  .open {order: -1;}
+  #hamburger span {display: block; position: absolute; height: 4px; width: 100%; background: var(--orange); border-radius: 4px; opacity: 1; left: 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: .25s ease-in-out; -moz-transition: .25s ease-in-out; -o-transition: .25s ease-in-out; transition: .25s ease-in-out;}
+  #hamburger span:nth-child(1) {top: 0px; -webkit-transform-origin: left center; -moz-transform-origin: left center; -o-transform-origin: left center; transform-origin: left center;}
+  #hamburger span:nth-child(2) {top: 12px; -webkit-transform-origin: left center; -moz-transform-origin: left center; -o-transform-origin: left center; transform-origin: left center;}
+  #hamburger span:nth-child(3) {top: 24px; -webkit-transform-origin: left center; -moz-transform-origin: left center; -o-transform-origin: left center; transform-origin: left center;}
+  #hamburger.open span:nth-child(1) {-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); top: -12px; left: 8px;}
+  #hamburger.open span:nth-child(2) {width: 0%; opacity: 0;}
+  #hamburger.open span:nth-child(3) {-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg);transform: rotate(-45deg); top: 24px; left: 8px;}
+	
+  #mobile-menu {display: none; z-index: 3; background: white; position: absolute; top: 125px; border-top: 3px solid var(--orange) }
+  #mobile-menu-list { flex-direction: column; text-align: center; list-style-type: none; margin: 0 !important; padding: 10px 0 !important; }
+  #mobile-menu .site-navigation-item a {font-size: 22px!important;  }
+  #mobile-menu .site-navigation-item {margin: 15px 0px!important; }
 
+  .mobile-site-navigation-item {padding: 10px 0px;}
+  .mobile-site-navigation-item a {font-size: 24px;  text-decoration: none; color: black;}
+  .mobile-drop-down-link a {font-size: 18px; color: gray; }
+  #mobile-menu-list a:hover {cursor: pointer; -webkit-text-stroke: 0.75px black; color: black;}
+  .mobile-drop-down-menu {list-style-type: none; margin: 0; padding: 0;}
+
+  @media screen and (max-width: 825px) {
+	  #site-nav-links-list {display: none;}
+    .hamburger-menu {display: block;}
+	}
+</style>
 <nav class="site-navigation flex-start-spacebetween box-shadow" >
-    
-  <img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
-  <ul class="site-navigation-list flex-start-spaceevenly" id="site-nav-links-list">
-    {.repeated section items}
-      <li class="site-navigation-item {.section active} active-link{.end}">
-        <!-- collection link -->
-          {.if collection.dropdown}
-            <a onclick="expandDropDown('{collection.navigationTitle}-dropdown')">
-            {collection.navigationTitle}<span style="font-size: 10px" id="dropdown-arrow"> &#9661;</span></a>
-            <ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
-              <li class="site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.title}</a></li>
-                {.repeated section items}
-            
-                <li class="site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.navigationTitle}</a> <span style="font-size: 10px">&#9664;</span> </li>
-            
-            {.end}
-            </ul>
-          </li> 
-          {.or}
-          <li class="site-navigation-item {.section active} active-link{.end}">
-      
-          <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-          </li>
-          
-          {.end}
- <li class="site-navigation-item {.section active} active-link{.end}">
-{.section externalLink}
-          <a href="{url}">{title}</a>
-            {.end}
-            </li>
-        
-      
-    {.end}
-  </ul>
-  <div class="hamburger-menu" onclick="expandDiv()">
-  <div id="nav-icon4">
-    <span id="ham1"></span>
-    <span id="ham2"></span>
-    <span id="ham3"></span>
-  </div>
-  </div>
+	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
+	<ul class="site-navigation-list flex-start-spaceevenly" id="site-nav-links-list">
+		{.repeated section items}
+		{#  Dropdown Menu Folder  }
+    {.if collection.dropdown}
+		<div id="{collection.navigationTitle}-drop-down-title">
+			<li class="site-navigation-item {.section active} active-link{.end}" ><a onclick="expandDropDown('{collection.navigationTitle}-dropdown', '{collection.navigationTitle}-drop-down-title')" >{collection.navigationTitle}</a></li>
+			<div>
+				<ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
+					<li class="site-navigation-item"><a href="{collection.fullUrl}">• <span class="{.section active} active-link{.end}"> {collection.title} </span></a></li>
+					{.repeated section items}
+					  <li class="site-navigation-item"><a href="{collection.fullUrl}">• <span class="{.section active} active-link{.end}">{collection.navigationTitle}</span></a></li>
+					{.end}
+				</ul>
+			</div>
+		</div>
+		{.or}
+    {#  Regular Page  }
+		<li class="site-navigation-item {.section active} active-link{.end}">
+			<a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+		</li>
+		{.end}
+    {#  External Links  }
+		{.section externalLink}
+		<li class="site-navigation-item {.section active} active-link{.end}"><a href="{url}">{title}</a></li>
+		{.end}
+		{.end}
+	</ul>
+	<div class="hamburger-menu hover" onclick="expandDiv()">
+		<div id="hamburger">
+			<span id="ham1"></span>
+			<span id="ham2"></span>
+			<span id="ham3"></span>
+		</div>
+	</div>
 </nav>
-<div id="mobile-menu" class="box-shadow flex-center-center" style="width: calc(100% - 20px)">
-<ul class="fade-in-list flex-center-center flex-column" id="mobile-menu-list">
-{.repeated section items}
-      <li class="site-navigation-item {.section active} active-link{.end}">
-        <!-- collection link -->
-        {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
-        {.end}
-      </li> 
-    {.end}
-</ul>
+
+<div id="mobile-menu" class="box-shadow flex-center-center" style="width: calc(100% - 40px)">
+	<ul id="mobile-menu-list">
+		<li class="mobile-site-navigation-item {.section active} active-link{.end}"><a href="/home"><img src="../assets/icons/home.png" class="nav-icon" alt="home icon"></a></li>
+		{.repeated section items}
+		
+		{.if collection.dropdown}
+		<li class="mobile-site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.navigationTitle}</a></li>
+		<div class="flex-center-center">
+    <ul class="mobile-drop-down-menu" id="{collection.navigationTitle}-dropdown">
+			{.repeated section items}
+			<li class="mobile-site-navigation-item {.section active} active-link{.end} mobile-drop-down-link"><a href="{collection.fullUrl}">{collection.navigationTitle}</a> </li>
+			{.end}
+		</ul>
+    </div>
+		{.or}
+		<li class="mobile-site-navigation-item {.section active} active-link{.end}">
+			<a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+		</li>
+		{.section externalLink}
+		<li class="mobile-site-navigation-item {.section active} active-link{.end}"><a href="{url}">{title}</a></li>
+		{.end}
+		{.end}
+		{.end}
+	</ul>
+	<squarespace:block-field id="footerBlocks" columns="12" />
 </div>
-
 <script>
+	function expandDropDown(divName, dropDownTitle){
+	  var targetDiv = document.getElementById(divName);
+	  var dropDownTitle = document.getElementById(dropDownTitle);
+	  var dropDownTitleLink = dropDownTitle.querySelectorAll('a');
+	  
+	  const dropDownMenuItems = document.querySelectorAll('.drop-down-menu li')
+	  if (targetDiv.style.display === "block"){
+	    targetDiv.style.display = "none"
+	    dropDownTitle.style.background = "none"
+	    dropDownTitle.style.color = "black"
+	    
+	
+	  } else {
+	    targetDiv.style.display = "block";
+	    dropDownTitle.style.background = "lightgray";
+	    
+	    
+	  }
+	
+	  for (i = 0; i < dropDownMenuItems.length; i++){
+	    dropDownMenuItems[i].style.animationDelay =  i * 100 + 'ms';
+	    dropDownMenuItems[i].classList.add('fade-in')
+	    
+	  }
+	  
+	}
+	
+	
+	const mobileMenu = document.getElementById('mobile-menu');
+	const mobileMenuList= document.getElementById('mobile-menu-list')
+	const mobileMenuItems = document.querySelectorAll('#mobile-menu-list li')
+	const siteWrapper = document.getElementById('site-wrapper')
+	const mobileMenuHeight = mobileMenuItems.length * 50;
+	function expandDiv() {
+	  if (mobileMenu.style.display === "block"){
+	    mobileMenu.style.display = "none"
+	    document.getElementById('ham1').style.transform = "rotate(0deg)"
+	    document.getElementById('ham2').style.display = "block"
+	    document.getElementById('ham3').style.transform = "rotate(0deg)"
+      document.getElementById('site-wrapper').style.filter = "blur(0px)"
+	    
+	  } else {
+	    document.getElementById('ham1').style.transform = "rotate(45deg) translateY(-5px)"
+	    document.getElementById('ham2').style.display = "none"
+	    document.getElementById('ham3').style.transform = "rotate(-45deg) "
+      document.getElementById('site-wrapper').style.filter = "blur(5px)"
+	    
+	    
+	  mobileMenu.style.height = '0';
+	  mobileMenu.style.display = 'block';
+	  mobileMenu.style.opacity = '0'
+	  
+	  
+	
+	  let height = 0;
+	  let opacity = 0;
+	  const maxHeight = mobileMenuHeight; 
+	  const duration = 150; 
+	  const increment = (maxHeight / duration) * 10;
+	
+	  const interval = setInterval(() => {
+	    if (height >= maxHeight) {
+	      clearInterval(interval);
+	      
+	    } else {
+	      height += increment;
+	      opacity += increment;
+	      mobileMenu.style.height = height + 'px';
+	      mobileMenu.style.opacity = opacity
+	    }
+	  }, 10);
+	  }
+	
+	  for (i = 0; i < mobileMenuItems.length; i++){
+	    mobileMenuItems[i].style.animationDelay =  i * 100 + 'ms';
+	    mobileMenuItems[i].classList.add('fade-in')
+	    
+	  }
+	  
+	}
 
-function expandDropDown(divName){
-  var targetDiv = document.getElementById(divName);
-  var dropdownArrow = document.getElementById('dropdown-arrow')
-  if (targetDiv.style.display === "block"){
-    targetDiv.style.display = "none"
-    dropdownArrow.innerHTML = "&nbsp; &#9661;"
-
-  } else {
-    targetDiv.style.display = "block"
-    dropdownArrow.innerHTML = "&nbsp; &#9660;"
-  }
-  
+  function handlePageResize() {
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var mobileMenu = document.getElementById("mobile-menu");
+  if (windowWidth > 825 && mobileMenu.style.display === "block") {
+    expandDiv();
+  } 
 }
 
-
-const mobileMenu = document.getElementById('mobile-menu');
-
-
-const mobileMenuList= document.getElementById('mobile-menu-list')
-const mobileMenuItems = document.querySelectorAll('#mobile-menu-list li')
-
-const mobileMenuHeight = mobileMenuItems.length * 50;
-console.log(mobileMenuHeight)
-function expandDiv() {
-  if (mobileMenu.style.display === "block"){
-    mobileMenu.style.display = "none"
-    document.getElementById('ham1').style.transform = "rotate(0deg)"
-    document.getElementById('ham2').style.display = "block"
-    document.getElementById('ham3').style.transform = "rotate(0deg)"
-    
-  } else {
-    document.getElementById('ham1').style.transform = "rotate(45deg)"
-    document.getElementById('ham2').style.display = "none"
-    document.getElementById('ham3').style.transform = "rotate(-45deg)"
-    
-    
-    mobileMenu.style.height = '0';
-  mobileMenu.style.display = 'block';
-  mobileMenu.style.opacity = '0'
-  
-  
-
-  let height = 0;
-  let opacity = 0;
-  const maxHeight = mobileMenuHeight; 
-  const duration = 150; 
-  const increment = (maxHeight / duration) * 10;
-
-  const interval = setInterval(() => {
-    if (height >= maxHeight) {
-      clearInterval(interval);
-      
-    } else {
-      height += increment;
-      opacity += increment;
-      mobileMenu.style.height = height + 'px';
-      mobileMenu.style.opacity = opacity
-    }
-  }, 10);
-  }
-
-  for (i = 0; i < mobileMenuItems.length; i++){
-    mobileMenuItems[i].style.animationDelay =  i * 300 + 'ms';
-    mobileMenuItems[i].classList.add('fade-in')
-    
-  }
-  
-}
-
-
-
+// Attach the resize event listener
+window.addEventListener("resize", handlePageResize);
 
 </script>
-
