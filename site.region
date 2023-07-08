@@ -12,7 +12,7 @@
       </header>
       <div id='site-wrapper'>
       {.section website}
-        <div class="page-header" {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg" {.end}>
+        <div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
           <div class="page-header-content">
             <div>
               <h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
@@ -43,6 +43,3 @@
   </body>
 </html>
 
-<script>
-
-document.get
