@@ -1,4 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+
+</script>
+<script>console.log({@|json-pretty})</script>
 <style>
 	.nav-icon {height: 24px;}
 	.site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
@@ -55,7 +58,7 @@
 				<ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
 					<li class="site-navigation-item"><a href="{collection.fullUrl}">• <span class="{.section active} active-link{.end}"> {collection.title} </span></a></li>
 					{.repeated section items}
-					  <li class="site-navigation-item"><a href="{collection.fullUrl}">• <span class="{.section active} active-link{.end}">{collection.navigationTitle}</span></a></li>
+					  <li class="site-navigation-item"><a href="{.if externalLink}{externalLink.url}{.or}{collection.fullUrl}{.end}">• <span class="{.section active} active-link{.end}">{.if externalLink}{externalLink.title}{.or}{collection.navigationTitle}{.end}</span></a></li>
 					{.end}
 				</ul>
 			</div>
