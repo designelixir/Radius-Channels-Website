@@ -10,7 +10,7 @@
 	.site-navigation li:hover {cursor: pointer; -webkit-text-stroke: 0.75px black;}
 	.active-link {text-decoration: underline; color: black;}
 	.active-link .site-navigation-item:hover {font-weight: 700px;}
-	.drop-down-menu { display: none; position: absolute; border: 0.25px solid black; z-index: 200000; margin: 0px 0px 15px 0px; padding: 2px; background: white; list-style-type:none;}
+	.drop-down-menu { display: none; position: absolute; border: 0.25px solid black; max-width: 160px; width: 100%; z-index: 200000; margin: 0px 0px 15px 0px; padding: 2px; background: white; list-style-type:none;}
 	.drop-down-menu li {padding: 5px 0px;  }
 	.drop-down-menu li a {color: gray; font-size: 16px!important; width: 100%;}
 	.drop-down-menu li a:hover {color: black;}
@@ -56,7 +56,7 @@
 			<li class="site-navigation-item {.section active} active-link{.end}" ><a onclick="expandDropDown('{collection.navigationTitle}-dropdown', '{collection.navigationTitle}-drop-down-title')" >{collection.navigationTitle}</a></li>
 			<div>
 				<ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
-					<li class="site-navigation-item"><a href="{collection.fullUrl}">• <span class="{.section active} active-link{.end}"> {collection.title} </span></a></li>
+					
 					{.repeated section items}
 					  <li class="site-navigation-item"><a href="{.if externalLink}{externalLink.url}{.or}{collection.fullUrl}{.end}">• <span class="{.section active} active-link{.end}">{.if externalLink}{externalLink.title}{.or}{collection.navigationTitle}{.end}</span></a></li>
 					{.end}
@@ -90,7 +90,7 @@
 		{.repeated section items}
 		
 		{.if collection.dropdown}
-		<li class="mobile-site-navigation-item {.section active} active-link{.end}"><a href="{collection.fullUrl}">{collection.navigationTitle}</a></li>
+		<li class="mobile-site-navigation-item {.section active} active-link{.end}"><a href="{.if externalLink}{externalLink.url}{.or}{collection.fullUrl}{.end}">• <span class="{.section active} active-link{.end}">{.if externalLink}{externalLink.title}{.or}{collection.navigationTitle}{.end}</span></a></li>
 		<div class="flex-center-center">
     <ul class="mobile-drop-down-menu" id="{collection.navigationTitle}-dropdown">
 			{.repeated section items}
