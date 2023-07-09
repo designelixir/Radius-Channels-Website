@@ -1,19 +1,5 @@
 
 
- 
-<script>
-
-
-
-function trimExcerpt(excerpt){
-    
-    console.log(excerpt)
-    
-}
-
-
-</script>
-
 <div id="eventsContainer" class="flex-start-center">
         <div id="eventsList">
         {.repeated section items}
@@ -29,7 +15,9 @@ function trimExcerpt(excerpt){
                         
                     </div>
                 </div>
-                <p id="{title}-excerpt">{excerpt}</p>
+                <div class="excerpt">
+                    <p>{excerpt}</p>
+                </div>
                 </div>
                 
                 
