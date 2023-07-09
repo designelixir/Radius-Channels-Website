@@ -1,0 +1,8 @@
+{.section collection}
+  {.repeated section collections}
+    <div class=”index”>
+      {title}
+      {mainContent}
+    </div>
+  {.end}
+{.end}
