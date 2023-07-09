@@ -12,7 +12,9 @@
       </header>
       <div id='site-wrapper'>
       <squarespace:query collection="events" limit="10">
-        {title}
+        {.repeated section items}
+      <li><a href="{fullUrl}">{title}</a></li>
+    {.end}
         
 
         </squarespace:query>
