@@ -13,7 +13,7 @@
 {body}
 <div id="upcomingEvents">
 <h3>Upcoming Events by {title}</h3>
-        <squarespace:query collection="events" limit="5" tag="{title}" category="Upcoming Events">
+        <squarespace:query collection="events" limit="5" tag="{title}">
         
 
             <div class="calendar-collection-upcoming flex-start-start">
@@ -33,7 +33,7 @@
     document.getElementById('noUpcomingEvents').innerHTML = 'No upcoming events. Check out all of our live and virtual events <a href="/events">here</a>'
 
 } else {
-    document.getElementById('noUpcomingEvents').innerHTML = 'Egg'
+    document.getElementById('noUpcomingEvents').innerHTML = ''
 }</script>   
     
     
