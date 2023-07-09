@@ -5,13 +5,10 @@
 
 
 
-function trimExcerpt(excerpt, targetDiv){
-    var targetDiv = document.getElementById(title + "-excerpt")
-    if (excerpt.length > 150){
-        console.log("longer")
-    } else {
-        console.log("fine")
-    }
+function trimExcerpt(excerpt){
+    
+    console.log(excerpt)
+    
 }
 
 
@@ -32,7 +29,7 @@ function trimExcerpt(excerpt, targetDiv){
                         
                     </div>
                 </div>
-                <p id="{title}-excerpt"><script>trimExcerpt({excerpt}, {title})</script></p>
+                <p id="{title}-excerpt">{excerpt}</p>
                 </div>
                 
                 
