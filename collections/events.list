@@ -1,11 +1,4 @@
-<script>
 
-function formatDate(date, targetDiv){
-    console.log(date)
-    console.log("HELLLLLOOOO")
-}
-
-</script>
 
 <div id="eventsContainer" class="flex-start-center">
         <div id="eventsList">
@@ -17,7 +10,7 @@ function formatDate(date, targetDiv){
                     </div>
                     <div>
                     
-                        <h6 id="{title}-date"><script>formatDate({customContent.eventStartDate}, {title})</script>{customContent.eventStartDate}</h6>
+                        <h6 id="{title}-date"></h6>
                         <h3>{title}</h3>
                         
                     </div>
@@ -31,9 +24,6 @@ function formatDate(date, targetDiv){
                     <img src="assets/blue-arrow.png" class="event-selected-arrow" style="width: 25px;">
                 
             </div>
-
-            
-
             {.end}
         
         </div>
