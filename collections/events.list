@@ -3,15 +3,17 @@
  
 <script>
 
-function convertDateString(dateString, targetDivId) {
-  const [month, day, year] = dateString.split('/');
-  var targetDiv = document.getElementById(targetDivId)
-  const dateObject = new Date(`${month}/${day}/${year}`);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = dateObject.toLocaleDateString(undefined, options);
-  targetDiv.innerHTML = formattedDate
-  
+
+
+function trimExcerpt(excerpt, targetDiv){
+    var targetDiv = document.getElementById(title + "-excerpt")
+    if (excerpt.length > 150){
+        console.log("longer")
+    } else {
+        console.log("fine")
+    }
 }
+
 
 </script>
 
@@ -24,13 +26,13 @@ function convertDateString(dateString, targetDivId) {
                     <div class="event-image " style="background-image: url({assetUrl})">
                     </div>
                     <div>
-                    <script>convertDateString({customContent.eventStartDate}, "{title}-date")</script>
+                    
                         <h6 id="{title}-date">{customContent.eventStartDate}</h6>
                         <h3>{title}</h3>
                         
                     </div>
                 </div>
-                <p>{excerpt}</p>
+                <p id="{title}-excerpt"><script>trimExcerpt({excerpt}, {title})</script></p>
                 </div>
                 
                 

@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 * {
   font-family: 'Questrial', sans-serif;
   box-sizing: border-box;
@@ -10,8 +11,9 @@ a {font-size: 16px; letter-spacing: 1px;}
 p {font-weight: 100!important;}
 h1 {font-size: 48px; font-weight: 600; font-family: 'Questrial', sans-serif}
 h2 {font-size: 36px;}
-h3 {font-size: 24px}
-h4 {font-size: 24px; font-weight: 200; line-height: 30px; }
+h3 strong {font-size: 24px}
+h3 {font-size: 24px; font-weight: 200; line-height: 30px; }
+h5 {font-size: 18px; font-weight: 200; line-height: 24px;}
 .spacer {padding: 2.5vh;}
 .thick {font-weight: 800;}
 .orange-h2 {color: var(--darkblue); font-size: 48px; font-weight: 100;}
@@ -19,6 +21,7 @@ h4 {font-size: 24px; font-weight: 200; line-height: 30px; }
   --darkblue: #133289;
   --orange: #DD633C;
   --lightblue: #06ACE9;
+  --lightgray: #E5E5E5;
 }
 
 .sqs-block-button-element--small {font-family: 'Questrial', sans-serif!important; font-size: 24px!important; text-transform: capitalize!important; color: var(--orange)!important; padding: 10px 25px!important; font-size: 24px; margin: 10px!important; border-radius: 8px; border: 2px solid var(--orange)!important; background: white!important; cursor: pointer;}
@@ -164,7 +167,7 @@ footer {text-align: center; margin-top: 100px;}
 
 //  Events page
 #eventsHeader {height: 500px; background-image: url('../assets/radiuschannels-emboss.png'); background-size: cover; background-position: center bottom;}
-#eventsContainer {margin: 50px; border: 1px solid gray;}
+#eventsContainer { border: 1px solid gray;}
 
 #eventList {width: 35%}
 #eventDetail {width: 100%;}
@@ -191,3 +194,19 @@ footer {text-align: center; margin-top: 100px;}
 #suppliersHeader {height: 500px; background-image: url('../assets/radiuschannels-emboss.png'); background-size: cover; background-position: center bottom;}
 .sqs-layout > .sqs-row {margin: 0!important;}
 .summary-header-text {font-size: 32px;}
+
+.supplier-card {padding: 40px; margin: 0px 0px 25px; background: var(--lightgray);}
+.supplier-title {margin-right: 50px;}
+.supplier-logo {width: 250px;}
+.supplier-logo-lg {width: 350px;}
+.breadcrumbs, .breadcrumbs a {font-size: 18px; text-decoration: none; color: black;}
+.breadcrumbs a:hover {text-decoration: underline; font-weight: 500;}
+.breadcrumbs span {color: var(--orange)!important;}
+
+.calendar-event { margin: 25px; width: 200px; border: 1px solid red;}
+.calendar-event-date {height: 200px; width: 200px; background-image: url('../assets/icons/calendar.png'); background-size: cover;}
+
+@media screen and (max-width: 825px) {
+  .supplier-card {flex-wrap: wrap;}
+ .supplier-title {margin: 0px 0px 25px 0px}
+}
