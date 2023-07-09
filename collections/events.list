@@ -9,15 +9,14 @@
                     <div class="event-image " style="background-image: url({assetUrl})">
                     </div>
                     <div>
-                    
-                        <h6 id="{title}-date"></h6>
+                        <h6 id="{title}-date">july</h6>
                         <h3>{title}</h3>
-                        
                     </div>
                 </div>
                 <div class="excerpt">
                     <p>{excerpt}</p>[...]
                 </div>
+                click here
                 </div>
                 
                 
@@ -49,7 +48,7 @@
                     <p>Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description Event Description</p>
                      <button class="solid-button box-shadow">Register Now</button>
                 </div>
-                <squarespace:block-field id="sampleEventField" columns="12"/>
+                
                 </div>
         </div>
         
