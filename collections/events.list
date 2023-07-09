@@ -1,4 +1,11 @@
+<script>
 
+function formatDate(date, targetDiv){
+    console.log(date)
+    console.log("HELLLLLOOOO")
+}
+
+</script>
 
 <div id="eventsContainer" class="flex-start-center">
         <div id="eventsList">
@@ -10,13 +17,13 @@
                     </div>
                     <div>
                     
-                        <h6 id="{title}-date">{customContent.eventStartDate}</h6>
+                        <h6 id="{title}-date"><script>formatDate({customContent.eventStartDate}, {title})</script>{customContent.eventStartDate}</h6>
                         <h3>{title}</h3>
                         
                     </div>
                 </div>
                 <div class="excerpt">
-                    <p>{excerpt}</p>
+                    <p>{excerpt}</p>[...]
                 </div>
                 </div>
                 
