@@ -32,7 +32,17 @@
       <main class="content-container" role="main" data-content-field="main-content">
        <div class="flex-start-start">
             <squarespace:block-field id="contactMap" columns="12"/>
+            <div class="basic-padding">
+            {.if website.location}
+             
+             <h4><span style="font-size: 24px">{website.location.addressTitle}</span><br>
+             <br>📍 {website.location.addressLine1}<br>&nbsp; &nbsp; &nbsp;{website.location.addressLine2}</h4>
+             
+            {.end}
+             <a href="tel:{websiteSettings.contactPhoneNumber}" style="text-decoration: none; color: black;">📱 {websiteSettings.contactPhoneNumber}</a><br><br>
+             <a href="mailto:{websiteSettings.contactEmail}" style="text-decoration: none; color: black;">📧 {websiteSettings.contactEmail}</a>
             <squarespace:block-field id="contactDetails" columns="12"/>
+            </div>
        </div>
 
        {squarespace.main-content}
