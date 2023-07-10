@@ -1,0 +1,5 @@
+ <squarespace:query collection="events" limit="100">
+        {.repeated section items}
+            <a href="{fullUrl}">{title}</a>
+        {.end}
+</squarespace:query>
