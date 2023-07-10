@@ -17,6 +17,7 @@
             <div>
               <h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
                 {collection.title}
+                <span id="subcollectionTitle"></span>
               </h1>
               <br>
               <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
