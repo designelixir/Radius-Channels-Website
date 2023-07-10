@@ -1,27 +1,49 @@
-
 {.section item}
-<h5 class="breadcrumbs"><a href="/events">&larr; All Events |</a> <span> {title}</span></h5>
-<div class="full-size-event box-shadow" id="{title}-fullpage-event">
-		<div class="full-size-event-header-wrapper">
-			<div class="full-size-event-header box-shadow" {.if assetUrl} style="background-image: url({assetUrl});" {.or} style="background-image: url('../assets/event-bg.png');"{.end}>
-		</div>
-		<div class="full-size-event-header-title box-shadow">
-			{.if customContent.eventType}
-			<p>Virtual Event</p>
-			{.or}
-			<p>In-Person Event</p>
-			{.end}
+<header class="site-header">
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
+      </header>
+      <div id='site-wrapper'>
+      {.section website}
+        <div {.if collection.mainImage} style="background-image: url({assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
+          <div class="page-header-content">
+            <div>
+              <h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
+                {collection.title}
+              </h1>
+              <br>
+              <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
+            </div>
+          </div>
+        </div>
+        {.end}
+
+
+      <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl}); background-size: cover;" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
+<div class="full-size-event" id="{title}-fullpage-event"  >
+
+
+		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
+			<h3 class="hover" onclick="window.open('/events', '_self')"><span style="color: gray">&larr; Back to {collection.title}</span></h3>
 			<h2>{title}</h2>
+      
 			<h3 style="color: var(--lightblue); margin: 5px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
       <p style="color: gray;">{customContent.eventTimeZone}</p>
+      
       <div class="flex-center-start">
       <p class="strong">Sponsored by: &nbsp;</p>
       {.repeated section tags}
               <p class="tag">{@}</p>{.alternates with}&nbsp;
             {.end}
+            
 		</div>
+    {.if customContent.eventType}
+			<p>Virtual Event</p>
+			{.or}
+			<p>In-Person Event</p>
+			{.end}
 	</div>
-	<div class="basic-padding">
+	<div style="margin: 25px; ">
+  
 		<p>{excerpt}</p>
 		<p>{body}</p>
 		{.if sourceUrl}
@@ -33,5 +55,7 @@
 </div>
 {.end}
 
+      {@|apply footer.block}
+</div>
 
 

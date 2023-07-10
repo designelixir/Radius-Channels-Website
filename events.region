@@ -8,17 +8,17 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
       
-      <div id='site-wrapper'>
+      
       
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content" style="margin-top:100px">
+      
+<main role="main" data-content-field="main-content" >
        
 
        {squarespace.main-content}
       </main>
      
-      {@|apply footer.block}
-      </div>r
+      
     
 
     <!-- combo and minify scripts when not logged in -->

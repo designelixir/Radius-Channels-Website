@@ -18,13 +18,23 @@
 
             <div class="calendar-collection-upcoming flex-start-start">
                 {.repeated section items}
-                <div class="calendar-event hover" onclick="window.open('{fullUrl}')">
+                <div class="calendar-event" onclick="window.open('{fullUrl}')">
 
-                    <div class="calendar-event-date">
-                        {customContent.eventStartDate}
+                    <div>
+                    <div style="background: var(--lightblue);" class="flex-center-center">
+                       <h4 style="text-align: center; font-size: 22px; color: white; padding: 15px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p}</h4>
+                       </div>
                     </div>
-                    <h5>{title}</h5>
+                    <div style="padding: 0px 15px; margin-bottom: 15px; text-align: center;" class="flex-center-center flex-column">
+                    <h3 class="text-align: center!important; line-height: 18px;">{title}</h3>
+                    
+                    <button class="outline-button">Click for details</button>
+            
+            </div>
+            
                 </div>
+
+                
                 {.end}
         </squarespace:query>
         <p id="noUpcomingEvents"></p>
@@ -49,9 +59,10 @@
             <div class="calendar-event hover" onclick="window.open('{fullUrl}')">
 
                 <div class="calendar-event-date">
-                    {customContent.eventStartDate}
+                    <h3>{structuredContent.startDate|date %B %d, %Y %I:%M %p}</h3>
                 </div>
                 <h5>{title}</h5>
+                <h3>{startDate|date %B %d, %Y %I:%M %p}</h3>
             </div>
             {.end}
 
