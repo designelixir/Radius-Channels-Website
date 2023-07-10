@@ -1,28 +1,31 @@
 
 {.section item}
-
+<div style="padding: 25px; background: var(--offwhite);" class="box-shadow">
 <div class="supplier-title ">
-    <h5 class="breadcrumbs"><a href="/our-suppliers">Our Suppliers |</a> <span> {title}</span></h5>
+    
         {.if assetUrl}
     <img src="{assetUrl}" class="supplier-logo-lg" alt="{title} supplier-logo">
+    
     {.or}
     <h1>{title}</h1>
     {.end}
 </div>
 {excerpt}
 {body}
-<div id="upcomingEvents">
+</div>
+<div id="upcomingEvents" style="padding: 25px;">
 <h3>Upcoming Events by {title}</h3>
         <squarespace:query collection="events" limit="5" tag="{title}">
         
 
             <div class="calendar-collection-upcoming flex-start-start">
                 {.repeated section items}
-                <div class="calendar-event" onclick="window.open('{fullUrl}')">
+                <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')">
 
                     <div>
-                    <div style="background: var(--lightblue);" class="flex-center-center">
-                       <h4 style="text-align: center; font-size: 22px; color: white; padding: 15px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p}</h4>
+                    <div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column">
+                       <h3 style="text-align: center; font-size: 28px; line-height: 28px; margin: 0; padding: 10px 0px; color: white;">{structuredContent.startDate|date %B %d, %Y}</h3>
+                       <h4 style="padding: 0; margin: 0; line-height: 12px;color: white;">{structuredContent.startDate|date %I:%M %p}</h4>
                        </div>
                     </div>
                     <div style="padding: 0px 15px; margin-bottom: 15px; text-align: center;" class="flex-center-center flex-column">

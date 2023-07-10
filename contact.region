@@ -30,7 +30,10 @@
         {.end}
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
-       
+       <div class="flex-start-start">
+            <squarespace:block-field id="contactMap" columns="12"/>
+            <squarespace:block-field id="contactDetails" columns="12"/>
+       </div>
 
        {squarespace.main-content}
       </main>
