@@ -7,9 +7,7 @@
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-      <header class="site-header">
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
-      </header>
+      
       <div id='site-wrapper'>
       
       <!-- cms content injection point -->
@@ -20,7 +18,7 @@
       </main>
      
       {@|apply footer.block}
-      </div>
+      </div>r
     
 
     <!-- combo and minify scripts when not logged in -->

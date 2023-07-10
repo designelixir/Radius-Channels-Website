@@ -90,7 +90,7 @@
 			{.or}
 			<p>In-Person Event</p>
 			{.end}
-			<h2>{title}</h2>
+			<h2 class="hover" onclick="window.open('{fullUrl}')">{title}</h2>
 			<h3 style="color: var(--lightblue)">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
       <p>{customContent.eventTimeZone}</p>
 		</div>
