@@ -30,3 +30,11 @@ function goToAnchor(anchor) {
   document.location = loc + '#' + anchor;
   return false;
 }
+
+const additionalTemplateData = {
+ 
+  currentDate: Date.now()
+};
+
+
+

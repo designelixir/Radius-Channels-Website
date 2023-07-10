@@ -14,6 +14,8 @@ h2 {font-size: 36px;}
 h3 strong {font-size: 24px}
 h3 {font-size: 24px; font-weight: 200; line-height: 30px; }
 h5 {font-size: 18px; font-weight: 200; line-height: 24px;}
+strong {font-weight: 600;}
+.strong {font-weight: 600;}
 .spacer {padding: 2.5vh;}
 .thick {font-weight: 800;}
 .orange-h2 {color: var(--darkblue); font-size: 48px; font-weight: 100;}
@@ -22,6 +24,7 @@ h5 {font-size: 18px; font-weight: 200; line-height: 24px;}
   --orange: #DD633C;
   --lightblue: #06ACE9;
   --lightgray: #E5E5E5;
+  --offwhite: #f2f2f2;
 }
 
 .sqs-block-button-element--small {font-family: 'Questrial', sans-serif!important; font-size: 24px!important; text-transform: capitalize!important; color: var(--orange)!important; padding: 10px 25px!important; font-size: 24px; margin: 10px!important; border-radius: 8px; border: 2px solid var(--orange)!important; background: white!important; cursor: pointer;}
@@ -166,21 +169,33 @@ footer {text-align: center; margin-top: 100px;}
 
 
 //  Events page
-#eventsHeader {height: 500px; background-image: url('../assets/radiuschannels-emboss.png'); background-size: cover; background-position: center bottom;}
-#eventsContainer { border: 1px solid gray;}
+.events { max-height: 900px; height: 100%; overflow-y: scroll;}
+.events-summary-list {border: 2px inset gray; height: 100%;}
+.events-summary {overflow-y: scroll;  z-index: 2; background-color: white; }
+.events-summary-wrapper { cursor: pointer}
+.event-summary-info {padding: 25px; }
+.events-summary-container {opacity: 0.2; background-color: var(--lightgray)}
 
-#eventList {width: 35%}
-#eventDetail {width: 100%;}
-.event-container {width: 30vw;}
-.full-size-event {padding: 40px 50px; backdrop-filter:  blur(4px);}
-.active-event .event {background: rgba(0,0,0,0.1)}
-.event-selected-arrow {display: none; z-index: 2; }
-.active-event .event-selected-arrow {display: block;}
-.event {padding: 15px; border: 1px solid silver;}
-.event-image {min-height: 150px; min-width: 150px; width: 150px; height: 150px; background: red; margin-right: 25px;}
-.event-selected-arrow {width: 25px; position: absolute; margin-right: -32%;}
-.excerpt {height: 100px; border: 1px solid red; overflow-y: hidden;}
-.excerpt p {overflow-y: hidden;}
+.event-selected {width: 25px; height: 100%; margin-right: -25px;z-index: 3;}
+.tag {text-decoration: none; color: white; background-color: var(--lightblue); border-radius: 15px; padding: 5px 8px; font-size: 14px; }
+
+.event-summary-title h3 {line-height: 24px; margin: 5px 0px; padding-left: 10px; border-left: 3px solid var(--lightblue)}
+.event-summary-image-wrapper {padding-right: 10px; border-right: 5px solid var(--lightblue); margin-right: 10px;}
+.event-summary-image {height: 175px; width: 150px; min-width: 150px; min-height: 150px; background-size: cover; background-repeat: no-repeat; background-position: center center; border: 1px solid black;}
+.event-summary-date {width: 148px; background: var(--orange); color: white; padding: 2px 10px; border-bottom: 1px solid black; text-align: center;}
+.excerpt p{max-height: 68px; overflow-y: hidden;}
+
+.selected-event .selector-arrow {opacity: 1!important;}
+.selector-arrow {opacity: 0; z-index: 300; width: 50px; margin-right: -25px;}
+.selected-event {background-color: white; border: 2px solid black; opacity: 1;}
+.events-detail {width: 60%; height: 100%; border-left: 1px solid black; background: var(--offwhite); z-index: 2;}
+.full-size-event {height: 100%; width: 100%; }
+.hidden-event {display: none;}
+.active-event {display: block!important;}
+.full-size-event-header {min-height: 200px; }
+.full-size-event-header-title {background-color: white; padding: 25px; margin: -150px 25px 0px; }
+.full-size-event-header-title h2 {padding-left: 10px; border-left: 5px solid var(--lightblue)}
+
 // Animations
 .fade-in{-webkit-animation:fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both}
 .fade-in2{-webkit-animation:fade-in 1s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1s cubic-bezier(.39,.575,.565,1.000) both}

@@ -1,67 +1,124 @@
+<script>
+	function toggleEvent(targetDiv){
+	  var target = targetDiv + '-fullpage-event';
+	  var targetSummary = targetDiv + '-summary';
+	  var targetDiv = document.getElementById(target);
 
-{.section categoryFilter}
-  <p class="filtered-by">Filtered by Category: {@|safe}</p>
-{.end}
+    var targetArrowDiv = targetDiv + '-summary-arrow';
+    var targetArrow = document.getElementById(targetArrowDiv)
 
-{.section tagFilter}
-  <p class="filtered-by">Filtered by Tag: {@|safe}</p>
-{.end}
+	  var allDivs = document.getElementsByClassName('active-event')
+	  var allSummaryDivs = document.getElementsByClassName('events-summary-container')
+    
 
-{.if authorFilter}
-  <p class="filtered-by">Filtered by Author: {author.displayName}</p>
-{.end}
+	  for (i=0; i < allDivs.length; i++){
+	      
+	      allDivs[i].classList.remove('active-event')
+        
+	      
+	  }
+    for (i=0; i < allSummaryDivs.length; i++){
+      
+      allSummaryDivs[i].classList.remove('selected-event')
+    }
+	    targetDiv.classList.add('active-event')
+	    document.getElementById(targetSummary).classList.add('selected-event');
+      
+	}
+</script>
+<h2>Upcoming Events </h2>
 
-<!-- item loop -->
+
+         
+<div class="events flex-start-start">
+
+  <div class="events-summary-list" style="width: 40%;">
 {.repeated section items}
+  <div class="flex-center-center events-summary-container" id="{title}-summary">
+		<div class="events-summary"  onclick="toggleEvent(`{title}`)" >
+			
+			<div class="events-summary-wrapper flex-center-center">
+				<div class="event-summary-info">
 
-  <article id="post-{id}" class="blog-list-item {@|item-classes}" data-item-id="{id}">
-    <!-- main image (thumbnail) -->
-    {.main-image?}
-      <a href="{fullUrl}" class="main-image content-fill">
-        <img {@|image-meta} />
-      </a>
-    {.end}
-    <!-- post title -->
-    <h1 class="title" data-content-field="title">
-      {.passthrough?}
-        <a href="{sourceUrl}" target="_blank">{title}</a>
-      {.or}
-        <a href="{fullUrl}">{title}</a>
-      {.end}
-    </h1>
-    <!-- excerpt or body -->
-    {.if excerpt}
-      {excerpt}
-      <a class="link" href="{fullUrl}">Read More</a>
-    {.or}
-      {body}
-    {.end}
-  </article>
+					<div class="event-summary-wrapper flex-start-start">
+						
+            
+     
+            <div class="event-summary-title">
+              <p>{structuredContent.startDate|date %B %d, %Y}</p>
+              <h3 class="strong hover">{title}</h3>
+              <div class="excerpt">
+                <p id="trimmed-excerpt"><script>document.getElementById('trimmed-excerpt').innerHTML = `{excerpt}`.substring(0, 115) + ' ... <br> <i> Click to read more</i>'</script></p>
+              </div>
+              <div class="flex-start-start">
+              {.repeated section tags}
+              <p class="tag">{@}</p>{.alternates with}&nbsp;
+            {.end}
+            {.if customContent.eventType}
+            &nbsp;<p class="tag">Virtual Event</p>
+            {.or}
+            <p class="tag">In-Person Event</p>
+            {.end}
+            </div>
+            </div>
 
-{.or}
+				  </div>
 
-  <!-- no items means no blog posts -->
-  <p><em>No blog posts yet.</em></p>
+         
 
+			  </div>
+      </div>
+
+    </div>
+    <div class="flex-center-center selector-arrow">
+      <img src="../assets/blue-arrow.png"  style="width: 100%">
+    </div>
+  </div>
+
+{.end}	
+  </div>
+
+  <div class="events-full-size" style="width: 60%;">
+{.repeated section items}
+	<div class="full-size-event hidden-event" id="{title}-fullpage-event">
+		<div class="full-size-event-header-wrapper">
+			<div class="full-size-event-header" {.if assetUrl} style="background-image: url({assetUrl});" {.or} style="background-image: url('../assets/event-bg.png');"{.end}>
+		</div>
+		<div class="full-size-event-header-title box-shadow">
+			{.if customContent.eventType}
+			<p>Virtual Event</p>
+			{.or}
+			<p>In-Person Event</p>
+			{.end}
+			<h2>{title}</h2>
+			<h3 style="color: var(--lightblue)">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
+      <p>{customContent.eventTimeZone}</p>
+		</div>
+	</div>
+	<div class="basic-padding">
+		<p>{excerpt}</p>
+		<p>{body}</p>
+		{.if sourceUrl}
+		<button class="solid-button" onclick="window.open('{sourceUrl}')">Register Now</button>
+		{.or}
+		<button class="solid-button" onclick="window.open('{fullUrl}')">Register Now</button>
+		{.end}
+	</div>
+</div>
 {.end}
+  </div>
 
-<!-- pagination -->
-{.if pagination}
-  <nav class="blog-list-pagination">
 
-    <!-- newer page -->
-    {.if pagination.prevPage}
-      <a href="{pagination.prevPageUrl}">Newer</a>
-    {.or}
-      <a class="disabled">Newer</a>
-    {.end}
+</div>
 
-    <!-- older page -->
-    {.if pagination.nextPage}
-      <a href="{pagination.nextPageUrl}">Older</a>
-    {.or}
-      <a class="disabled">Older</a>
-    {.end}
+<script>
 
-  </nav>
-{.end}
+var eventsSummaryDivs = document.getElementsByClassName('events-summary-container')
+console.log(eventsSummaryDivs.length)
+const firstChild = eventsSummaryDivs[0]
+const firstChildId = firstChild.id;
+const substringToRemove = '-summary';
+const modifiedString = firstChildId.replace(substringToRemove, '');
+console.log(modifiedString)
+toggleEvent(modifiedString)
+</script>
