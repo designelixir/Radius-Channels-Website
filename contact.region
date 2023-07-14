@@ -29,10 +29,10 @@
         </div>
         {.end}
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content">
-       <div class="flex-start-start">
+      <main role="main" data-content-field="main-content" >
+       <div class="flex-center-spacebetween">
             <squarespace:block-field id="contactMap" columns="12"/>
-            <div class="basic-padding">
+            <div class="basic-padding" style="width: 100%;">
             {.if website.location}
              
              <h4><span style="font-size: 24px">{website.location.addressTitle}</span><br>
