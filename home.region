@@ -20,9 +20,7 @@
         {@|apply downArrow.block}
       </section>
 		
-		<main class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
-			{squarespace.main-content}
-		</main>
+		
 		
 		
 		<div id="ourMission" class="basic-padding flex-center-spacebetween" style="margin-top: 100px">
@@ -39,9 +37,9 @@
 			</div>
 		</div>
 		<div id="ourMethodology" class="basic-padding" style="margin-top: 100px; ">
-			<div>
-				<h2 class="orange-h2">Our <span class="thick">Methodology</span> </h2>
-				<h4>Radius Channels provides a white-glove approach to sales, technical, marketing and operations support that is tailored to your organization.</h4>
+			<div class="homepage-layout-section">
+				<h2 class="orange-h2"><squarespace:block-field id="blockField1" columns="12"/> </h2>
+				<h4><squarespace:block-field id="blockField1" columns="12"/></h4>
 			</div>
 			<div class="flex-center-center">
 				<div class="methodology" style="text-align: center;">
@@ -67,7 +65,9 @@
 			</div>
 		</div>
 		<!-- cms content injection point -->
-		
+		<main class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
+			{squarespace.main-content}
+		</main>
 		<!--Footer with open block field -->
 		
 			{@|apply footer.block}
