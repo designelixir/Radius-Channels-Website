@@ -52,17 +52,12 @@ strong {font-weight: 600;}
 .family-bio-title-wrapper h6 {margin: 15px 25px;}
 .family-bio-title-wrapper h2 {padding: 0px 25px 25px 25px}
 
-.parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+.additional-leadership-team {display: inline-flex; flex-wrap: wrap; margin-top: 50px; }
+
+.additional-leadership { filter: grayscale(100%); 
+  height: 20vw; width: 20vw; background-repeat: no-repeat; background-size: cover;
 }
-
-.div1 { grid-area: 2 / 5 / 3 / 6; }
-
-
+.additional-leadership:hover {filter: none}
 @media screen and (max-width: 1330px) {
   #bio-container {display: inline-flexbox; flex-wrap: wrap;}
   .bio-wrapper {width: 50%; height: 50vw;}

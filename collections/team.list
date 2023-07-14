@@ -1,5 +1,5 @@
 <div class="leadership-team flex-center-center content-container" id="bio-container">
-        {.repeated section items}
+    {.repeated section items}
         {.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
            <div class="family-bio">
@@ -30,8 +30,20 @@
         {.end}
         
         
-        {.end}
+    {.end}
 </div>   
+
+<div class="additional-leadership-team flex-center-center">
+<h1 style="position: absolute; z-index: 2; color: white; text-shadow: 2px 2px 2px black;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
+{.repeated section items}
+    {.if starred}{.or}
+    <div class="additional-leadership" style="background-image: url({assetUrl})">
+    
+    </div>
+    {.end}
+{.end}
+
+</div>
 
 
 
