@@ -74,7 +74,7 @@
 						<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
 						<div class="drop-down-description">{collection.description}</div>
 					</div>
-					<div class="full-drop-down-right basic-padding">
+					<div class="full-drop-down-right basic-padding" style="min-height: 100px; min-width: 100px; border: 1px solid lime;">
 					<squarespace:block-field id="{collection.urlId}-description" columns="12"/>
 
 					
