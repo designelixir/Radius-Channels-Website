@@ -34,7 +34,7 @@
 </div>   
 
 <div class="additional-leadership-team flex-center-center">
-<h1 style="position: absolute; z-index: 2; color: white; text-shadow: 2px 2px 2px black;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
+<h1 style="position: absolute; z-index: 2; color: white; text-shadow: 2px 2px 2px black; min-width: 100px; border: 1px solid lime;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
 {.repeated section items}
     {.if starred}{.or}
     <div class="additional-leadership" style="background-image: url({assetUrl})">
