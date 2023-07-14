@@ -26,6 +26,6 @@
   }
 }
 </style>
-<div class="arrow-container flex-center-center hover" onclick="window.open('#ourMission', '_self')">
+<div class="arrow-container flex-center-center hover" onclick="window.scrollTo(0, window.innerHeight);">
 <div class="arrow bounce"></div>
 </div>
