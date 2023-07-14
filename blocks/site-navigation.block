@@ -8,7 +8,7 @@
 	.nav-icon {height: 24px;}
 	.site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
 	.site-navigation-list {list-style-type: none; margin-top: 25px; }
-	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 12px; line-height: 30px; white-space: nowrap;}
+	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 0 12px; line-height: 30px; white-space: nowrap;}
 	.site-navigation li:hover {cursor: pointer; -webkit-text-stroke: 0.75px black;}
 	.active-link {text-decoration: underline; color: black;}
 	.active-link .site-navigation-item:hover {font-weight: 700px;}
@@ -59,7 +59,7 @@
 	<ul class="site-navigation-list flex-start-spaceevenly" id="site-nav-links-list">
 	{.repeated section items}
 		{#  Dropdown Menu Folder  }
-		{.if collection.description}
+		{.if collection}
 		<div id="{collection.urlId}-drop-down-title" onclick="expandDropDown('{collection.urlId}', '{collection.urlId}-drop-down-title')">
 			
 			<div class="flex-center-center flex-column link-container">
@@ -74,30 +74,16 @@
 						<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
 						<div class="drop-down-description">{collection.description}</div>
 					</div>
-					<div class="full-drop-down-right">
-					{collection.title}
+					<div class="full-drop-down-right basic-padding">
+					<squarespace:block-field id="{collection.urlId}-description" columns="12"/>
 
-					{.section website}
-  
-  <squarespace:category collection="vendors">
-    {.if categories}
-      <div class="category-wrapper">
-        <span class="category">{.repeated section categories}{name}{.alternates with}, {.end}</span>
-      </div>
-    {.end}
-  </squarespace:category>
-
-{.end}
+					
 					</div>
 				</div>
 			</div>
 		</div>
-		{.or}
-    {#  Regular Page  }
-		<li class="site-navigation-item {.section active} active-link{.end}">
-			<a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-		</li>
 		{.end}
+		
     {#  External Links  }
 		{.section externalLink}
 		<li class="site-navigation-item {.section active} active-link{.end}"><a href="{url}">{title}</a></li>
