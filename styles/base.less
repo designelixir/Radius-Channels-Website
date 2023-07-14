@@ -30,6 +30,48 @@ strong {font-weight: 600;}
   --offwhite: #f2f2f2;
 }
 
+
+.bio-wrapper {width: 25%; margin: 5px; height: 30vw; min-width: 300px; max-width: 40vw; max-height: 670px; background-size: cover;  background-position: center center; background-repeat: no-repeat; display: flex; align-items: flex-end;}
+.bio-content-wrapper {width: 100%; height: 100%; display: flex; align-items: flex-end;}
+.bio-content { text-align: center; width: 95%;  background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
+
+.bold-paragraph p {font-size: 1.5em; line-height: 1.75em; color: white;  font-weight: 100;}
+.bold-paragraph a {color: white; font-weight: 700;}
+.bold-paragraph a:hover {font-weight: 900;}
+.bio-title-wrapper {margin-bottom: 15px; text-align: center; width: 100%;}
+.family-bio {flex: 1 1 350px; height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);}
+.family-bio-text {width: 100%; height: 100%; display: flex; align-items: flex-end; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
+
+
+.family-bio-description {height: 100%;  width: 100%; }
+
+.bio-icons-container {display: inline-flex; width: 100%; align-items: center; justify-content: center; padding-top: 15px;}
+
+.family-bio-title { width: 100%; height: 50%;  display: flex; align-items: flex-end; justify-content: center;}
+.family-bio-title-wrapper {margin-bottom: 15px; text-align: center; width: 100%; color: white;}
+.family-bio-title-wrapper h6 {margin: 15px 25px;}
+.family-bio-title-wrapper h2 {padding: 0px 25px 25px 25px}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 2 / 5 / 3 / 6; }
+
+
+@media screen and (max-width: 1330px) {
+  #bio-container {display: inline-flexbox; flex-wrap: wrap;}
+  .bio-wrapper {width: 50%; height: 50vw;}
+}
+
+@media screen and (max-width: 675px) {
+  .bio-wrapper {width: 100%; height: 100vw; max-width: unset;}
+}
+
 .sqs-block-button-element--small {font-family: 'Questrial', sans-serif!important; font-size: 24px!important; text-transform: capitalize!important; color: var(--orange)!important; padding: 10px 25px!important; font-size: 24px; margin: 10px!important;  border: 2px solid var(--orange)!important; background: white!important; cursor: pointer;}
 .sqs-block-button-element--medium {font-family: 'Questrial', sans-serif!important; font-size: 24px!important; text-transform: capitalize!important; color: white!important; padding: 10px 25px!important; font-size: 24px; margin: 10px!important;  border: 2px solid var(--orange)!important; background: var(--orange)!important; cursor: pointer;}
 .sqs-block  {padding: 0!important;}
@@ -64,7 +106,7 @@ button:hover {transform: scale(1.1)}
 .flex-spacebetween-start {display: flex; -webkit-align-content: space-between; align-content: space-between;  flex-flow: row wrap;  -webkit-flex-flow: row wrap; }
 .flex-start-spaceevenly {display: flex; align-items: flex-start; justify-content: space-between;}
 .flex-baseline-start {display: flex; align-items: flex-end; justify-content: flex-start;}
-
+.flex-end-end {display: flex; align-items: flex-end; justify-content: flex-end;}
 .flex-wrap {flex-wrap: wrap;}
 .flex-column {flex-direction: column;}
 
@@ -105,6 +147,9 @@ footer {text-align: center; margin-top: 100px;}
 // Animations
 .fade-in-fast{-webkit-animation:fade-in 3.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
 .fade-in-slow {-webkit-animation:fade-in 5.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 2.2s cubic-bezier(.39,.575,.565,1.000) both}
+
+.fade-in{animation-delay: 1s; -webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+
 
  @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 

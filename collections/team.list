@@ -1,18 +1,107 @@
-<div class="grid-container team-grid">
+<div class="leadership-team flex-center-center content-container" id="bio-container">
+        {.repeated section items}
+        {.if starred}
+        <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
+           <div class="family-bio">
+                    <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;height: 100%;" onclick="clickBio()">
+                    <div class="family-bio-description fade-in"style="color: white; display: none;">
+                      <div style="padding: 15px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
+                          <div style="text-align: center;">
+                            {body}
+                            <div class="bio-icons-container" >
+                            {.if customContent.linkedin}<a href="{customContent.linkedin}" target="_blank"><img src="../assets/icons/linkedin.png" style="height: 25px; margin-right: 10px;"></a>{.end}
+                            {.if customContent.email}<a href="mailto:{customContent.email}" target="_blank"><img src="../assets/icons/email.png" style="height: 25px;"></a>{.end}
+                            
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="family-bio-title fade-in">
+                      <div class="family-bio-title-wrapper">
+                        <h3>{title}</h3>
+                        <h4>{customContent.jobtitle}</h4>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+       
+        
+        {.end}
+        
+        
+        {.end}
+</div>   
 
-{.repeated section items}
-<div class="team-card grid-item">
-    <div class="team-photo" {.main-image?}style="background-image: url({assetUrl})"{.or}style="background-image: url(../assets/blank.png)"{.end}>
 
-    </div>
-    <div class="flex-center-spacebetween">
-    <h3>{title}</h3>
-    <div class="flex-center-center">
-    {.if customContent.linkedin}<a href="{customContent.linkedin}" target="_blank"><img src="../assets/icons/linkedin.png" style="height: 25px; margin-right: 10px;"></a>{.end}
-    {.if customContent.email}<a href="mailto:{customContent.email}" target="_blank"><img src="../assets/icons/email.png" style="height: 25px;"></a>{.end}
-    </div>
-    </div>
-    {body}
-</div>
-{.end}
 
+<script>
+$('.family-bio div').hover(
+    function(){
+    $(this).css({"background":"rgba(0,0,0,0.5)"})
+    $('.family-bio-description', this).css({"display":"block"});
+    $('.family-bio-title', this).css({"display":"none"})
+    
+}, function(){
+    $(this).css({"background":"linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%)"})
+    $('.family-bio-description', this).css({"display":"none"});
+    $('.family-bio-title', this).css({"display":"inline-flex"})
+})
+
+var count = 0;
+function clickBio(){
+  count++;
+  if ((count % 2) != 0) {
+     $(this).css({"backdrop-filter":"blur(4px)"})
+    $('.bio-details', this).css({"display":"block"});
+    $('.bio-title-wrapper', this).css({"display":"none"})
+  } else {
+   $(this).css({"backdrop-filter":"blur(0px)"})
+    $('.family-bio-description', this).css({"display":"none"});
+    $('.family-bio-title', this).css({"display":"block"})
+  }
+}
+
+
+var bios = document.getElementsByClassName('family-bio-wrapper');
+var biocontainer = document.getElementById('bio-container')
+var familylistSize = bios.length * 354; 
+var bioContainerWidth = $('#bio-container').outerWidth();
+var match = familylistSize - bioContainerWidth;
+var intervalID = setInterval(biosRight,4000);
+var endOfDiv = false;
+
+function biosRight(canceltimer){
+    if (endOfDiv){biocontainer.scrollLeft -= match ;}
+    else {biocontainer.scrollLeft += 354;}
+
+    if (canceltimer) {clearInterval(intervalID)}
+}
+
+
+var scrolled;
+
+$('#bio-container').scroll(function(){
+    
+    scrolled = $('#bio-container').scrollLeft(); 
+    if(scrolled >= match ) {
+        endOfDiv = true 
+    } else {endOfDiv = false}
+});
+
+if (endOfDiv){
+  $('#bio-container').scroll(function(){biocontainer.scrollLeft -= match; console.log("back")})
+}
+
+function biosLeft(canceltimer){
+  if (canceltimer) {clearInterval(intervalID)}
+  biocontainer.scrollLeft -= 354 ;
+  if (scrolled < 100 ) {biocontainer.scrollLeft += familylistSize;} 
+  
+  
+}
+
+
+
+
+</script>
