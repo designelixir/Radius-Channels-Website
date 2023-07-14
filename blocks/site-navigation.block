@@ -42,6 +42,8 @@
   #mobile-menu .site-navigation-item a {font-size: 22px!important;  }
   #mobile-menu .site-navigation-item {margin: 15px 0px!important; }
 
+.vendors-description {border: 1px solid red; min-height: 100px; }
+
   .mobile-site-navigation-item {padding: 10px 0px;}
   .mobile-site-navigation-item a {font-size: 24px;  text-decoration: none; color: black;}
   .mobile-drop-down-link a {font-size: 18px; color: gray; }
