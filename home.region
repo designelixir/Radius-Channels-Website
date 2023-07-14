@@ -12,9 +12,9 @@
 		{@|apply hero.block}
 		
 			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
-		<squarespace:block-field id="vendors-description" columns="12"/>
+		
     <div id="site-wrapper">
-
+<squarespace:block-field id="vendors-description" columns="12"/>
       <section id="hero">
         {@|apply textRotation.block}
         {@|apply downArrow.block}
