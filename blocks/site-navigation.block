@@ -67,7 +67,7 @@
 			<div class="flex-center-center flex-column link-container">
 			<li class="site-navigation-item {.section active} active-link{.end}" ><a>{collection.navigationTitle}</a></li>
 			
-					<p id="{collection.urlId}-arrow" style=" display: none; margin-top: 15px;">&#x25B2;</p>
+					<p id="{collection.urlId}-arrow" style=" opacity: 0; margin-top: 0px;">&#x25B2;</p>
 				
 			</div>
 			<div class="drop-down-menu" id="{collection.urlId}-dropdown">
@@ -76,7 +76,7 @@
 						<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
 						<div class="drop-down-description">{collection.description}</div>
 					</div>
-					<div class="full-drop-down-right basic-padding" style="min-height: 100px; min-width: 100px; border: 1px solid lime;">
+					<div class="full-drop-down-right basic-padding" style="min-height: 100px; min-width: 100px;">
 					<squarespace:block-field id="{collection.urlId}-description" columns="12"/>
 
 					
@@ -130,6 +130,12 @@
 </header>
 <script>
 	function expandDropDown(divName, dropDownTitle){
+		var dropDowns = document.getElementsByClassName('drop-down-menu');
+		console.log(dropDowns)
+		for(i=0; i > dropDowns.length; i++){
+			console.log(dropDowns[i])
+			dropDowns[i].style.display = "none"
+		}
 		console.log(divName)
 	  var dropDownArrow =  document.getElementById(divName + '-arrow');
 		
@@ -140,7 +146,7 @@
 	  const dropDownMenuItems = document.querySelectorAll('.drop-down-menu li')
 	  
 	  if (targetDiv.style.display === "block"){
-		dropDownArrow.style.display = "none";
+		dropDownArrow.style.opacity = 0;
 	    targetDiv.style.display = "none";
 	    dropDownTitle.style.background = "none"
 	    dropDownTitle.style.color = "black"
@@ -148,7 +154,7 @@
 	
 	  } else {
 	    targetDiv.style.display = "block";
-		dropDownArrow.style.display = "block";
+		dropDownArrow.style.opacity = 1;
 	    dropDownTitle.style.background = "lightgray";
 	    
 	    
