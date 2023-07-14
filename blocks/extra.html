@@ -3,8 +3,6 @@
 </script>
 <script>console.log({@|json-pretty})</script>
 <style>
-	
-	header {z-index: 30000; position: absolute; top: 0; left: 0; width: 100vw; }
 	.nav-icon {height: 24px;}
 	.site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
 	.site-navigation-list {list-style-type: none; margin-top: 25px; }
@@ -12,19 +10,14 @@
 	.site-navigation li:hover {cursor: pointer; -webkit-text-stroke: 0.75px black;}
 	.active-link {text-decoration: underline; color: black;}
 	.active-link .site-navigation-item:hover {font-weight: 700px;}
-	.drop-down-menu { position: absolute; border: 3px solid lightgray;  display: none; overflow: hidden; left: 0;  width: 100%; z-index: 200000; margin: 0px 0px 0px 0px; background: white; list-style-type:none;}
+	.drop-down-menu { display: none; position: absolute; border: 0.25px solid black; max-width: 160px; width: 100%; z-index: 200000; margin: 0px 0px 15px 0px; padding: 2px; background: white; list-style-type:none;}
 	.drop-down-menu li {padding: 5px 0px;  }
 	.drop-down-menu li a {color: gray; font-size: 16px!important; width: 100%;}
 	.drop-down-menu li a:hover {color: black;}
-	.full-drop-down-left {background-color: var(--lightblue); padding: 20px; color: white!important; max-width: 40%;}
-	.full-drop-down-right {}
 	.open-nav {height: 100vh!important; background-color: white; z-index: 3000; position: absolute; flex-direction: column; justify-content: center;}
 .expanded-mobile-menu-window {background: white; width: 100vw; height: 100vh; z-index: 20000; position: absolute; top: 0; left: 0; display: none;}
 .hidden {display: none;}
 
-.drop-down-description p a{border: 1px solid red; text-decoration: none; padding: 10px 25px; font-size: 18px; color: white;  border: 2px solid white; cursor: pointer; }
-.drop-down-description br {margin-bottom: 25px;}
-.drop-down-description p a:hover {background-color: white; color: black;}
   {#  mobile menu  }
   .hamburger-menu {display: none; margin-top: 20px;}
   #hamburger {width: 40px; height: 35px; position: relative; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: .5s ease-in-out; -moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out; transition: .5s ease-in-out;}
@@ -57,39 +50,18 @@
 <nav class="site-navigation flex-start-spacebetween box-shadow" >
 	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 	<ul class="site-navigation-list flex-start-spaceevenly" id="site-nav-links-list">
-	{.repeated section items}
+		{.repeated section items}
 		{#  Dropdown Menu Folder  }
-		{.if collection.description}
-		<div id="{collection.urlId}-drop-down-title" onclick="expandDropDown('{collection.urlId}', '{collection.urlId}-drop-down-title')">
-			
-			<div class="flex-center-center flex-column link-container">
-			<li class="site-navigation-item {.section active} active-link{.end}" ><a>{collection.navigationTitle}</a></li>
-			
-					<p id="{collection.urlId}-arrow" style=" display: none; margin-top: 15px;">&#x25B2;</p>
-				
-			</div>
-			<div class="drop-down-menu" id="{collection.urlId}-dropdown">
-				<div class="flex-start-start">
-					<div class="full-drop-down-left">
-						<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
-						<div class="drop-down-description">{collection.description}</div>
-					</div>
-					<div class="full-drop-down-right">
-					{collection.title}
-
-					{.section website}
-  
-  <squarespace:category collection="vendors">
-    {.if categories}
-      <div class="category-wrapper">
-        <span class="category">{.repeated section categories}{name}{.alternates with}, {.end}</span>
-      </div>
-    {.end}
-  </squarespace:category>
-
-{.end}
-					</div>
-				</div>
+    {.if collection.dropdown}
+		<div id="{collection.navigationTitle}-drop-down-title">
+			<li class="site-navigation-item {.section active} active-link{.end}" ><a onclick="expandDropDown('{collection.navigationTitle}-dropdown', '{collection.navigationTitle}-drop-down-title')" >{collection.navigationTitle}</a></li>
+			<div>
+				<ul class="drop-down-menu box-shadow" id="{collection.navigationTitle}-dropdown">
+					
+					{.repeated section items}
+					  <li class="site-navigation-item"><a href="{.if externalLink}{externalLink.url}{.or}{collection.fullUrl}{.end}">• <span class="{.section active} active-link{.end}">{.if externalLink}{externalLink.title}{.or}{collection.navigationTitle}{.end}</span></a></li>
+					{.end}
+				</ul>
 			</div>
 		</div>
 		{.or}
@@ -142,30 +114,24 @@
 </header>
 <script>
 	function expandDropDown(divName, dropDownTitle){
-		console.log(divName)
-	  var dropDownArrow =  document.getElementById(divName + '-arrow');
-		
-	  var targetDiv = document.getElementById(divName+'-dropdown');
+	  var targetDiv = document.getElementById(divName);
 	  var dropDownTitle = document.getElementById(dropDownTitle);
-	  var dropDownTitleLink = dropDownTitle.querySelectorAll('.link-container li');
+	  var dropDownTitleLink = dropDownTitle.querySelectorAll('a');
 	  
 	  const dropDownMenuItems = document.querySelectorAll('.drop-down-menu li')
-	  
 	  if (targetDiv.style.display === "block"){
-		dropDownArrow.style.display = "none";
-	    targetDiv.style.display = "none";
+	    targetDiv.style.display = "none"
 	    dropDownTitle.style.background = "none"
 	    dropDownTitle.style.color = "black"
 	    
 	
 	  } else {
 	    targetDiv.style.display = "block";
-		dropDownArrow.style.display = "block";
 	    dropDownTitle.style.background = "lightgray";
 	    
 	    
 	  }
-
+	
 	  for (i = 0; i < dropDownMenuItems.length; i++){
 	    dropDownMenuItems[i].style.animationDelay =  i * 100 + 'ms';
 	    dropDownMenuItems[i].classList.add('fade-in')

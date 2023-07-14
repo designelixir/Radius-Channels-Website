@@ -10,9 +10,9 @@
 	</head>
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 		{@|apply hero.block}
-		<header class="site-header">
+		
 			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
-		</header>
+		
     <div id="site-wrapper">
 
       <section id="hero">

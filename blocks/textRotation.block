@@ -38,7 +38,7 @@
 </style>
 <div class="flex-center-center" style="height: calc(100%); z-index: 1;">
 	<div>
-		<h1 class="rotatingText-description fade-in2">Orchestrating Next Generation Channel</h1>
+		<h1 class="rotatingText-description fade-in2"><squarespace:block-field id="heroTitle" columns="12"/></h1>
 		<div class="rotatingText fade-in3">
 			<div class="rotatingText-content">
 				<h2 id="adj1" class="rotatingText-adjective">Reach</h2>
@@ -46,10 +46,6 @@
 				<h2 id="adj3" class="rotatingText-adjective">Frequency</h2>
 			</div>
 		</div>
-		<div class="flex-center-center flex-wrap" style="margin-top: 75px;">
-			<a class="button solid-button" href="/#ourMission">Our Mission</a>
-			<a class="button solid-button" href="/#ourFormula">Formula</a>
-			<a class="button inverted-button" href="/#ourMethodology">Methodology</a>
-		</div>
+		<squarespace:block-field id="heroButton" columns="12"/>
 	</div>
 </div>

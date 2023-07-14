@@ -11,6 +11,7 @@
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
       </header>
       <div id='site-wrapper'>
+      
       {.section website}
         <div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
           <div class="page-header-content">

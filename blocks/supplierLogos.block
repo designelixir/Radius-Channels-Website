@@ -1,0 +1,6 @@
+
+<squarespace:query collection="vendors" limit="10">
+    {.repeated section items}
+      {title}
+    {.end}
+</squarespace:query>

@@ -1,5 +1,6 @@
 
 <!-- item loop -->
+<script>console.log({@|json-pretty})</script>
 {.repeated section items}
     
     <div onclick="window.open('{fullUrl}', '_self')" class="supplier-card hover flex-center-start">
