@@ -38,10 +38,10 @@
 </style>
 <div class="flex-center-center" style="height: calc(100%); z-index: 1;">
 	<div>
-		<h1 class="rotatingText-description fade-in2"><squarespace:block-field id="heroTitle" columns="12"/></h1>
+		<h1 class="rotatingText-description fade-in2 basic-padding"><squarespace:block-field id="heroTitle" columns="12"/></h1>
 		<div class="rotatingText fade-in3">
 			<div class="rotatingText-content">
-				<h2 id="adj1" class="rotatingText-adjective">Reach</h2>
+				<h2 id="adj1" class="rotatingText-adjective"><squarespace:block-field id="rotatingWord1" columns="12"/></h2>
 				<h2 id="adj2" class="rotatingText-adjective">Scale</h2>
 				<h2 id="adj3" class="rotatingText-adjective">Frequency</h2>
 			</div>
