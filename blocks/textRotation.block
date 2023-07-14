@@ -39,7 +39,7 @@
 <div class="flex-center-center" style="height: calc(100%); z-index: 1;">
 	<div>
 		<h1 class="rotatingText-description fade-in2 basic-padding"><squarespace:block-field id="heroTitle" columns="12"/></h1>
-		
+		<squarespace:block-field id="heroRotatingWords" columns="12"/>
 		<squarespace:block-field id="heroButton" columns="12"/>
 	</div>
 </div>
