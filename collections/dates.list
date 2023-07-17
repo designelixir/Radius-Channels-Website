@@ -72,8 +72,8 @@
 	<div class="events flex-start-start">
 		<div class="events-summary-list" style="width: 40%; height: 900px; overflow-y: scroll;">
 			{.repeated section items}
-			<div class="flex-center-center events-summary-container"  id="{id}" style="border: 0.25px solid black">
-				<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')" >
+			<div class="flex-center-center events-summary-container"  id="{id}" data-full-url="{fullUrl}" style="border: 0.25px solid black">
+				<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')"  >
 					<div class="events-summary-wrapper flex-center-center">
 						<div class="event-summary-info">
 							<div class="event-summary-wrapper flex-start-start">
@@ -117,8 +117,9 @@
 	console.log(eventsSummaryDivs.length)
 	const firstChild = eventsSummaryDivs[0]
 	const firstChildId = firstChild.id;
+  const firstChildUrl = firstChild.dataset.fullUrl;
 	const substringToRemove = '-summary';
 	const modifiedString = firstChildId.replace(substringToRemove, '');
 	console.log(modifiedString)
-	toggleEvent(modifiedString)
+	toggleEvent(modifiedString, firstChildUrl)
 </script>
