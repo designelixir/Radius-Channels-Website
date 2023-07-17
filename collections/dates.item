@@ -39,7 +39,4 @@
 </div>
 {.end}
 
-      {@|apply footer.block}
-</div>
-
 
