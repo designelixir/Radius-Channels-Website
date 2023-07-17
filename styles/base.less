@@ -28,6 +28,7 @@ strong {font-weight: 600;}
   --lightblue: #06ACE9;
   --lightgray: #E5E5E5;
   --offwhite: #f2f2f2;
+  --fadedblue: #DCE3F1;
 }
 
 #home h1 {color: var(--darkblue)}
@@ -110,12 +111,33 @@ button:hover {transform: scale(1.1)}
 .content-container {padding: 25px;}
 
 // Homepage
-.home-section {width: 100vw; border: 1px solid purple;}
-.homepage-section-excerpt p{margin: 10px 0 0 50px; padding: 0px; color: gray; font-weight: 300;}
-.homepage-section-title {color: var(--darkblue); width: 100%;}
-.home-section-title {width: 100%; border: 1px solid orange;}
-.home-section-content {width: 100%; border: 1px solid red;}
+.home-section { padding: 25px 25px;}
+.home-section h3 {color: black;}
+.home-section h1 {margin: 0px 0px 25px 0px; min-width: 300px; color: var(--darkblue) }
+.home-section-title {padding: 20px;}
+.home-section-content { padding: 20px;}
 #hero { height: 95vh; width: 100%; min-height: 650px; }
+#home-sections-wrapper {margin-top: 100px;}
+.methodology img {min-width: 140px;}
+
+.home-section:nth-child(even) {
+  background-color: var(--fadedblue);
+
+}
+.home-section:nth-child(even) .home-section-title {
+  order: 2;
+}
+
+@media screen and (max-width: 825px) {
+.home-section {flex-direction: column;}
+  .home-section-title {width: 100%; }
+  .home-section-content {margin: 0;}
+  .home-section:nth-child(even) .home-section-content {
+    order: 2;
+  }
+  .home-section h1 {font-size: 36px;}
+  .home-section h3 {font-size: 18px; line-height: 24px;}
+}
 
 
 .logo {max-height: 75px; }

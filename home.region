@@ -9,8 +9,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 	</head>
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-		{@|apply hero.block}
 		
+		{@|apply hero.block}
 			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 		
     <div id="site-wrapper">
@@ -20,33 +20,32 @@
         {@|apply downArrow.block}
       </section>
 		
-		<main id="home" class="content-container" role="main" data-content-field="main-content" id="main-section">
-			
-			<div class="home-section flex-start-spacebetween">
+		
+		<section id="home-sections-wrapper">	
+			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection1-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection1-Content" columns="12"/></div>
 			</div>
-			<div class="home-section flex-start-spacebetween">
+			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection2-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection2-Content" columns="12"/></div>
+				
+				
 			</div>
-			<div class="home-section flex-start-spacebetween">
+			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection3-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection3-Content" columns="12"/></div>
 			</div>
-			<div class="home-section flex-start-spacebetween">
+			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection4-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection4-Content" columns="12"/></div>
 			</div>
-			<div class="home-section flex-start-spacebetween">
+			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection5-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection5-Content" columns="12"/></div>
 			</div>
-			<div class="home-section flex-start-spacebetween">
-				<div class="home-section-title"><squarespace:block-field id="homeSection6-Title" columns="12"/></div>
-				<div class="home-section-content"><squarespace:block-field id="homeSection6-Content" columns="12"/></div>
-			</div>
-			
+		</section>
+		<main id="home" class="content-container" role="main" data-content-field="main-content" id="main-section">
 			{squarespace.main-content}
 		</main>
 		
