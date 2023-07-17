@@ -20,7 +20,27 @@
         {@|apply downArrow.block}
       </section>
 		
-		<main id="home" class="content-container basic-padding" role="main" data-content-field="main-content" id="main-section">
+		<main id="home" class="content-container" role="main" data-content-field="main-content" id="main-section">
+			
+			<div class="home-section">
+				<squarespace:block-field id="homeSection1" columns="12"/>
+			</div>
+			<div class="home-section">
+				<squarespace:block-field id="homeSection2" columns="12"/>
+			</div>
+			<div class="home-section">
+				<squarespace:block-field id="homeSection3" columns="12"/>
+			</div>
+			<div class="home-section">
+				<squarespace:block-field id="homeSection4" columns="12"/>
+			</div>
+			<div class="home-section">
+				<squarespace:block-field id="homeSection5" columns="12"/>
+			</div>
+			<div class="home-section">
+				<squarespace:block-field id="homeSection6" columns="12"/>
+			</div>
+			
 			{squarespace.main-content}
 		</main>
 		
