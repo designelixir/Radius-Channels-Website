@@ -32,6 +32,8 @@
 	
 		function toggleEvent(target, fullUrl){
 	    var targetIframe = document.getElementById('target-iframe');
+      header = targetIframe.contentDocument.querySelector("header");
+      header.remove();
 	    var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
 		  var targetDiv = document.getElementById(target);
 		  var allDivs = document.getElementsByClassName('active-event')
