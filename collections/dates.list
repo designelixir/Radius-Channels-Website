@@ -2,7 +2,9 @@
 	function isDateInFutureOrPast(start, end, id) {
 	  const today = new Date();
 	  console.log(id)
-	  var targetId = id;
+    var targetParentId = document.getElementById(String(id))
+	  var targetId = document.getElementById('eventType-' + String(id))
+    
 	  const startDate = new Date(start)
 	  const endDate = new Date(end)
 	  console.log(start,  end)
@@ -11,11 +13,16 @@
 	
 	  if (startDate > today) {
 	    console.log("upcoming")
+      targetId.innerHTML = "Upcoming"
+      targetParentId.classList.add('future-event')
 	  } else if (startDate < today && endDate > today){
-	
+      targetId.innerHTML = "Upcoming"
+      targetParentId.classList.add('future-event')
 	    console.log("current")
 	  } else if (startDate < today) {
-	    
+      targetParentId.classList.add('past-event')
+	    targetId.innerHTML = "Archived Event"
+      targetParentId.classList.add('archived-event')
 	    console.log("past")
 	  }  else {
 	    console.log("no event defined")
@@ -24,10 +31,28 @@
 	
 	function toggleTypes(toggleType){
 	  var typeToggles = document.getElementsByClassName('type-toggle'); 
+    var futureEvents = document.getElementsByClassName('future-event')
+    var archivedEvents = document.getElementsByClassName('archived-event')
+    var allContentDivs = document.getElementsByClassName('events-summary-container')
 	  for (var i = 0; i < typeToggles.length; i++){
 	    typeToggles[i].classList.remove('active-type-toggle')
 	  }
 	  document.getElementById(toggleType).classList.add('active-type-toggle')
+
+    for (var i = 0; i < allContentDivs.length; i++){
+      allContentDivs[i].classList.remove('visible-event', 'active-event')
+    }
+    if (toggleType === 'upcoming-toggle'){
+      toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
+      for (var i = 0; i < futureEvents.length; i++){
+      futureEvents[i].classList.add('visible-event')
+    }
+    } else {
+      toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
+      for (var i = 0; i < archivedEvents.length; i++){
+      archivedEvents[i].classList.add('visible-event')
+    }
+    }
 	}
 	
 		function toggleEvent(target, fullUrl){
@@ -78,6 +103,7 @@
 						<div class="event-summary-info">
 							<div class="event-summary-wrapper flex-start-start">
 								<div class="event-summary-title">
+                  <p id="eventType-{id}"></p>
 									<p>{structuredContent.startDate|date %B %d, %Y}</p>
 									<h3 class="strong hover">{title}</h3>
 									<div class="excerpt">
@@ -101,7 +127,7 @@
 					</div>
 				</div>
 			</div>
-			<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{id}`)</script>
+			<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
 			{.end}	
 		</div>
 		<div class="events-full-size" style="width: 60%;">
@@ -113,13 +139,5 @@
 </div>
 </div>
 <script>
-	var eventsSummaryDivs = document.getElementsByClassName('events-summary-container')
-	console.log(eventsSummaryDivs.length)
-	const firstChild = eventsSummaryDivs[0]
-	const firstChildId = firstChild.id;
-  const firstChildUrl = firstChild.dataset.fullUrl;
-	const substringToRemove = '-summary';
-	const modifiedString = firstChildId.replace(substringToRemove, '');
-	console.log(modifiedString)
-	toggleEvent(modifiedString, firstChildUrl)
+toggleTypes('upcoming-toggle')
 </script>

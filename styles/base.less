@@ -250,7 +250,9 @@ footer {text-align: center; margin-top: 100px;}
 .events-summary {overflow-y: scroll;  z-index: 2; background-color: white; }
 .events-summary-wrapper { cursor: pointer}
 .event-summary-info {padding: 25px; }
-.events-summary-container {opacity: 0.2; background-color: var(--lightgray)}
+.events-summary-container {opacity: 0.2; background-color: var(--lightgray); display: none;}
+
+.visible-event {display: block!important;}
 
 .event-type-toggles {color: gray;}
 .event-type-toggles .active-type-toggle {color: black!important;}
@@ -276,6 +278,9 @@ footer {text-align: center; margin-top: 100px;}
 
 .full-size-event-header-title-full-page {background-color: white; padding: 25px; border-bottom: 3px solid var(--darkblue); margin-top: -150px; }
 .full-size-event-header-full-page {max-height: 300px;  z-index: 1;   width: 100vw; height: 500px; } 
+
+
+
 // Animations
 .fade-in{-webkit-animation:fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both}
 .fade-in2{-webkit-animation:fade-in 1s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1s cubic-bezier(.39,.575,.565,1.000) both}
