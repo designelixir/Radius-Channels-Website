@@ -4,7 +4,7 @@
 <script>console.log({@|json-pretty})</script>
 <style>
 	
-	header {z-index: 30000; position: absolute; top: 0; left: 0; width: 100vw; }
+	header {z-index: 30000; position: fixed; top: 0; left: 0; width: 100vw; }
 	.nav-icon {height: 24px;}
 	.site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
 	.site-navigation-list {list-style-type: none; margin-top: 25px; }

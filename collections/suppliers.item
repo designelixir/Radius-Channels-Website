@@ -1,3 +1,30 @@
+<script>
+
+function isDateInFutureOrPast(start, end, id) {
+  const today = new Date();
+  
+  const startDate = new Date(start)
+  const endDate = new Date(end)
+  console.log(start,  end)
+  
+var eventTypeDiv = document.getElementById("eventType-" + id)
+
+  if (startDate > today) {
+    targetDiv.classList.add("future-event")
+    console.log("future")
+  } else if (startDate < today && endDate > today){
+    targetDiv.classList.add("current-event")
+    console.log("current")
+  } else if (startDate < today) {
+    targetDiv.classList.add("past-event")
+    console.log("past")
+  }  else {
+    console.log("no event defined")
+  }
+}
+</script>
+
+
 
 {.section item}
 <div style="padding: 25px; background: var(--offwhite);" class="box-shadow">
@@ -16,9 +43,9 @@
 <div id="upcomingEvents" style="padding: 25px;">
 <h3>Upcoming Events by {title}</h3>
         <squarespace:query collection="events" limit="5" tag="{title}">
-        
+        <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{id}`)</script>
 
-            <div class="calendar-collection-upcoming flex-start-start">
+            <div class="calendar-collection-upcoming flex-start-start" id="{id}">
                 {.repeated section items}
                 <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')">
 
