@@ -1,21 +1,4 @@
-{.section item}
-<header class="site-header">
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
-      </header>
-      <div id='site-wrapper'>
-      {.section website}
-        <div {.if collection.mainImage} style="background-image: url({assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
-          <div class="page-header-content">
-            <div>
-              <h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
-                {collection.title}
-              </h1>
-              <br>
-              <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
-            </div>
-          </div>
-        </div>
-        {.end}
+
 
 
       <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl}); background-size: cover;" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
