@@ -72,7 +72,7 @@
 		<div class="drop-down-wrapper">
 		<div class="nav-drop-down-title">
 			<h3><strong>About Radius Channels</strong></h3>
-				<p><i>We are singularly focused on increasing  your channel profitability through flawless execution and the timely delivery of innovative, customized support resources. </i></p>
+				<p><i>Our team of dedicated, customer-centric industry experts is passionate about helping you achieve unprecedented channel growth and success.</i></p>
 				<button onclick="window.open('/about')" class="outline-button">Meet Our Team</button>
 		</div>
 		<div class="nav-drop-down-sections-wrapper" class="flex-start-start">
