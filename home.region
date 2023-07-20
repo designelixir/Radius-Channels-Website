@@ -9,19 +9,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	</head>
+	{@|apply hero.block}
+		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 		
-		{@|apply hero.block}
-			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
-		
-    <div id="site-wrapper">
-<squarespace:block-field id="vendors-description" columns="12"/>
+    
+	<squarespace:block-field id="vendors-description" columns="12"/>
       <section id="hero">
         {@|apply textRotation.block}
         {@|apply downArrow.block}
       </section>
-		
-		
 		<section id="home-sections-wrapper">	
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection1-Title" columns="12"/></div>
@@ -30,8 +27,6 @@
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection2-Title" columns="12"/></div>
 				<div class="home-section-content"><squarespace:block-field id="homeSection2-Content" columns="12"/></div>
-				
-				
 			</div>
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection3-Title" columns="12"/></div>
@@ -50,18 +45,8 @@
 			{squarespace.main-content}
 		</main>
 		
-		
-		
-		<!-- cms content injection point -->
-		
-		<!--Footer with open block field -->
-		
-			{@|apply footer.block}
-		
-    </div>
-		<!-- combo and minify scripts when not logged in -->
+		{@|apply footer.block}
 		<squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-		<!-- other scripts, and footer code injection -->
 		{squarespace-footers}
 	</body>
 </html>

@@ -1,23 +1,55 @@
+<script>console.log({@|json-pretty})</script>
 <div class="site-navigation flex-start-spacebetween box-shadow">
+	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 
-<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
+	<div class="site-navigation-list flex-center-end" id="site-navs">
+		{.repeated section items}
+			{.section collection}
+			<div class="site-navigation-item flex-center-center flex-column" onclick="toggle({collection.urlId})" >
+				<p class="{.section active} active-link{.end}">{navigationTitle}</p>
+				<p id="`{collection.urlId}`-arrow" class="nav-arrow">&#x25B2;</p>
+			</div>
+			{.end}
+			{.section externalLink}
+			<div class="site-navigation-item flex-center-center flex-column hover">
+				<a href="{url}"{.section newWindow} target="_blank"{.end} class="{.section active} active-link{.end}">{title}</a>
+				
+			</div>
+			{.end}
+		{.end}
+	</div>
+</div>
 
-<div class="site-navigation-list flex-center-end" id="site-navs">
+{.repeated section items}
+	{.folder?}
+	<div id="{collection.urlId}" class="section-nav swing-in-top-fwd">
+		<div class="drop-down-wrapper">
+			<div class="nav-drop-down-title">
+				<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
+				<div class="drop-down-description">{collection.description}</div>
+			</div>
+			{.section folder}
+				egggg
+				<script>console.log({@|json-pretty})</script>
+			{.or}
+			{urlId}
+			
+				eggggggggggggg
+			{.end}
+			
+		</div>
+	</div>	
+	{.end}
 
+	{.section collection}
 	
-	<div class="flex-center-center flex-column site-navigation-item"><a onclick="toggle('vendors')">Vendors &amp; Solutions</a><p id="vendors-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
-	<div class="flex-center-center flex-column site-navigation-item"><a onclick="toggle('partners')">For Partners</a><p id="partners-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
-	<div class="flex-center-center flex-column site-navigation-item"><a onclick="toggle('about')">About Radius</a><p id="about-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
-	<div class="flex-center-center flex-column site-navigation-item"><a href="/contact">Contact</a><p id="about-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
+	{.end}
 
-
-</div>
-
-</div>
+{.end}
 
 <div class="full-width-nav" id="drop-down">
 
-	<div id="vendors" class="section-nav swing-in-top-fwd">
+	<div id="vendors" class="section-nav swing-in-top-fwd" style="display: none;">
 		<div class="drop-down-wrapper">
 		<div class="nav-drop-down-title">
 			<h3>Vendors &amp; Solutions</h3>
@@ -38,7 +70,7 @@
 		</div>
 	</div>
 
-	<div id="partners" class="section-nav swing-in-top-fwd" >
+	<div id="partners" class="section-nav swing-in-top-fwd" style="display: none;">
 		<div class="drop-down-wrapper">
 			<div class="nav-drop-down-title">
 				<h3>For Partners</h3>
@@ -68,11 +100,11 @@
 		</div>
 	</div>
 
-	<div id="about" class="section-nav swing-in-top-fwd">
+	<div id="about" class="section-nav swing-in-top-fwd" style="display: none;">
 		<div class="drop-down-wrapper">
 		<div class="nav-drop-down-title">
 			<h3><strong>About Radius Channels</strong></h3>
-				<p><i>Our team of dedicated, customer-centric industry experts is passionate about helping you achieve unprecedented channel growth and success.</i></p>
+				<p><i>We are singularly focused on increasing  your channel profitability through flawless execution and the timely delivery of innovative, customized support resources. </i></p>
 				<button onclick="window.open('/about')" class="outline-button">Meet Our Team</button>
 		</div>
 		<div class="nav-drop-down-sections-wrapper" class="flex-start-start">

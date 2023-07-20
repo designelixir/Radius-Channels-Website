@@ -1,0 +1,11 @@
+<div style="border: 1px solid red">
+
+
+  <ol>
+    {.repeated section items}
+      <li><a href="{fullUrl}">{title}</a></li>
+    {.end}
+  </ol>
+
+
+</div>
