@@ -22,29 +22,33 @@
 
 {.repeated section items}
 <script>console.log({@|json-pretty})</script>
-	{.section collection}
+
 		<div id="{collection.urlId}" class="section-nav swing-in-top-fwd">
 			<div class="drop-down-wrapper">
 				<div class="nav-drop-down-title">
 					<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
 					<div class="drop-down-description">{collection.description}</div>
 				</div>
-				<div class="nav-drop-downs-sections-wrapper">
-				{.if folderActive}
-					
-					<div class="nav-drop-down-section" style="border: 1px solid red;">
-						
-						{title}
-						
-						
-					</div>
-					
+				<div class="nav-drop-downs-sections-wrapper flex-start-start flex-wrap">
+				{.folder?}
+					{.repeated section items}
+						{.collection?}
+						<div class="nav-drop-down-section" style="border: 1px solid red;">
+							<p><strong>{collection.navigationTitle}</strong></p>
+							<p><i>{collection.description}</i></p>
+						</div>
+						{.end}
+					{.end}
+
+				{.end}
+				{.collection?}
+				{collection.urlId}
+					{@|apply nav.block}
 				{.end}
 				</div>
 			</div>
 		</div>	
 		
-	{.end}
 {.end}
 
 <div class="full-width-nav" id="drop-down">

@@ -1,11 +1,6 @@
-<div style="border: 1px solid red">
-
-
-  <ol>
-    {.repeated section items}
-      <li><a href="{fullUrl}">{title}</a></li>
-    {.end}
-  </ol>
-
-
-</div>
+<squarespace:query collection="{urlId}" limit="10">
+<script>console.log({@|json-pretty})</script>
+{.repeated section items}
+<li><a href="{fullUrl}">{title}</a></li>
+{.end}
+</squarespace:query>
