@@ -5,7 +5,7 @@
 <div class="site-navigation-list flex-center-end" id="site-navs">
 {.repeated section items}
 	{.section collection}
-	<div class="flex-center-center flex-column site-navigation-item hover"><a onclick="toggle('{navigationTitle}')">{navigationTitle}</a><p id="{navigationTitle}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
+	<div class="flex-center-center flex-column site-navigation-item hover"><a onclick="toggle('{title}')">{navigationTitle}</a><p id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
 	{.end}
 	{.section externalLink}
 	<div class="flex-center-center flex-column site-navigation-item hover"><a href="/contact">Contact</a></div>
@@ -18,23 +18,25 @@
 <div class="full-width-nav" id="drop-down">
 {.repeated section items}
 <script>console.log({@|json-pretty})</script>
-	{.folder?}
-	<div id="{collection.navigationTitle}" class="section-nav swing-in-top-fwd">
+	{.section collection}
+	<div id="{navigationTitle}" class="section-nav swing-in-top-fwd">
 		<div class="drop-down-wrapper">
 		{#  left side  }
+			
 			<div class="nav-drop-down-title">
-				<h3>{collection.title}</h3>
-				<span class="nav-drop-down-description">{collection.description}</span>
+				<h3>{title}</h3>
+				<span class="nav-drop-down-description">{description}</span>
 			</div>
+			
 		{#  right side  }
 			<div class="nav-drop-down-sections-wrapper">	
-			{.folder?}
+			 {.equal? folderBehavior 1}
 			<div class="flex-start-start flex-wrap">
 				{.repeated section items}
 				{.collection?}
-				<div class="nav-drop-down-section">
-					<p><strong>{collection.navigationTitle}</strong><br>
-					<i>{collection.description}</i></p>
+				<div class="nav-drop-down-section"  {.equal? folderBehavior 2}style="border: 2px solid red"{.end}>
+					<p><strong>{navigationTitle}</strong><br>
+					<i>{description}</i></p>
 				</div>
 				{.end}
 			{.end}
@@ -49,24 +51,8 @@
 			</div>
 		</div>
 	</div>
+	
 	{.end}
-	{.collection?}
-	<div id="{collection.title}" class="section-nav swing-in-top-fwd">
-		<div class="drop-down-wrapper">
-		{#  left side  }
-			<div class="nav-drop-down-title">
-				<h3>{collection.title}</h3>
-				<span class="nav-drop-down-description">{collection.description}</span>
-			</div>
-		{#  right side  }
-			<div class="nav-drop-down-sections-wrapper ">	
-			
-
-			</div>
-		</div>
-	</div>
-	{.end}
-
 {.end}
 
 
