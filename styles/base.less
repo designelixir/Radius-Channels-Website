@@ -167,11 +167,14 @@ button:hover {transform: scale(1.1)}
 	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 0 12px; line-height: 30px; white-space: nowrap; font-style: italic;}
 .site-navigation { padding: 15px 20px; background-color: white; max-height: 105px; }
 	.site-navigation-list {list-style-type: none; margin-top: 25px; }
-  .nav-arrow {padding: 0px; margin: 0px; position: absolute; top: 91px; opacity: 1; color: var(--darkblue);}
-.section-nav { width: 100vw; }
+  .nav-arrow {padding: 0px; margin: 0px; position: absolute; top: 91px; opacity: 0; color: var(--darkblue);}
+.section-nav { width: 100vw; display: none; }
 	.open-nav {height: 100vh!important; background-color: white; z-index: 3000; position: absolute; flex-direction: column; justify-content: center;}
 .expanded-mobile-menu-window {background: white; width: 100vw; height: 100vh; z-index: 20000; position: absolute; top: 0; left: 0; display: none;}
 .hidden {display: none;}
+
+.nav-drop-down-description p a {background: rgba(0,0,0,0); border: 2px solid white; color: white; padding: 10px 25px; text-decoration: none; font-size: 18px; margin: 10px 0px!important; cursor: pointer;}
+.nav-drop-down-description p {margin-bottom: 50px;}
 
 .nav-drop-down-sections-wrapper {width: 66vw; background-color: white; border-left: 2px solid black; display: table-cell;}
 .drop-down-wrapper {display: table; border: 2px solid var(--darkblue)}
