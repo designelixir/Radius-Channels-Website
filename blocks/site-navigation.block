@@ -49,8 +49,9 @@
 			</div>
 		</div>
 	</div>
-	{.or}
-	<div id="{collection.navigationTitle}" class="section-nav swing-in-top-fwd">
+	{.end}
+	{.collection?}
+	<div id="{collection.title}" class="section-nav swing-in-top-fwd">
 		<div class="drop-down-wrapper">
 		{#  left side  }
 			<div class="nav-drop-down-title">
