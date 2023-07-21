@@ -1,4 +1,4 @@
-<script>console.log({@|json-pretty})</script>
+
 <div class="site-navigation flex-start-spacebetween box-shadow">
 	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 
@@ -21,30 +21,30 @@
 </div>
 
 {.repeated section items}
-	{.folder?}
-	<div id="{collection.urlId}" class="section-nav swing-in-top-fwd">
-		<div class="drop-down-wrapper">
-			<div class="nav-drop-down-title">
-				<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
-				<div class="drop-down-description">{collection.description}</div>
-			</div>
-			{.section folder}
-				egggg
-				<script>console.log({@|json-pretty})</script>
-			{.or}
-			{urlId}
-			
-				eggggggggggggg
-			{.end}
-			
-		</div>
-	</div>	
-	{.end}
-
+<script>console.log({@|json-pretty})</script>
 	{.section collection}
-	
+		<div id="{collection.urlId}" class="section-nav swing-in-top-fwd">
+			<div class="drop-down-wrapper">
+				<div class="nav-drop-down-title">
+					<h3 class="hover" onclick="window.open('{collection.fullUrl}', '_self')">{collection.title}</h3>
+					<div class="drop-down-description">{collection.description}</div>
+				</div>
+				<div class="nav-drop-downs-sections-wrapper">
+				{.if folderActive}
+					
+					<div class="nav-drop-down-section" style="border: 1px solid red;">
+						
+						{title}
+						
+						
+					</div>
+					
+				{.end}
+				</div>
+			</div>
+		</div>	
+		
 	{.end}
-
 {.end}
 
 <div class="full-width-nav" id="drop-down">
