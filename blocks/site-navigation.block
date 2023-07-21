@@ -25,15 +25,25 @@
 			<button onclick="window.open('/vendors')" class="outline-button">View Line Card</button>
 		</div>
 
-		<div class="nav-drop-down-sections-wrapper ">	
-			<div  class="flex-center-center" >
-			<a class="hover drop-down-vendor" href="/vendors/apptega"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596458488-1SXF1DO8LFWGGD97QRLA/apptega.png" style="width: 100%;"/></a>
-			<a class="hover drop-down-vendor" href="/vendors/deep-instinct"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688755771648-MGALZPM8C6MHUJPIC3NP/3CD002EC-02D0-41E7-8E62-2EA0FF462D3F.png" style="width: 100%;"/></a>
-			<a class="hover drop-down-vendor" href="/vendors/druva"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688937315228-M7BQVEU3SK362C096MKQ/druva-logo.png" style="width: 100%;"/></a>
-			<a class="hover drop-down-vendor" href="/vendors/lenovo"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596510960-X96G2C5I78UOSP1PB6VK/Lenovo_logo_2015.svg.png" style="width: 100%;"/></a>
-			<a class="hover drop-down-vendor" href="/vendors/tanium"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688756021135-QC7IYOQ3HIY4WPCVIB2X/15BAF226-F95A-4C2C-9CB1-512BEA9C962C.png" style="width: 100%;"/></a>
+		<<div class = " nav-drop-down-sections-wrapper flex-start-start">
+				<div  class="flex-center-center flex-wrap" id="vendor-images">
+				<div class="nav-drop-down-section">
+					<img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596458488-1SXF1DO8LFWGGD97QRLA/apptega.png" style="width: 100%;"/>
+				</div>
+				<div class="nav-drop-down-section">
+				<img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688755771648-MGALZPM8C6MHUJPIC3NP/3CD002EC-02D0-41E7-8E62-2EA0FF462D3F.png" style="width: 100%;"/>
+				</div>
+				<div class="nav-drop-down-section">
+				<img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688937315228-M7BQVEU3SK362C096MKQ/druva-logo.png" style="width: 100%;"/>
+				</div>
+				<div class="nav-drop-down-section">
+				<img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596510960-X96G2C5I78UOSP1PB6VK/Lenovo_logo_2015.svg.png" style="width: 100%;"/>
+				</div>
+				<div class="nav-drop-down-section">
+				<img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688756021135-QC7IYOQ3HIY4WPCVIB2X/15BAF226-F95A-4C2C-9CB1-512BEA9C962C.png" style="width: 100%;"/>
+				</div>
 			</div>
-			
+			</div>
 		</div>
 		</div>
 	</div>
