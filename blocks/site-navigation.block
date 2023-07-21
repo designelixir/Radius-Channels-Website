@@ -45,7 +45,7 @@
 				{collection.urlId}
 					{@|apply nav.block}
 				{.end}
-				</div>
+				</div>=
 			</div>
 		</div>	
 		
