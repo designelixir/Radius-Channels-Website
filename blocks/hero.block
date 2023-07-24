@@ -4,7 +4,7 @@
    top: 0;
    left: 0;
    width: 100%;
-   height: 95vh;
+   height: 80vh;
    min-height: 650px;
    z-index: -1;
    pointer-events: none;
@@ -25,11 +25,13 @@
 }
 </style>
 
-<div class="vimeo-wrapper fade-in flex-center-center" style="background-image: url({collection.mainImage.assetUrl});">
+<div class="vimeo-wrapper fade-in flex-center-center" id="hero-video" style="background-image: url({collection.mainImage.assetUrl});">
 
    <iframe src="" id="heroIframe"
            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-           <div style="width: 100%; height: 100%; position: absolute; background: rgba(255,255,255,0.25)"></div>
+           <div style="width: 100%; height: 100%; position: absolute; background: rgba(255,255,255,0.25)">
+           
+           </div>
 </div>
   
 

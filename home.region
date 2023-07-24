@@ -15,7 +15,7 @@
 		
     
 	<squarespace:block-field id="vendors-description" columns="12"/>
-      <section id="hero">
+      <section id="hero" >
         {@|apply textRotation.block}
         {@|apply downArrow.block}
       </section>
