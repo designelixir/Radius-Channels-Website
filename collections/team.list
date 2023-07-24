@@ -18,11 +18,7 @@
                       <div style="padding: 15px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
                           <div style="text-align: center;">
                             {body}
-                            <div class="bio-icons-container" >
-                            {.if customContent.linkedin}<a href="{customContent.linkedin}" target="_blank"><img src="../assets/icons/linkedin.png" style="height: 25px; margin-right: 10px;"></a>{.end}
-                            {.if customContent.email}<a href="mailto:{customContent.email}" target="_blank"><img src="../assets/icons/email.png" style="height: 25px;"></a>{.end}
                             
-                            </div>
                           </div>
                         </div>
                     </div>
@@ -31,6 +27,11 @@
                       <div class="family-bio-title-wrapper">
                         <h3>{title}</h3>
                         <h4>{customContent.jobtitle}</h4>
+                        <div class="bio-icons-container" >
+                            {.if customContent.linkedin}<a href="{customContent.linkedin}" target="_blank"><img src="../assets/icons/linkedin.png" style="height: 25px; margin-right: 10px;"></a>{.end}
+                            {.if customContent.email}<a href="mailto:{customContent.email}" target="_blank"><img src="../assets/icons/email.png" style="height: 25px;"></a>{.end}
+                            
+                            </div>
                       </div>
                     </div>
                   </div>
