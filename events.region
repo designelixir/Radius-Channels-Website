@@ -76,28 +76,6 @@
 		}
 </script>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-<header class="site-header">
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
-      </header>
-      {.section website}
-        <div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
-          <div class="page-header-content">
-            <div>
-              <h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
-                {collection.title}
-                {.if item.title}<span id="subcollectionTitle" style="color: var(--orange)"> | {item.title}</span>{.end}
-              </h1>
-              {.if item.title}
-              <a href="{collection.fullUrl}" style="color: white;">&larr; Back to {collection.title}</a>
-              {.end}
-              <br>
-              <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
-            </div>
-          </div>
-        </div>
-        {.end}
-      <div id='site-wrapper'>
-
 
      
       
