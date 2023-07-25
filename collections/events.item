@@ -8,6 +8,9 @@
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
 			<h3 class="hover" onclick="window.open('/events', '_self')"><span style="color: gray">&larr; Back to {collection.title}</span></h3>
+            {.repeated section categories}
+              <p class="tag">{@}</p>{.alternates with}&nbsp;
+            {.end}
 			<h2>{title}</h2>
       
 			<h3 style="color: var(--lightblue); margin: 5px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
