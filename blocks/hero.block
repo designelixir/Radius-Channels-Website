@@ -26,11 +26,9 @@
 </style>
 
 <div class="vimeo-wrapper fade-in flex-center-center" id="hero-video" style="background-image: url({collection.mainImage.assetUrl});">
-
    <squarespace:block-field id="homeHero" columns="12"/>
-           <div style="width: 100%; height: 100%; position: absolute; background: rgba(255,255,255,0.25)">
-           
-           </div>
+   <div style="width: 100%; height: 100%; position: absolute; background: rgba(255,255,255,0.25)"></div>
+   
 </div>
   
 

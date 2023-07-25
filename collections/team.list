@@ -1,7 +1,5 @@
-
-
 <div class="additional-leadership-team flex-center-center">
-<h1 style=" z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
+<h1 style="z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
 {.repeated section items}
     
     {.if starred}
@@ -39,78 +37,12 @@
     </div>
     {.end}
 {.end}
-
 </div>
 
 
 
 <script>
 $('.family-bio div').hover(
-    function(){
-    
-    $('.family-bio-title', this).css({"display":"inline-flex"})
-    
-    
-}, function(){
-    
-    $('.family-bio-title', this).css({"display":"none"})
-    
-})
-
-var count = 0;
-function clickBio(){
-  count++;
-  if ((count % 2) != 0) {
-     $(this).css({"backdrop-filter":"blur(4px)"})
-    $('.bio-details', this).css({"display":"block"});
-    $('.bio-title-wrapper', this).css({"display":"none"})
-  } else {
-   $(this).css({"backdrop-filter":"blur(0px)"})
-    $('.family-bio-description', this).css({"display":"none"});
-    $('.family-bio-title', this).css({"display":"block"})
-  }
-}
-
-
-var bios = document.getElementsByClassName('family-bio-wrapper');
-var biocontainer = document.getElementById('bio-container')
-var familylistSize = bios.length * 354; 
-var bioContainerWidth = $('#bio-container').outerWidth();
-var match = familylistSize - bioContainerWidth;
-var intervalID = setInterval(biosRight,4000);
-var endOfDiv = false;
-
-function biosRight(canceltimer){
-    if (endOfDiv){biocontainer.scrollLeft -= match ;}
-    else {biocontainer.scrollLeft += 354;}
-
-    if (canceltimer) {clearInterval(intervalID)}
-}
-
-
-var scrolled;
-
-$('#bio-container').scroll(function(){
-    
-    scrolled = $('#bio-container').scrollLeft(); 
-    if(scrolled >= match ) {
-        endOfDiv = true 
-    } else {endOfDiv = false}
-});
-
-if (endOfDiv){
-  $('#bio-container').scroll(function(){biocontainer.scrollLeft -= match; console.log("back")})
-}
-
-function biosLeft(canceltimer){
-  if (canceltimer) {clearInterval(intervalID)}
-  biocontainer.scrollLeft -= 354 ;
-  if (scrolled < 100 ) {biocontainer.scrollLeft += familylistSize;} 
-  
-  
-}
-
-
-
-
+    function(){$('.family-bio-title', this).css({"display":"inline-flex"})}, 
+    function(){$('.family-bio-title', this).css({"display":"none"})})
 </script>

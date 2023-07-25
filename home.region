@@ -12,7 +12,7 @@
 	{@|apply hero.block}
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-      <section id="hero" >
+      <section id="hero">
         {@|apply textRotation.block}
         {@|apply downArrow.block}
       </section>
