@@ -43,7 +43,7 @@ var eventTypeDiv = document.getElementById("eventType-" + id)
 </div>
 <div id="upcomingEvents" style="padding: 25px;">
 <h3>Upcoming Events by {title}</h3>
-        <squarespace:query collection="events" limit="5" tag="{title}">
+        <squarespace:query collection="test-events" limit="5" tag="{title}">
         <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{id}`)</script>
 
             <div class="calendar-collection-upcoming flex-start-start" id="{id}">
