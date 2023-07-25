@@ -8,7 +8,39 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
       
+      <squarespace:query collection="test-events" limit="10">
+
       
+        {.repeated section items}
+        <div class="flex-center-center events-summary-container"  id="{id}" data-full-url="{fullUrl}" style="border: 0.25px solid black">
+				<div class="events-summary"  >
+					<div class="events-summary-wrapper flex-center-center">
+						<div class="event-summary-info">
+							<div class="event-summary-wrapper flex-start-start">
+								<div class="event-summary-title">
+                  <p id="eventType-{id}"></p>
+									<p>{structuredContent.startDate|date %B %d, %Y}</p>
+									<h3 class="strong hover">{title}</h3>
+									<div class="excerpt">
+										<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
+									</div>
+									<div class="flex-start-start">
+										{.repeated section tags}
+										<p class="tag">{@}</p>
+										{.alternates with}&nbsp;
+										{.end}
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+        {.end}
+      
+
+    </squarespace:query>
       
       <!-- cms content injection point -->
       
