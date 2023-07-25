@@ -36,7 +36,7 @@
 	}
 	}
 </style>
-<div class="flex-center-center" style="height: 80vh; z-index: 1;">
+<div class="flex-center-center" style="height: 100%;">
 	<div>
 		<h1 class="rotatingText-description fade-in2 basic-padding"><squarespace:block-field id="heroTitle" columns="12"/></h1>
 		<squarespace:block-field id="heroRotatingWords" columns="12"/>

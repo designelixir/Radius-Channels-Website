@@ -12,9 +12,10 @@
 	
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-	   <squarespace:block-field id="homeHero" columns="12"/>
+	   
    			
-      <section id="hero" style="">
+      <section id="hero" >
+	  <squarespace:block-field id="homeHero" columns="12"/>
         {@|apply textRotation.block}
         
       </section>
@@ -51,6 +52,7 @@ function positionHero(){
 	heroHeight = $('#drop-down div').height()
 	heroTop = $('#drop-down').offset().top
 	$('#hero-video').css("top", heroTop)
+	$('#hero').css('top', heroTop)
 	if(document.getElementsByClassName('open').length > 0){
 		var openTarget = document.querySelector('.open').id
 		toggle(openTarget)

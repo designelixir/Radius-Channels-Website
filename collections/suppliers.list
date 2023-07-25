@@ -1,6 +1,13 @@
 
 <!-- item loop -->
-<script>console.log({@|json-pretty})</script>
+<style>
+
+  button {font-size: 16px!important;}
+  .sqs-block-button-element--small {font-size: 16px!important;}
+  .sqs-block-button-element--medium {font-size: 16px!important;}
+  .button {font-size: 16px!important;}
+
+</style>
 {.repeated section items}
     
     <div onclick="window.open('{fullUrl}', '_self')" class="supplier-card hover flex-center-start">
