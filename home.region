@@ -9,10 +9,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	</head>
-	{@|apply hero.block}
+	
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-		
+	<main id="home" class="content-container" role="main" data-content-field="main-content" id="main-section">
+			{squarespace.main-content}
+		</main>	
     
 	<squarespace:block-field id="vendors-description" columns="12"/>
       <section id="hero" >
@@ -41,9 +43,7 @@
 				<div class="home-section-content"><squarespace:block-field id="homeSection5-Content" columns="12"/></div>
 			</div>
 		</section>
-		<main id="home" class="content-container" role="main" data-content-field="main-content" id="main-section">
-			{squarespace.main-content}
-		</main>
+		
 		
 		{@|apply footer.block}
 		<squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
