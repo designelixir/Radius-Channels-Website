@@ -1,9 +1,10 @@
+
 {.section item}
 
 
 
       <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl}); background-size: cover;" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
-<div class="full-size-event" id="{title}-fullpage-event"  >
+        <div class="full-size-event" id="{title}-fullpage-event"  >
 
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
@@ -11,17 +12,18 @@
             {.repeated section categories}
               <span class="tag">{@}</span>{.alternates with}&nbsp;
             {.end}
+            
 			<h2>{title}</h2>
       
 			<h3 style="color: var(--lightblue); margin: 5px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
-      <p style="color: gray;">{customContent.eventTimeZone}</p>
       
       <div class="flex-center-start">
+      {.if tags}
       <p class="strong">Sponsored by: &nbsp;</p>
       {.repeated section tags}
               <p class="tag">{@}</p>{.alternates with}&nbsp;
             {.end}
-            
+        {.end}    
 		</div>
     {.if customContent.eventType}
 			<p>Virtual Event</p>
@@ -35,8 +37,6 @@
 		<p>{body}</p>
 		{.if sourceUrl}
 		<button class="solid-button" onclick="window.open('{sourceUrl}')">Register Now</button>
-		{.or}
-		<button class="solid-button" onclick="window.open('{fullUrl}')">Register Now</button>
 		{.end}
 	</div>
 </div>

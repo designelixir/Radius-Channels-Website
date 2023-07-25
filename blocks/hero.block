@@ -1,35 +1,9 @@
-<style>
-.vimeo-wrapper {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 80vh;
-   min-height: 650px;
-   z-index: -1;
-   pointer-events: none;
-   overflow: hidden;
-   background-size: cover; 
-   background-repeat: no-repeat; 
-   background-position: center center;
-}
-.vimeo-wrapper iframe {
-   width: 100vw;
-   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-   min-height: 100%;
-   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
-</style>
 
-<div class="vimeo-wrapper fade-in flex-center-center" id="hero-video" style="background-image: url({collection.mainImage.assetUrl});">
-   <squarespace:block-field id="homeHero" columns="12"/>
-   <div style="width: 100%; height: 100%; position: absolute; background: rgba(255,255,255,0.25)"></div>
+
+
+
    
-</div>
+
   
 
   

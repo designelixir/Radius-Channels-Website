@@ -42,16 +42,17 @@ var eventTypeDiv = document.getElementById("eventType-" + id)
 {body}
 </div>
 <div id="upcomingEvents" style="padding: 25px;">
-<h3>Upcoming Events by {title}</h3>
-        <squarespace:query collection="test-events" limit="5" tag="{title}">
-        <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{id}`)</script>
+<h3>Events by {title}</h3>
+        <squarespace:query collection="events2" limit="5" tag="{title}">
+        <script>console.log({@|json-pretty})</script>
+        <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{title}`)</script>
 
-            <div class="calendar-collection-upcoming flex-start-start" id="{id}">
+            <div class="calendar-collection-upcoming flex-start-start" id="{title}">
                 {.repeated section items}
                 <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')">
 
                     <div>
-                    <div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column">
+                    <div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column calendar-summary">
                        <h3 style="text-align: center; font-size: 28px; line-height: 28px; margin: 0; padding: 10px 0px; color: white;">{structuredContent.startDate|date %B %d, %Y}</h3>
                        <h4 style="padding: 0; margin: 0; line-height: 12px;color: white;">{structuredContent.startDate|date %I:%M %p}</h4>
                        </div>

@@ -3,12 +3,13 @@
 	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 
 	<div class="site-navigation-list flex-center-end" id="site-navs">
+	<script>console.log({@|json-pretty})</script>
 		{.repeated section items}
 			{.section collection}
-			<div class="flex-center-center flex-column site-navigation-item hover "><a onclick="toggle('{navigationTitle}')">{title}</a><p id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
+			<a class=" flex-center-center flex-column site-navigation-item hover" id="{navigationTitle|slugify}" onclick="toggle('{navigationTitle}')">{title}<span id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</span></a>
 			{.end}
 			{.section externalLink}
-			<div class="flex-center-center flex-column site-navigation-item hover "><a href="{fullUrl}">Contact</a></div>
+			<a class="site-navigation-item" href="{url}" id={title|slugify}>{title}</a>
 			{.end}
 		{.end}
 	</div>
@@ -23,7 +24,7 @@
 		<div class="drop-down-wrapper flex-center-center">
 		{#  left side  }
 			{.section collection}
-			<div class="nav-drop-down-title" id="{fullUrl}" class="{.section active} active-link{.end}">
+			<div class="nav-drop-down-title" id="{fullUrl}" >
 				<h3>{title}</h3>
 				<span class="nav-drop-down-description">{description}</span>
 			</div>
@@ -85,7 +86,7 @@ function toggle(targetWindow){
 		target.classList.remove('open')
 		$('.section-nav').css('display', 'none')
 		target.style.display = "none"
-		$('#hero-video').css("top", heroTop)
+		$('#homeHero').css("top", heroTop)
 		$('.nav-arrow').css('opacity', '0')
 		targetArrow.style.opacity = "0"
 	} else {
@@ -94,7 +95,7 @@ function toggle(targetWindow){
 		target.style.display = "block"
 		target.classList.add('open')
 		
-		$('#hero-video').css("top", heroHeight + heroTop)
+		$('#homeHero').css("top", heroHeight + heroTop)
 		$('.nav-arrow').css('opacity', '0')
 		targetArrow.style.opacity = "1"
 	}
@@ -102,6 +103,11 @@ function toggle(targetWindow){
 	
 
 }
+
+  const currentURLPath = window.location.pathname;
+  const trimmedString = currentURLPath.replace(/^\/|\/$/g, '');
+  console.log(trimmedString)
+  $('#' + trimmedString).css({'color': 'var(--orange)', 'font-style': 'normal'})
 
 window.addEventListener('resize', function(){
 	heroHeight = $('#drop-down div').height()

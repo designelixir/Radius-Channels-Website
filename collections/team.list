@@ -45,4 +45,7 @@
 $('.family-bio div').hover(
     function(){$('.family-bio-title', this).css({"display":"inline-flex"})}, 
     function(){$('.family-bio-title', this).css({"display":"none"})})
+    $('.family-bio div').click(
+    function(){$('.family-bio-title', this).css({"display":"inline-flex"})}, 
+    function(){$('.family-bio-title', this).css({"display":"none"})})
 </script>

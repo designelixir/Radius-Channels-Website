@@ -9,13 +9,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	</head>
-	{@|apply hero.block}
+	
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+	   <squarespace:block-field id="homeHero" columns="12"/>
+   			
       <section id="hero">
         {@|apply textRotation.block}
         {@|apply downArrow.block}
       </section>
+	  
 		<section id="home-sections-wrapper">	
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection1-Title" columns="12"/></div>

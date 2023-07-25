@@ -20,7 +20,7 @@
                 {.if item.title}<span id="subcollectionTitle" style="color: var(--orange)"> | {item.title}</span>{.end}
               </h1>
               {.if item.title}
-              <a href="{collection.fullUrl}" style="color: white;">&larr; Back to {collection.title}</a>
+              <a href="{collection.fullUrl}"  style="color: white;">&larr; Back to {collection.title}</a>
               {.end}
               <br>
               <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
@@ -30,9 +30,9 @@
         {.end}
       <!-- cms content injection point -->
       <main role="main" data-content-field="main-content" >
-       <div class="flex-center-spacebetween">
+       <div class="flex-center-spacebetween" id="contactBlock">
             <squarespace:block-field id="contactMap" columns="12"/>
-            <div class="basic-padding" style="width: 100%;">
+            <div class="basic-padding" style="width: 100%;" id="contactInfo">
             {.if website.location}
              
              <h4><span style="font-size: 24px">{website.location.addressTitle}</span><br>

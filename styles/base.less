@@ -124,7 +124,7 @@ button:hover {transform: scale(1.1)}
 .home-section h1 {margin: 0px 0px 25px 0px; min-width: 300px; color: var(--darkblue) }
 .home-section-title {padding: 20px;}
 .home-section-content { padding: 20px;}
-#hero { height: 85vh; width: 100%; min-height: 650px; }
+#hero { height: 85vh; width: 100%; min-height: 650px; background: rgba(255,255,255,0.35); }
 #home-sections-wrapper {margin-top: 100px;}
 .methodology img {min-width: 140px;}
 
@@ -139,8 +139,9 @@ button:hover {transform: scale(1.1)}
 @media screen and (max-width: 1025px) {
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
-  .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; width: 100%!important; overflow-x: scroll;  }
-  .events-summary-container { border: 1px solid red!important; max-width: 60vw; max-height: unset!important;}
+  .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
+  .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 350px; max-height: unset!important; height: 100%;}
+  
   .events-summary {height: 100%;}
   .event-summary-info {height: 100%;}
   .events-full-size {width: 100%!important;}
@@ -151,6 +152,7 @@ button:hover {transform: scale(1.1)}
   .home-section:nth-child(even) .home-section-content {
     order: 2;
   }
+  .excerpt {display: none;}
   .icon-container {width: 100%;}
   
   .dashed-line {display: none;}
@@ -173,12 +175,12 @@ button:hover {transform: scale(1.1)}
 
 
 // Site.region
-#homeHero { min-height: 600px; width: 100vw; height: 80vh;}
+#homeHero { min-height: 600px; width: 100vw; height: 80vh; z-index: -1; position: absolute; top: 105px;}
 #homeHero .video-player .plyr video {object-fit: cover;}
 .sqs-native-video .native-video-player {height: 80vh; max-height: 900px;}
 .page-header { z-index: 1;  background-size: cover; background-position: center bottom; }
 .page-header-content { padding: 25px; }
-	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 0 12px; line-height: 30px; white-space: nowrap; font-style: italic;}
+	.site-navigation-item {color: black; text-decoration: none; font-size: 18px; padding: 0 12px; line-height: 30px; white-space: nowrap; font-style: italic;}
 .site-navigation { padding: 15px 20px; background-color: white; }
 	.site-navigation-list {list-style-type: none; margin-top: 25px; }
   .nav-arrow {padding: 0px; margin: 0px; position: absolute; top: 91px; opacity: 0; color: var(--darkblue);}
@@ -209,6 +211,11 @@ button:hover {transform: scale(1.1)}
 
 
 @media screen and (max-width: 825px) {
+  #contactBlock {flex-direction: column;}
+  #contactMap {width: 100%;}
+  #contactDetails {display: flex; align-items: center; justify-content: center; width: 100%;}
+  #contactDetails .social-icon-alignment-left .sqs-svg-icon--list {text-align: center!important}
+  #contactInfo {width: 100%; padding: 0px 25px; text-align: center;}
   .site-navigation {flex-wrap: wrap; align-items: center!important; justify-content: center!important;}
   .site-navigation-list {flex-wrap: wrap; justify-content: center!important;}
   .nav-drop-down-title {width: 100%; padding: 0px 15px 15px;}
@@ -335,7 +342,7 @@ footer {text-align: center; margin-top: 100px;}
 .events-summary-wrapper { cursor: pointer}
 
 .event-summary-info {padding: 25px; }
-.events-summary-container {opacity: 0.2; background-color: var(--lightgray); display: none;}
+.events-summary-container {opacity: 0.2; background-color: var(--lightgray); display: none; border: 0.25px solid black;}
 
 .future-event {border: 2px solid red;}
 
@@ -395,9 +402,9 @@ footer {text-align: center; margin-top: 100px;}
 
 .calendar-event {cursor: pointer; margin: 25px; max-width: 300px; border: 1px solid black;}
 .calendar-event-date {height: 200px; width: 200px; padding: 10px;  background-size: 100% 100%;}
-
+.calendar-summary {background-color: gray;}
 @media screen and (max-width: 825px) {
   .supplier-card {flex-wrap: wrap;}
  .supplier-title {margin: 0px 0px 25px 0px}
- .excerpt {display: none;}
+ 
 }
