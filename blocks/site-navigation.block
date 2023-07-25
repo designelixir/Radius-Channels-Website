@@ -108,14 +108,5 @@ function toggle(targetWindow){
   const trimmedString = currentURLPath.replace(/^\/|\/$/g, '');
   $('#' + trimmedString).css({'color': 'var(--orange)', 'font-style': 'normal'})
 
-window.addEventListener('resize', function(){
-	heroHeight = $('#drop-down div').height()
-	heroTop = $('#drop-down').offset().top
-	$('#hero-video').css("top", heroTop)
-	if(document.getElementsByClassName('open').length > 0){
-		var openTarget = document.querySelector('.open').id
-		toggle(openTarget)
-	}	
-})
 
 </script>
