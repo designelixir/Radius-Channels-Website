@@ -16,9 +16,9 @@
    			
       <section id="hero">
         {@|apply textRotation.block}
-        {@|apply downArrow.block}
+        
       </section>
-	  
+{@|apply downArrow.block}
 		<section id="home-sections-wrapper">	
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection1-Title" columns="12"/></div>
