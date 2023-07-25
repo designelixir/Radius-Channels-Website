@@ -12,9 +12,6 @@
 	{@|apply hero.block}
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-		
-    
-	<squarespace:block-field id="vendors-description" columns="12"/>
       <section id="hero" >
         {@|apply textRotation.block}
         {@|apply downArrow.block}
