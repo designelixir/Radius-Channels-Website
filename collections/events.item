@@ -8,7 +8,7 @@
 
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
-			<h3 class="hover" onclick="window.open('/events', '_self')"><span style="color: gray">&larr; Back to {collection.title}</span></h3>
+			<h3 class="hover" onclick="window.open('events2', '_self')"><span style="color: gray">&larr; Back to {collection.title}</span></h3>
             {.repeated section categories}
               <span class="tag">{@}</span>{.alternates with}&nbsp;
             {.end}

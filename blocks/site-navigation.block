@@ -106,7 +106,6 @@ function toggle(targetWindow){
 
   const currentURLPath = window.location.pathname;
   const trimmedString = currentURLPath.replace(/^\/|\/$/g, '');
-  console.log(trimmedString)
   $('#' + trimmedString).css({'color': 'var(--orange)', 'font-style': 'normal'})
 
 window.addEventListener('resize', function(){
