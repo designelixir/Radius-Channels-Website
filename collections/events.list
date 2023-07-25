@@ -71,7 +71,23 @@
 	      
 		}
 </script>
-
+<header class="site-header">
+	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
+</header>
+<div id='site-wrapper'>
+	{.section website}
+	<div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
+	<div class="page-header-content">
+		<div>
+			<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
+			{collection.title}
+			</h1>
+			<br>
+			<squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
+		</div>
+	</div>
+</div>
+{.end}
 <div class="content-container">
 	<div class="flex-start-start event-type-toggles">
 		<h2 id="upcoming-toggle" class="active-type-toggle type-toggle" onclick="toggleTypes('upcoming-toggle')">Upcoming Events </h2>
