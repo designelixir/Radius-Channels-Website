@@ -1,6 +1,7 @@
 <script>
 
 function isDateInFutureOrPast(start, end, id) {
+  console.log(start)
   const today = new Date();
   
   const startDate = new Date(start)
@@ -74,7 +75,8 @@ var eventTypeDiv = document.getElementById("eventType-" + id)
 
 } else {
     document.getElementById('noUpcomingEvents').innerHTML = ''
-}</script>   
+}
+</script>   
     
     
     
@@ -82,23 +84,31 @@ var eventTypeDiv = document.getElementById("eventType-" + id)
 </div>
 {.if items}
 <h3>Past Events by {title}</h3>
-    <squarespace:query collection="events" limit="3" tag="{title}">
+    <squarespace:query collection="events" limit="5" tag="{title}">
+        <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, `{id}`)</script>
 
-        <div class="calendar-collection-upcoming flex-start-start">
-            {.repeated section items}
-            <div class="calendar-event hover" onclick="window.open('{fullUrl}')">
+            <div class="calendar-collection-upcoming flex-start-start" id="{id}">
+                {.repeated section items}
+                <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')">
 
-                <div class="calendar-event-date">
-                    <h3>{structuredContent.startDate|date %B %d, %Y %I:%M %p}</h3>
-                </div>
-                <h5>{title}</h5>
-                <h3>{startDate|date %B %d, %Y %I:%M %p}</h3>
+                    <div>
+                    <div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column">
+                       <h3 style="text-align: center; font-size: 28px; line-height: 28px; margin: 0; padding: 10px 0px; color: white;">{structuredContent.startDate|date %B %d, %Y}</h3>
+                       <h4 style="padding: 0; margin: 0; line-height: 12px;color: white;">{structuredContent.startDate|date %I:%M %p}</h4>
+                       </div>
+                    </div>
+                    <div style="padding: 0px 15px; margin-bottom: 15px; text-align: center;" class="flex-center-center flex-column">
+                    <h3 class="text-align: center!important; line-height: 18px;">{title}</h3>
+                    
+                    <button class="outline-button">Click for details</button>
+            
             </div>
-            {.end}
+            
+                </div>
 
-
-
-    </squarespace:query>
+                
+                {.end}
+        </squarespace:query>
 
     {.end}
 {.end}

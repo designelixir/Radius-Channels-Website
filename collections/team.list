@@ -1,10 +1,4 @@
-<div class="leadership-team flex-center-center content-container" id="bio-container">
-    {.repeated section items}
-        
-        
-        
-    {.end}
-</div>   
+
 
 <div class="additional-leadership-team flex-center-center">
 <h1 style=" z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>

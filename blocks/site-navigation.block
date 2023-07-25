@@ -5,10 +5,10 @@
 	<div class="site-navigation-list flex-center-end" id="site-navs">
 		{.repeated section items}
 			{.section collection}
-			<div class="flex-center-center flex-column site-navigation-item hover"><a onclick="toggle('{navigationTitle}')">{title}</a><p id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
+			<div class="flex-center-center flex-column site-navigation-item hover "><a onclick="toggle('{navigationTitle}')">{title}</a><p id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</p></div>
 			{.end}
 			{.section externalLink}
-			<div class="flex-center-center flex-column site-navigation-item hover"><a href="/contact">Contact</a></div>
+			<div class="flex-center-center flex-column site-navigation-item hover "><a href="{fullUrl}">Contact</a></div>
 			{.end}
 		{.end}
 	</div>
@@ -23,7 +23,7 @@
 		<div class="drop-down-wrapper flex-center-center">
 		{#  left side  }
 			{.section collection}
-			<div class="nav-drop-down-title">
+			<div class="nav-drop-down-title" id="{fullUrl}" class="{.section active} active-link{.end}">
 				<h3>{title}</h3>
 				<span class="nav-drop-down-description">{description}</span>
 			</div>
@@ -34,7 +34,7 @@
 				<div class="flex-start-start flex-wrap">
 					{.repeated section items}
 						{.section collection}
-						<div class="nav-drop-down-section" {.if passwordProtected} style="pointer-events: none" {.or} onclick="window.open('{fullUrl}', '_self')"{.end}  >
+						<div class="nav-drop-down-section" id="{url}" {.if passwordProtected} style="pointer-events: none" {.or} onclick="window.open('{fullUrl}', '_self')"{.end}  >
 							<div style="margin: 10px 20px">
 							<p><strong>{navigationTitle}{.if passwordProtected}{.or} <span style="color: var(--orange)"> &rarr;</span>{.end}</strong><br>
 							<i>{description}</i></p>
@@ -76,22 +76,24 @@
 var heroTop = $('#drop-down').offset().top
 $('#hero-video').css("top", heroTop)
 function toggle(targetWindow){
-	console.log(targetWindow)
+	
 	target = document.getElementById(targetWindow)
 	targetArrow = document.getElementById(targetWindow + "-arrow")
 	heroHeight = $('#drop-down div').height()
 	heroTop = $('#drop-down').offset().top
-	console.log(heroHeight, " ", heroTop)
 	if (target.style.display === "block"){
-		console.log("showing")	
+		target.classList.remove('open')
 		$('.section-nav').css('display', 'none')
 		target.style.display = "none"
 		$('#hero-video').css("top", heroTop)
 		$('.nav-arrow').css('opacity', '0')
 		targetArrow.style.opacity = "0"
 	} else {
+		
 		$('.section-nav').css('display', 'none')
 		target.style.display = "block"
+		target.classList.add('open')
+		
 		$('#hero-video').css("top", heroHeight + heroTop)
 		$('.nav-arrow').css('opacity', '0')
 		targetArrow.style.opacity = "1"
@@ -100,4 +102,15 @@ function toggle(targetWindow){
 	
 
 }
+
+window.addEventListener('resize', function(){
+	heroHeight = $('#drop-down div').height()
+	heroTop = $('#drop-down').offset().top
+	$('#hero-video').css("top", heroTop)
+	if(document.getElementsByClassName('open').length > 0){
+		var openTarget = document.querySelector('.open').id
+		toggle(openTarget)
+	}	
+})
+
 </script>

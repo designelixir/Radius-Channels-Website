@@ -1,0 +1,93 @@
+<style>
+.icon-wrapper {min-width: 60vw;}
+.icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
+.icon-container:nth-child(odd) h4 {color: var(--darkblue)}
+.circle-border { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 500px; z-index: 4;}
+.circle {height: 100px; width: 100px; margin: 10px; border-radius: 400px; background-color: white; z-index: 3;}
+
+.blue-border {border: 10px solid var(--lightblue); }
+.light-blue-border {border: 10px solid var(--darkblue)}
+.dashed-line {position: absolute; float: left; width: 150px; background: orange; height: 2px; z-index: 2; animation:slide-in-left 4s cubic-bezier(.25,.46,.45,.94) both}
+.icon-container {padding: 15px; opacity: 0;}
+.cutout {height: 50px; width: 25px; position: absolute; margin-left: 125px; z-index: 2; background-color: var(--fadedblue);}
+.scale-up-center{-webkit-animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
+
+@-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}
+
+</style>
+
+
+<div class="flex-end-center flex-wrap icon-wrapper">
+
+<div class="flex-center-center flex-column icon-container">
+<h4>Vendor Specialized Staff </h4>
+    <div class="circle-border blue-border">
+    
+    <div class="cutout"></div>
+    <div class="dashed-line"></div>
+    <div class="circle flex-center-center">
+        <img src="../assets/icons/people.svg" style="height:40px;"/>
+    </div>
+    </div>
+</div>
+
+<div class="flex-center-center flex-column icon-container">
+<h4>Operational Excellence </h4>
+    <div class="circle-border light-blue-border">
+    
+    <div class="cutout"></div>
+    <div class="dashed-line"></div>
+    <div class="circle flex-center-center">
+        <img src="../assets/icons/gears.svg" style="height:60px;"/>
+    </div>
+    </div>
+</div>
+
+
+
+<div class="flex-center-center flex-column icon-container">
+<h4>Marketing &amp; Demand </h4>
+    <div class="circle-border blue-border">
+    
+    <div class="cutout"></div>
+    <div class="dashed-line"></div>
+    <div class="circle flex-center-center">
+        <img src="../assets/icons/marketing.svg" style="height:50px;"/>
+    </div>
+    </div>
+</div>
+
+<div class="flex-center-center flex-column icon-container">
+<h4>Sales Engineering </h4>
+    <div class="circle-border light-blue-border">
+    <div class="cutout"></div>
+    <div class="dashed-line"></div>
+    <div class="circle flex-center-center">
+        <img src="../assets/icons/sales-engineering.svg" style="height:70px;"/>
+    </div>
+    </div>
+</div>
+
+<div class="flex-center-center flex-column icon-container">
+<h4>Customer Success </h4>
+    <div class="circle-border blue-border">
+    <div class="cutout"></div>
+    <div class="dashed-line"></div>
+    <div class="circle flex-center-center">
+        <img src="../assets/icons/feedback.svg" style="height:50px;"/>
+    </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+
+var icons = document.getElementsByClassName('icon-container');
+console.log(icons.length)
+for (var i=0; i<icons.length; i++){
+    icons[i].style.animation = 'fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both'
+    icons[i].style.animationDelay = (i / 2) + 's'
+}
+
+</script>

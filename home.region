@@ -30,7 +30,7 @@
 			</div>
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection3-Title" columns="12"/></div>
-				<div class="home-section-content"><squarespace:block-field id="homeSection3-Content" columns="12"/></div>
+				<div class="home-section-content">{@|apply icons.block}</div>
 			</div>
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection4-Title" columns="12"/></div>

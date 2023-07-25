@@ -12,18 +12,18 @@
 	
 	
 	  if (startDate > today) {
-	    console.log("upcoming")
+	    
       targetId.innerHTML = "Upcoming"
       targetParentId.classList.add('future-event')
 	  } else if (startDate < today && endDate > today){
       targetId.innerHTML = "Upcoming"
       targetParentId.classList.add('future-event')
-	    console.log("current")
+	    
 	  } else if (startDate < today) {
       targetParentId.classList.add('past-event')
 	    targetId.innerHTML = "Archived Event"
       targetParentId.classList.add('archived-event')
-	    console.log("past")
+	    
 	  }  else {
 	    console.log("no event defined")
 	  }

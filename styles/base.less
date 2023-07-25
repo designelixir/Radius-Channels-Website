@@ -47,14 +47,14 @@ strong {font-weight: 600;}
 #additionalTeamTitle h1 {text-shadow: 0px 0px 5px black;}
 .family-bio-description {height: 100%;  width: 100%; }
 
-.bio-icons-container {display: inline-flex; width: 100%; align-items: center; justify-content: center; padding-top: 15px;}
+.bio-icons-container {display: inline-flex; width: 100%; align-items: center; justify-content: center;}
 
 .family-bio-title { width: 100%; height: 50%;  display: none; align-items: flex-end; justify-content: center; background: linear-gradient(0deg, rgba(0,0,0,0.25730042016806722) 0%, rgba(0,0,0,0.050653361344537785) 100%);}
 .family-bio-title-wrapper {margin-bottom: 15px; text-align: center; width: 100%; color: white;}
 .family-bio-title-wrapper h6 {margin: 15px 25px;}
 .family-bio-title-wrapper h2 {padding: 0px 25px 25px 25px}
 
-.additional-leadership-team {display: inline-flex; flex-wrap: wrap; margin-top: 50px; }
+.additional-leadership-team {display: inline-flex; flex-wrap: wrap;}
 
 .color-filter {filter: grayscale(100%);}
 .color-filter:hover {filter: none;}
@@ -68,7 +68,7 @@ strong {font-weight: 600;}
 @media screen and (max-width: 800px) {
   #bio-container {display: inline-flexbox; flex-wrap: wrap;}
   .bio-wrapper {width: 50%; height: 50vw;}
-  #additionalTeamTitle h1 {font-size: 28px;}
+  #additionalTeamTitle h1 {font-size: 28px; padding-top: 25vh;}
 }
 
 
@@ -119,16 +119,16 @@ button:hover {transform: scale(1.1)}
 .content-container {padding: 25px;}
 
 // Homepage
-.home-section { padding: 25px 25px;}
+.home-section { padding: 50px 25px; min-height: 25vh;}
 .home-section h3 {color: black;}
 .home-section h1 {margin: 0px 0px 25px 0px; min-width: 300px; color: var(--darkblue) }
 .home-section-title {padding: 20px;}
 .home-section-content { padding: 20px;}
-#hero { height: 95vh; width: 100%; min-height: 650px; }
+#hero { height: 85vh; width: 100%; min-height: 650px; }
 #home-sections-wrapper {margin-top: 100px;}
 .methodology img {min-width: 140px;}
 
-.home-section:nth-child(even) {
+.home-section:nth-child(odd) {
   background-color: var(--fadedblue);
 
 }
@@ -136,15 +136,19 @@ button:hover {transform: scale(1.1)}
   order: 2;
 }
 
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 1025px) {
 .home-section {flex-direction: column;}
   .home-section-title {width: 100%; }
   .home-section-content {margin: 0;}
   .home-section:nth-child(even) .home-section-content {
     order: 2;
   }
+  .icon-container {width: 100%;}
+  
+  .dashed-line {display: none;}
   .home-section h1 {font-size: 36px;}
   .home-section h3 {font-size: 18px; line-height: 24px;}
+  .home-section h3 a {font-size: 18px; color: inherit; font-weight: 200; line-height: 24px;}
 }
 
 
@@ -153,19 +157,15 @@ button:hover {transform: scale(1.1)}
 @media screen and (max-width: 825px) {
   #ourFormula {flex-wrap: wrap;}
   #ourFormula svg {order: 2;}
-  #hero {height:95vh;}
+  #hero {height:75vh;}
   .icon-wrapper {flex-wrap: wrap!important;}
 }
 
 // icon-container block
-.icon-container {border-radius: 20px; background: var(--darkblue); width: 100%; min-width: 170px; max-width: 220px;  margin: 5vh 15px; padding: 25px; height: 325px; text-align: center; color: white; }
-.icon-container:hover {transform: scale(1.1); box-shadow: 0px 0px 10px var(--darkblue); cursor: pointer;}
-.icon-container h3 {font-weight: 300;}
-.icon-container-item { color: white; width: 100%; margin: 15px; text-align: center;}
-.icon-image {height: 75px; background-size: 75px; background-position: center center; background-repeat: no-repeat;}
+
 
 // Site.region
-.page-header { z-index: 1;  min-height: 30vh; background-size: cover; background-position: center bottom; padding-top: 135px;}
+.page-header { z-index: 1;  background-size: cover; background-position: center bottom; }
 .page-header-content { padding: 25px; }
 	.site-navigation-item a {color: black; text-decoration: none; font-size: 18px; padding: 0 12px; line-height: 30px; white-space: nowrap; font-style: italic;}
 .site-navigation { padding: 15px 20px; background-color: white; }
@@ -194,13 +194,20 @@ button:hover {transform: scale(1.1)}
 .drop-down-description p a{ text-decoration: none; padding: 10px 25px; font-size: 18px; color: white;  border: 2px solid white; cursor: pointer; }
 .drop-down-description br {margin-bottom: 15px;}
 
+.active-link {font-weight: 900; color: red;}
+
+
 @media screen and (max-width: 825px) {
   .site-navigation {flex-wrap: wrap; align-items: center!important; justify-content: center!important;}
   .site-navigation-list {flex-wrap: wrap; justify-content: center!important;}
   .nav-drop-down-title {width: 100%; padding: 0px 15px 15px;}
   .drop-down-wrapper {display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column;}
-  .nav-drop-down-section, .nav-drop-down-sections-wrapper {width: 100%; padding: 10px}
-  .nav-drop-down-sections-wrapper {border-left: 0px solid black; border-top: 2px solid black;}
+  .nav-drop-down-section, .nav-drop-down-sections-wrapper {width: 100%;}
+  .nav-drop-down-title {border-right: 0px solid black; border-bottom: 2px solid black;}
+  .nav-arrow {position: relative; top: 0; order: -1; transform: rotate(90deg)}
+  .nav-drop-down-section:nth-child(odd) {background: rgba(0,0,0,0.15)}
+  .site-navigation-item {flex-direction: row;}
+  .site-navigation-item a:active {font-weight: 800;}
 }
 
 /* ----------------------------------------------
@@ -230,8 +237,21 @@ footer {text-align: center; margin-top: 100px;}
 
  @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
- 
+ .slide-in-left{-webkit-animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+/* ----------------------------------------------
+ * Generated by Animista on 2023-7-24 17:27:34
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
 
+ @-webkit-keyframes slide-in-left{
+  0%{-webkit-transform:translateX(-1000px);transform:translateX(0px);width: 0px;}
+  100%{-webkit-transform:translateX(0);transform:translateX(0);width: 250px;}}
+
+  @keyframes slide-in-left{
+    0%{-webkit-transform:translateX(-1000px);transform:translateX(0px);width: 0}
+    100%{-webkit-transform:translateX(0);transform:translateX(0); width: 250px;}}
 
 .scroll-down {
 	
