@@ -1,4 +1,4 @@
-<div class="additional-leadership-team flex-center-center">
+<div class="additional-leadership-team flex-center-center" style="margin-top: 1vw;">
 <h1 style="z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
 {.repeated section items}
     
@@ -10,7 +10,6 @@
                       <div style="padding: 15px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
                           <div style="text-align: center;">
                             {body}
-                            
                           </div>
                         </div>
                     </div>
