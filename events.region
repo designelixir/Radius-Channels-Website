@@ -97,7 +97,7 @@
         </div>
         {.end}
       <div id='site-wrapper'>
-      <squarespace:query collection="test-events" limit="10"><div class="content-container">
+      <squarespace:query collection="events2" limit="10"><div class="content-container">
 	<div class="flex-start-start event-type-toggles">
 		<h2 id="upcoming-toggle" class="active-type-toggle type-toggle" onclick="toggleTypes('upcoming-toggle')">Upcoming Events </h2>
 		<h2>&nbsp;/&nbsp; </h2>
