@@ -76,7 +76,11 @@
 				{.or}
 				
 				
-				{@|apply textRotation.block}
+				<squarespace:query collection="vendors" limit="10" >
+					{.repeated section items}
+					<p>{title}</p>
+					{.end}
+				</squarespace:query>
 				{.end}
 				
 			</div>

@@ -45,6 +45,9 @@
 
        {squarespace.main-content}
       </main>
+      <div style="border: 2px solid teal">
+      {@|apply supplierLogos.block}
+      </div>
       {@|apply footer.block}
       </div>
     
