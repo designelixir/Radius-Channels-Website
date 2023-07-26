@@ -52,6 +52,8 @@ function toggleTypes(toggleType){
 		else {
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
+			var targetIframe = document.getElementById('target-iframe');
+			targetIframe.style.display = "block";
 			for (var i = 0; i < archivedEvents.length; i++){
 				archivedEvents[i].classList.add('visible-event')
 			}
