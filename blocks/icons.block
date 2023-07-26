@@ -15,7 +15,7 @@
 @-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}
 @media screen and (max-width: 1000px) {
 
-#iconWrapper {flex-wrap: wrap; align-items: center!important; min-width: 400px;}
+#iconWrapper {flex-wrap: wrap; min-width: 400px;}
 }
 </style>
 
