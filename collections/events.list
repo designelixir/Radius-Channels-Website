@@ -40,17 +40,15 @@ function toggleTypes(toggleType){
 	}
 
 		if (toggleType === 'upcoming-toggle' && futureEvents.length > 0){
-			document.getElementsByClassName('events-summary-list').style.border = "2px inset gray";
+			document.getElementById('noEvents').style.display = "none"
 			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
 			} 
 		} else if (toggleType === 'upcoming-toggle' && futureEvents.length === 0) {
-			document.getElementsByClassName('events-summary-list').style.border = "none";
 			document.getElementById('noEvents').style.display = "block"
 		}
 		else {
-			document.getElementsByClassName('events-summary-list').style.border = "2px inset gray";
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			for (var i = 0; i < archivedEvents.length; i++){
