@@ -9,14 +9,19 @@
 		<header class="site-header">
 			<squarespace:navigation navigationId="siteNav" template="site-navigation" />
 		</header>
-		<div id='site-wrapper'> {.section website} <div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header" {.or} class="page-header" {.end}>
+		<div id='site-wrapper'> 
+    {.section website} 
+      <div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header" {.or} class="page-header" {.end}>
 				<div class="page-header-content">
 					<div>
-						<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}> {collection.title} {.if item.title}<span id="subcollectionTitle" style="color: var(--orange)"> | {item.title}</span>{.end} </h1> {.if item.title} <a href="{collection.fullUrl}" style="color: white;">&larr; Back to {collection.title}</a> {.end} <br>
-						<squarespace:block-field id="{squarespace.page-id}-text" columns="12" />
+						<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}> {collection.title} {.if item.title}<span id="subcollectionTitle" style="color: var(--orange)"> | {item.title}</span>{.end} </h1> {.if item.title} <a href="{collection.fullUrl}" style="color: white;">&larr; Back to {collection.title}</a> {.end} 
 					</div>
 				</div>
-			</div> {.end} <main role="main" data-content-field="main-content"> {squarespace.main-content} </main> {@|apply footer.block} </div>
+			</div> 
+      {.end} 
+      <main role="main" data-content-field="main-content"> {squarespace.main-content} </main> 
+      {@|apply footer.block} 
+    </div>
 		<squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" /> {squarespace-footers}
 	</body>
 </html>

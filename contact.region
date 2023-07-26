@@ -21,9 +21,7 @@
               </h1>
               {.if item.title}
               <a href="{collection.fullUrl}"  style="color: white;">&larr; Back to {collection.title}</a>
-              {.end}
-              <br>
-              <squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
+              {.end}              
             </div>
           </div>
         </div>

@@ -74,17 +74,9 @@
 					{.end}
 				</div>
 				{.or}
-				<div class="flex-center-center">
-				<div class="flex-center-center flex-wrap">
-					<a href="/vendors/apptega" class="hover"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596458488-1SXF1DO8LFWGGD97QRLA/apptega.png" alt="apptega" style="width: 150px; "/></a>
-					<a href="/vendors/deep-instinct" class="hover"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688755771648-MGALZPM8C6MHUJPIC3NP/3CD002EC-02D0-41E7-8E62-2EA0FF462D3F.png" alt="apptega" style="width: 150px; margin: 15px;"/></a>
-					<a href="/vendors/druva" class="hover"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688937315228-M7BQVEU3SK362C096MKQ/druva-logo.png" alt="apptega" style="width: 120px; margin: 15px;"/></a>
-					
-					<a href="/vendors/lenovo" class="hover"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1689596510960-X96G2C5I78UOSP1PB6VK/Lenovo_logo_2015.svg.png" alt="apptega" style="width: 120px; margin: 15px;"/></a>
-					<a href="/vendors/tanium" class="hover"><img src="https://images.squarespace-cdn.com/content/v1/6441fe1b577d9b56e55ec1e8/1688756021135-QC7IYOQ3HIY4WPCVIB2X/15BAF226-F95A-4C2C-9CB1-512BEA9C962C.png" alt="apptega" style="width: 120px; margin: 15px;"/></a>
-					
-				</div>
-				</div>
+				
+				
+				{@|apply textRotation.block}
 				{.end}
 				
 			</div>
