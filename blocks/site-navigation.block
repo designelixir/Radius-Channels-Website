@@ -16,7 +16,7 @@
 .nav-drop-down-section:hover {background: rgba(0,0,0,0.1);}
 .nav-drop-down-section:hover strong {color: var(--orange)}
 .nav-arrow {padding: 0px; margin: 0px; position: absolute; top: 91px; opacity: 0; color: var(--darkblue);}
-
+.nav-vendor {max-height: 50px;}
 @media screen and (max-width: 825px) {
 	.site-navigation {flex-wrap: wrap; align-items: center!important; justify-content: center!important;}
   .site-navigation-list {flex-wrap: wrap; justify-content: center!important;}
@@ -76,10 +76,12 @@
 				{.or}
 				
 				
-				<squarespace:query collection="vendors" limit="10" >
-					{.repeated section items}
-					<p>{title}</p>
-					{.end}
+				<squarespace:query collection="{urlId}" limit="10" >
+					<div class="flex-center-center flex-wrap">
+						{.repeated section items}
+							<a href="{fullUrl}"><img class="nav-vendor" src="{assetUrl}" alt="{title} logo"/></a>
+						{.end}
+					</div>
 				</squarespace:query>
 				{.end}
 				
