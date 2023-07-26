@@ -1,5 +1,5 @@
 <style>
-.icon-wrapper {min-width: 500px; overflow-x: scroll!important;}
+.icon-wrapper {min-width: 500px; }
 .icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
 .icon-container:nth-child(odd) h4 {color: var(--darkblue)}
 .circle-border { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 500px; z-index: 4;}
@@ -13,7 +13,7 @@
 .scale-up-center{-webkit-animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
 
 @-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 .icon-wrapper {flex-wrap: wrap;}
 }
 </style>
