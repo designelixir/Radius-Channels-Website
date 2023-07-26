@@ -39,9 +39,9 @@
 			</div>
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection5-Title" columns="12"/></div>
-				<div class="home-section-content">
+				<div class="home-section-content" >
 					<squarespace:query collection="vendors" limit="10" featured="true">
-						<div class="flex-center-center flex-wrap">
+						<div class="flex-center-end flex-wrap" id="homeSection5-vendors">
 							{.repeated section items}
 								<a href="{fullUrl}"><img class="nav-vendor hover" src="{assetUrl}" alt="{title} logo"/></a>
 							{.end}
