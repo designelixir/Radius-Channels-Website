@@ -89,9 +89,9 @@ function toggleEvent(target, fullUrl){
 {.end}
 <div class="content-container">
 	<div class="flex-start-start event-type-toggles">
-		<h2 id="upcoming-toggle" class="active-type-toggle type-toggle" onclick="toggleTypes('upcoming-toggle')">Upcoming Events </h2>
+		<h2 id="upcoming-toggle" class="active-type-toggle type-toggle hover" onclick="toggleTypes('upcoming-toggle')">Upcoming Events </h2>
 		<h2>&nbsp;/&nbsp; </h2>
-		<h2 id="archive-toggle" class="type-toggle" onclick="toggleTypes('archive-toggle')">Archived Events</h2>
+		<h2 id="archive-toggle" class="type-toggle hover" onclick="toggleTypes('archive-toggle')">Archived Events</h2>
 	</div>
 	<p id="noEvents" style="display: none">No upcoming events to show. <span onclick="toggleTypes('archive-toggle')" class="hover">View our Archived Events!</span></p>
 	<div class="events flex-start-start">
