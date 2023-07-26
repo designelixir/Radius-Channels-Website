@@ -1,13 +1,13 @@
 <style>
 .icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
 .icon-container:nth-child(odd) h4 {color: var(--darkblue)}
-.circle-border { width: 125px; height: 125px; display: flex; align-items: center; justify-content: center; border-radius: 250px; z-index: 4;}
+.circle-border { width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 250px; z-index: 4;}
 .circle {height: 75px; width: 75px; border-radius: 150px; background-color: white; z-index: 3;}
 
 .blue-border {border: 5px solid var(--lightblue); }
-.light-blue-border {border: 10px solid var(--darkblue)}
+.light-blue-border {border: 5px solid var(--darkblue)}
 .dashed-line {position: absolute; float: left; max-width: 125px; background: orange; height: 2px; z-index: 2; animation:slide-in-left 4s cubic-bezier(.25,.46,.45,.94) both}
-.icon-container {padding: 15px; opacity: 0;}
+.icon-container {padding: 15px; opacity: 0; max-width: 125px;}
 .cutout {height: 50px; width: 15px; position: absolute; margin-left: 90px; z-index: 2; background-color: var(--fadedblue);}
 .scale-up-center{-webkit-animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
 
@@ -27,7 +27,7 @@
     <div class="cutout"></div>
     <div class="dashed-line"></div>
     <div class="circle flex-center-center">
-        <img src="../assets/icons/people.svg" style="height:40px;"/>
+        <img src="../assets/icons/people.svg" style="height:30px;"/>
     </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
     <div class="cutout"></div>
     <div class="dashed-line"></div>
     <div class="circle flex-center-center">
-        <img src="../assets/icons/gears.svg" style="height:60px;"/>
+        <img src="../assets/icons/gears.svg" style="height:40px;"/>
     </div>
     </div>
 </div>
@@ -53,7 +53,7 @@
     <div class="cutout"></div>
     <div class="dashed-line"></div>
     <div class="circle flex-center-center">
-        <img src="../assets/icons/marketing.svg" style="height:50px;"/>
+        <img src="../assets/icons/marketing.svg" style="height:40px;"/>
     </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
     <div class="cutout"></div>
     <div class="dashed-line"></div>
     <div class="circle flex-center-center">
-        <img src="../assets/icons/sales-engineering.svg" style="height:70px;"/>
+        <img src="../assets/icons/sales-engineering.svg" style="height:50px;"/>
     </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
     <div class="cutout"></div>
     <div class="dashed-line"></div>
     <div class="circle flex-center-center">
-        <img src="../assets/icons/feedback.svg" style="height:50px;"/>
+        <img src="../assets/icons/feedback.svg" style="height:30px;"/>
     </div>
     </div>
 </div>
