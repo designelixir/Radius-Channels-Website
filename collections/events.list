@@ -91,9 +91,9 @@ function toggleEvent(target, fullUrl){
 	</div>
 	<div class="events flex-start-start">
 		<div class="events-summary-list flex-start-start flex-column">
-		<div class="events-summary-container">
-		<p>No upcoming events to show.</p>
-		</div>
+		
+		<p id="noEvents" style="display: none">No upcoming events to show.</p>
+		
 			{.repeated section items}
 			<div class="flex-center-center events-summary-container"  id="{id}" data-full-url="{fullUrl}">
 				<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')"  >
@@ -138,6 +138,10 @@ function toggleEvent(target, fullUrl){
 </div>
 <script>
 var futureEventsLength = document.getElementsByClassName('future-event')
-console.log(futureEventsLength.length)
+if (futureEventsLength.length > 0){
 	toggleTypes('upcoming-toggle')
+} else {
+	document.getElementById('noEvents').style.display = "block"
+}
+	
 </script>
