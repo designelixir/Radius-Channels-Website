@@ -44,7 +44,11 @@ function toggleTypes(toggleType){
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
 			} 
-		} else {
+		} else if (toggleType === 'upcoming-toggle' && futureEvents.length === 0) {
+			var targetIframe = document.getElementById('target-iframe');
+			targetIframe.style.display = "none";
+		}
+		else {
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			for (var i = 0; i < archivedEvents.length; i++){
 				archivedEvents[i].classList.add('visible-event')
@@ -87,6 +91,9 @@ function toggleEvent(target, fullUrl){
 	</div>
 	<div class="events flex-start-start">
 		<div class="events-summary-list flex-start-start flex-column">
+		<div class="events-summary-container">
+		<p>No upcoming events to show.</p>
+		</div>
 			{.repeated section items}
 			<div class="flex-center-center events-summary-container"  id="{id}" data-full-url="{fullUrl}">
 				<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')"  >
