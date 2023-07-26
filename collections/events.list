@@ -2,6 +2,7 @@
 
 
 <script>
+
 function isDateInFutureOrPast(start, end, id) {
 	const today = new Date();
 	var targetParentId = document.getElementById(String(id))
@@ -38,7 +39,7 @@ function toggleTypes(toggleType){
 		allContentDivs[i].classList.remove('visible-event', 'active-event')
 	}
 
-		if (toggleType === 'upcoming-toggle'){
+		if (toggleType === 'upcoming-toggle' && futureEvents.length > 0){
 			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
@@ -129,5 +130,7 @@ function toggleEvent(target, fullUrl){
 </div>
 </div>
 <script>
+var futureEventsLength = document.getElementsByClassName('future-event')
+console.log(futureEventsLength.length)
 	toggleTypes('upcoming-toggle')
 </script>
