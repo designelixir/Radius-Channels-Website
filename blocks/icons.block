@@ -1,5 +1,5 @@
 <style>
-.icon-wrapper {min-width: 750px;}
+.icon-wrapper {min-width: 750px; overflow-x: scroll!important;}
 .icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
 .icon-container:nth-child(odd) h4 {color: var(--darkblue)}
 .circle-border { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 500px; z-index: 4;}
