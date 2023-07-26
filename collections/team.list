@@ -1,6 +1,6 @@
 <style>
 .team-grid {display: inline-flex; flex-wrap: wrap; margin-top: 25px;}
-#teamTextOverlay {z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;}
+#teamTextOverlay {z-index: 2; min-width: 20px; border: 1px solid lime; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;}
 </style>
 
 
