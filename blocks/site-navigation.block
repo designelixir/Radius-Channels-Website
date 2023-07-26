@@ -74,7 +74,7 @@
 					{.end}
 				</div>
 				{.or}
-				
+				{.section collection}
 				
 				<squarespace:query collection="{urlId}" limit="10" >
 					<div class="flex-center-center flex-wrap">
@@ -83,6 +83,7 @@
 						{.end}
 					</div>
 				</squarespace:query>
+				{.end}
 				{.end}
 				
 			</div>
