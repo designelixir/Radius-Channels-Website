@@ -2,76 +2,66 @@
 
 
 <script>
-	function isDateInFutureOrPast(start, end, id) {
+function isDateInFutureOrPast(start, end, id) {
 	const today = new Date();
 	var targetParentId = document.getElementById(String(id))
 	var targetId = document.getElementById('eventType-' + String(id))
 	const startDate = new Date(start)
 	const endDate = new Date(end)
-	  
-	
-	
-	  if (startDate > today) {
-	     targetId.innerHTML = "Upcoming"
-	     targetParentId.classList.add('future-event')
-	  } else if (startDate < today && endDate > today){
-	     targetId.innerHTML = "Upcoming"
-	     targetParentId.classList.add('future-event')
-	  } else if (startDate < today) {
-	     targetParentId.classList.add('past-event')
-	    targetId.innerHTML = "Archived Event"
-	     targetParentId.classList.add('archived-event')
-	  }  else {
-	    console.log("no event defined")
-	  }
+	if (startDate > today) {
+		targetId.innerHTML = "Upcoming"
+		targetParentId.classList.add('future-event')
+	} else if (startDate < today && endDate > today){
+		targetId.innerHTML = "Upcoming"
+		targetParentId.classList.add('future-event')
+	} else if (startDate < today) {
+		targetParentId.classList.add('past-event')
+	targetId.innerHTML = "Archived Event"
+		targetParentId.classList.add('archived-event')
+	}  else {
+	console.log("no event defined")
 	}
-	
-	function toggleTypes(toggleType){
-	  var typeToggles = document.getElementsByClassName('type-toggle'); 
-	   var futureEvents = document.getElementsByClassName('future-event')
-	   var archivedEvents = document.getElementsByClassName('archived-event')
-	   var allContentDivs = document.getElementsByClassName('events-summary-container')
+}
 
-	  for (var i = 0; i < typeToggles.length; i++){
-	    typeToggles[i].classList.remove('active-type-toggle')
-	  }
-	  document.getElementById(toggleType).classList.add('active-type-toggle')
-	
-	   for (var i = 0; i < allContentDivs.length; i++){
-	     allContentDivs[i].classList.remove('visible-event', 'active-event')
-	   }
+function toggleTypes(toggleType){
+	var typeToggles = document.getElementsByClassName('type-toggle'); 
+	var futureEvents = document.getElementsByClassName('future-event')
+	var archivedEvents = document.getElementsByClassName('archived-event')
+	var allContentDivs = document.getElementsByClassName('events-summary-container')
 
-	   if (futureEvents.length >= 1 && toggleType === 'upcoming-toggle'){
-	     toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
-	     for (var i = 0; i < futureEvents.length; i++){
-	     futureEvents[i].classList.add('visible-event')
-	   } else if (futureEvents.length === 0){
-		console.log("nothing")
-	   
-
-	   } else {
-	     toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
-	     for (var i = 0; i < archivedEvents.length; i++){
-	     archivedEvents[i].classList.add('visible-event')
-	   }
-	   }
+	for (var i = 0; i < typeToggles.length; i++){
+	typeToggles[i].classList.remove('active-type-toggle')
 	}
-	
-		function toggleEvent(target, fullUrl){
-	    var targetIframe = document.getElementById('target-iframe');
-	    var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
-		  var targetDiv = document.getElementById(target);
-		  var allDivs = document.getElementsByClassName('active-event')
-	    
-	
-		  for (i=0; i < allDivs.length; i++){
-		      allDivs[i].classList.remove('active-event')
-		  }
-	
-		    targetDiv.classList.add('active-event')
-	      targetIframe.src = targetUrl
-	      
+	document.getElementById(toggleType).classList.add('active-type-toggle')
+
+	for (var i = 0; i < allContentDivs.length; i++){
+		allContentDivs[i].classList.remove('visible-event', 'active-event')
+	}
+
+		if (toggleType === 'upcoming-toggle'){
+			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
+			for (var i = 0; i < futureEvents.length; i++){
+				futureEvents[i].classList.add('visible-event')
+			} 
+		} else {
+			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
+			for (var i = 0; i < archivedEvents.length; i++){
+				archivedEvents[i].classList.add('visible-event')
+			}
 		}
+}
+	
+function toggleEvent(target, fullUrl){
+	var targetIframe = document.getElementById('target-iframe');
+	var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
+	var targetDiv = document.getElementById(target);
+	var allDivs = document.getElementsByClassName('active-event')
+	for (i=0; i < allDivs.length; i++){
+		allDivs[i].classList.remove('active-event')
+	}
+	targetDiv.classList.add('active-event')
+	targetIframe.src = targetUrl
+}
 </script>
 <header class="site-header">
 	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -92,7 +82,7 @@
 	<div class="flex-start-start event-type-toggles">
 		<h2 id="upcoming-toggle" class="active-type-toggle type-toggle" onclick="toggleTypes('upcoming-toggle')">Upcoming Events </h2>
 		<h2>&nbsp;/&nbsp; </h2>
-		<h2 id="archive-toggle" class="type-toggle" onclick="toggleTypes('archive-toggle')">Archived Events </h2>
+		<h2 id="archive-toggle" class="type-toggle" onclick="toggleTypes('archive-toggle')">Archived Events</h2>
 	</div>
 	<div class="events flex-start-start">
 		<div class="events-summary-list flex-start-start flex-column">
