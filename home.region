@@ -14,7 +14,7 @@
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 	   
    			
-      <section id="hero" >
+      <section id="hero">
 	  <squarespace:block-field id="homeHero" columns="12"/>
         {@|apply textRotation.block}
         

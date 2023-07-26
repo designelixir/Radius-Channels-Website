@@ -1,5 +1,12 @@
-<div class="additional-leadership-team flex-center-center" style="margin-top: 1vw;">
-<h1 style="z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;"><squarespace:block-field id="additionalTeamTitle" columns="12"/></h1>
+<style>
+.team-grid {display: inline-flex; flex-wrap: wrap; margin-top: 25px;}
+#teamTextOverlay {z-index: 2; color: white; margin: 25px; position: absolute; margin-top: 300px; min-width: 100px;}
+</style>
+
+
+<div class="team-grid flex-center-center">
+<squarespace:block-field id="teamTextOverlay" columns="12"/>
+
 {.repeated section items}
     
     {.if starred}

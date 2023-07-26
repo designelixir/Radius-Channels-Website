@@ -1,12 +1,13 @@
-<footer class="footer-navigation fade-in-fast flex-center-center-column" >
+<style>
+footer {text-align: center; margin-top: 100px;}
+.de-tag {font-size: 10px; text-decoration: none; color: gray; text-align: center; margin-bottom: 25px;}
+.footer-navigation .logo {margin: -40px 10px 15px; background: white; padding: 10px;}
+.footer-navigation {border-top: 3px solid var(--orange)}
+</style>
 
-    
-  <img src="../assets/radius-circles.png" onclick="window.open('/home', '_self')" alt="Radius Channels Logo" class="logo hover">
-  
-  <squarespace:block-field id="footerBlocks" columns="12" />
-
-
-<p>&copy; Copyright {website.siteTitle}</p>
-<a href="https://designelixir.studio" target="_blank" class="de-tag">Made with &hearts; by Design Elixir</a>
-
+<footer class="footer-navigation fade-in-fast flex-center-center-column">
+	<img src="{website.socialLogoImageUrl}" onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
+	<squarespace:block-field id="footerBlocks" columns="12" />
+	<p>&copy; Copyright {website.siteTitle}</p>
+	<a href="https://designelixir.studio" target="_blank" class="de-tag">Made with &hearts; by Design Elixir</a>
 </footer>
