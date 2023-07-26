@@ -84,7 +84,7 @@
 <script>
 
 var icons = document.getElementsByClassName('icon-container');
-console.log(icons.length)
+
 for (var i=0; i<icons.length; i++){
     icons[i].style.animation = 'fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both'
     icons[i].style.animationDelay = (i / 2) + 's'

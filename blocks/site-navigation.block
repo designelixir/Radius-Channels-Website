@@ -34,7 +34,6 @@
 <div class="site-navigation flex-start-spacebetween box-shadow">
 	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 	<div class="site-navigation-list flex-center-end" id="site-navs">
-	<script>console.log({@|json-pretty})</script>
 		{.repeated section items}
 			{.section collection}
 			<a class=" flex-center-center flex-column site-navigation-item hover" id="{navigationTitle|slugify}" onclick="toggle('{navigationTitle}')">{title}<span id="{title}-arrow" class="nav-arrow" style="margin-top: 0px;">&#x25B2;</span></a>

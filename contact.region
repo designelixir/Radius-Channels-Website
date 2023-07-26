@@ -37,7 +37,7 @@
              <br>📍 {website.location.addressLine1}<br>&nbsp; &nbsp; &nbsp;{website.location.addressLine2}</h4>
              
             {.end}
-             <a href="tel:{websiteSettings.contactPhoneNumber}" style="text-decoration: none; color: black;">📱 {websiteSettings.contactPhoneNumber}</a><br><br>
+             {.if websiteSettings.contactPhoneNumber}<a href="tel:{websiteSettings.contactPhoneNumber}" style="text-decoration: none; color: black;">📱 {websiteSettings.contactPhoneNumber}</a><br><br>{.end}
              <a href="mailto:{websiteSettings.contactEmail}" style="text-decoration: none; color: black;">📧 {websiteSettings.contactEmail}</a>
             <squarespace:block-field id="contactDetails" columns="12"/>
             </div>
@@ -45,9 +45,6 @@
 
        {squarespace.main-content}
       </main>
-      <div style="border: 2px solid teal">
-      {@|apply supplierLogos.block}
-      </div>
       {@|apply footer.block}
       </div>
     

@@ -1,29 +1,26 @@
+
+
+
 <script>
 	function isDateInFutureOrPast(start, end, id) {
-	  const today = new Date();
-	  console.log(id)
-	   var targetParentId = document.getElementById(String(id))
-	  var targetId = document.getElementById('eventType-' + String(id))
-	   
-	  const startDate = new Date(start)
-	  const endDate = new Date(end)
-	  console.log(start,  end)
+	const today = new Date();
+	var targetParentId = document.getElementById(String(id))
+	var targetId = document.getElementById('eventType-' + String(id))
+	const startDate = new Date(start)
+	const endDate = new Date(end)
 	  
 	
 	
 	  if (startDate > today) {
-	    console.log("upcoming")
 	     targetId.innerHTML = "Upcoming"
 	     targetParentId.classList.add('future-event')
 	  } else if (startDate < today && endDate > today){
 	     targetId.innerHTML = "Upcoming"
 	     targetParentId.classList.add('future-event')
-	    console.log("current")
 	  } else if (startDate < today) {
 	     targetParentId.classList.add('past-event')
 	    targetId.innerHTML = "Archived Event"
 	     targetParentId.classList.add('archived-event')
-	    console.log("past")
 	  }  else {
 	    console.log("no event defined")
 	  }
@@ -34,6 +31,7 @@
 	   var futureEvents = document.getElementsByClassName('future-event')
 	   var archivedEvents = document.getElementsByClassName('archived-event')
 	   var allContentDivs = document.getElementsByClassName('events-summary-container')
+
 	  for (var i = 0; i < typeToggles.length; i++){
 	    typeToggles[i].classList.remove('active-type-toggle')
 	  }
@@ -42,11 +40,15 @@
 	   for (var i = 0; i < allContentDivs.length; i++){
 	     allContentDivs[i].classList.remove('visible-event', 'active-event')
 	   }
-	   if (toggleType === 'upcoming-toggle'){
+
+	   if (futureEvents.length >= 1 && toggleType === 'upcoming-toggle'){
 	     toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
 	     for (var i = 0; i < futureEvents.length; i++){
 	     futureEvents[i].classList.add('visible-event')
-	   }
+	   } else if (futureEvents.length === 0){
+		console.log("nothing")
+	   
+
 	   } else {
 	     toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 	     for (var i = 0; i < archivedEvents.length; i++){
@@ -82,8 +84,6 @@
 			<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
 			{collection.title}
 			</h1>
-			<br>
-			<squarespace:block-field id="{squarespace.page-id}-text" columns="12"/>
 		</div>
 	</div>
 </div>

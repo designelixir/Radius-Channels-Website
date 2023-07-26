@@ -1,89 +1,49 @@
 <script>
-
-function isDateInFutureOrPast(start, end, id) {
-	  const today = new Date();
-	  console.log(id)
-	   var targetParentId = document.getElementById(String(id))
-	  
-	   
-	  const startDate = new Date(start)
-	  const endDate = new Date(end)
-	  console.log(start,  end)
-	  
-	
-	
-	  if (startDate > today) {
-	    console.log("upcoming")
-	     
-	     targetParentId.classList.add('future-event')
-	  } else if (startDate < today && endDate > today){
-	     
-	     targetParentId.classList.add('future-event')
-	    console.log("current")
-	  } else if (startDate < today) {
-	     targetParentId.classList.add('past-event')
-	    
-	     targetParentId.classList.add('archived-event')
-	    console.log("past")
-	  }  else {
-	    console.log("no event defined")
-	  }
+	function isDateInFutureOrPast(start, end, id) {
+		const today = new Date();
+		var targetParentId = document.getElementById(String(id))
+		const startDate = new Date(start)
+		const endDate = new Date(end)
+		if (startDate > today) {
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today && endDate > today) {
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today) {
+			targetParentId.classList.add('past-event')
+			targetParentId.classList.add('archived-event')
+		} else {
+			console.log("no event defined")
+		}
 	}
-</script>
-
-
-
-{.section item}
-<div style="padding: 25px; background: var(--offwhite);" class="box-shadow">
-<div class="supplier-title ">
-    
-        {.if assetUrl}
-    <img src="{assetUrl}" class="supplier-logo-lg" alt="{title} supplier-logo">
-    
-    {.or}
-    <h1>{title}</h1>
-    {.end}
-</div>
-{excerpt}
-{body}
+</script> {.section item} <div style="padding: 25px; background: var(--offwhite);" class="box-shadow">
+	<div class="supplier-title "> {.if assetUrl} <img src="{assetUrl}" class="supplier-logo-lg" alt="{title} supplier-logo"> {.or} <h1>{title}</h1> {.end} </div> {excerpt} {body}
 </div>
 <div id="upcomingEvents" style="padding: 25px;">
-<h3>Upcoming &amp; Past Events by {title}</h3>
-        <squarespace:query collection="events2" limit="5" tag="{title}">
-            <div class="calendar-collection-upcoming flex-start-start" >
-                {.repeated section items}
-                <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')" id="{id}">
-
-                    <div>
-                    <div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column calendar-summary">
-                       <h3 style="text-align: center; font-size: 28px; line-height: 28px; margin: 0; padding: 10px 0px; color: white;">{structuredContent.startDate|date %B %d, %Y}</h3>
-                       <h4 style="padding: 0; margin: 0; line-height: 12px;color: white;">{structuredContent.startDate|date %I:%M %p}</h4>
-                       </div>
-                    </div>
-                    <div style="padding: 0px 15px; margin-bottom: 15px; text-align: center;" class="flex-center-center flex-column">
-                    <h3 class="text-align: center!important; line-height: 18px;">{title}</h3>
-                    
-                    <button onclick="window.open('{fullUrl}')">Click for details</button>
-            
-            </div>
-            <script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
-                </div>
-
-                
-                {.end}
-        </squarespace:query>
-        <p id="noUpcomingEvents"></p>
-
-<script>  
-var events = document.getElementsByClassName('calendar-event'); console.log(events); 
-if (events.length === 0) {
-    document.getElementById('noUpcomingEvents').innerHTML = 'No upcoming events. Check out all of our live and virtual events <a href="/events">here</a>'
-
-} else {
-    document.getElementById('noUpcomingEvents').innerHTML = ''
-}
-</script>   
-    {.end}
+	<h3>Upcoming &amp; Past Events by {title}</h3>
+	<squarespace:query collection="events2" limit="5" tag="{title}">
+		<div class="calendar-collection-upcoming flex-start-start"> {.repeated section items} <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')" id="{id}">
+				<div>
+					<div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column calendar-summary">
+						<h3 style="text-align: center; font-size: 28px; line-height: 28px; margin: 0; padding: 10px 0px; color: white;">{structuredContent.startDate|date %B %d, %Y}</h3>
+						<h4 style="padding: 0; margin: 0; line-height: 12px;color: white;">{structuredContent.startDate|date %I:%M %p}</h4>
+					</div>
+				</div>
+				<div style="padding: 0px 15px; margin-bottom: 15px; text-align: center;" class="flex-center-center flex-column">
+					<h3 class="text-align: center!important; line-height: 18px;">{title}</h3>
+					<button onclick="window.open('{fullUrl}')">Click for details</button>
+				</div>
+				<script>
+					isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')
+				</script>
+			</div> {.end}
+	</squarespace:query>
+	<p id="noUpcomingEvents"></p>
+	<script>
+		var events = document.getElementsByClassName('calendar-event');
+		if (events.length === 0) {
+			document.getElementById('noUpcomingEvents').innerHTML = 'No upcoming events. Check out all of our live and virtual events  < a href = "/events" > here < /a>'
+		} else {
+			document.getElementById('noUpcomingEvents').innerHTML = ''
+		}
+	</script> {.end}
 </div>
-
-
