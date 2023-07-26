@@ -1,15 +1,14 @@
 <style>
-#iconWrapper {min-width: 500px; }
 .icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
 .icon-container:nth-child(odd) h4 {color: var(--darkblue)}
-.circle-border { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 500px; z-index: 4;}
-.circle {height: 100px; width: 100px; margin: 10px; border-radius: 400px; background-color: white; z-index: 3;}
+.circle-border { width: 125px; height: 125px; display: flex; align-items: center; justify-content: center; border-radius: 250px; z-index: 4;}
+.circle {height: 75px; width: 75px; border-radius: 150px; background-color: white; z-index: 3;}
 
-.blue-border {border: 10px solid var(--lightblue); }
+.blue-border {border: 5px solid var(--lightblue); }
 .light-blue-border {border: 10px solid var(--darkblue)}
-.dashed-line {position: absolute; float: left; width: 150px; background: orange; height: 2px; z-index: 2; animation:slide-in-left 4s cubic-bezier(.25,.46,.45,.94) both}
+.dashed-line {position: absolute; float: left; max-width: 125px; background: orange; height: 2px; z-index: 2; animation:slide-in-left 4s cubic-bezier(.25,.46,.45,.94) both}
 .icon-container {padding: 15px; opacity: 0;}
-.cutout {height: 50px; width: 25px; position: absolute; margin-left: 125px; z-index: 2; background-color: var(--fadedblue);}
+.cutout {height: 50px; width: 15px; position: absolute; margin-left: 90px; z-index: 2; background-color: var(--fadedblue);}
 .scale-up-center{-webkit-animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .4s cubic-bezier(.39,.575,.565,1.000) both}
 
 @-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}
