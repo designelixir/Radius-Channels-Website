@@ -1,5 +1,5 @@
 <style>
-.icon-wrapper {min-width: 500px; }
+#iconWrapper {min-width: 500px; }
 .icon-container h4{color: var(--lightblue); text-align: center; font-weight: 800; }
 .icon-container:nth-child(odd) h4 {color: var(--darkblue)}
 .circle-border { width: 150px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 500px; z-index: 4;}
@@ -14,12 +14,12 @@
 
 @-webkit-keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale-up-center{0%{-webkit-transform:scale(.5);transform:scale(.5)}100%{-webkit-transform:scale(1);transform:scale(1)}}
 @media screen and (max-width: 1000px) {
-.icon-wrapper {flex-wrap: wrap;}
+#iconWrapper {flex-wrap: wrap;}
 }
 </style>
 
 
-<div class="flex-end-center icon-wrapper">
+<div class="flex-end-center " id="iconWrapper">
 
 <div class="flex-center-center flex-column icon-container">
 <h4>Vendor Specialized Staff </h4>
@@ -86,10 +86,27 @@
 <script>
 
 var icons = document.getElementsByClassName('icon-container');
+var iconWrapper = document.getElementById('iconWrapper')
 
-for (var i=0; i<icons.length; i++){
-    icons[i].style.animation = 'fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both'
-    icons[i].style.animationDelay = (i / 2) + 's'
-}
+function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+    $(window).scroll(function(){
+
+        if (isScrolledIntoView('#iconWrapper') === true) {
+            for (var i=0; i<icons.length; i++){
+            icons[i].style.animation = 'fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both'
+            icons[i].style.animationDelay = (i / 2) + 's'
+            }
+        }
+
+    });
 
 </script>
