@@ -47,6 +47,7 @@ function toggleTypes(toggleType){
 		} else if (toggleType === 'upcoming-toggle' && futureEvents.length === 0) {
 			var targetIframe = document.getElementById('target-iframe');
 			targetIframe.style.display = "none";
+			document.getElementById('noEvents').style.display = "block"
 		}
 		else {
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
@@ -90,7 +91,7 @@ function toggleEvent(target, fullUrl){
 		<h2>&nbsp;/&nbsp; </h2>
 		<h2 id="archive-toggle" class="type-toggle" onclick="toggleTypes('archive-toggle')">Archived Events</h2>
 	</div>
-	<p id="noEvents" style="display: none">No upcoming events to show.</p>
+	<p id="noEvents" style="display: none">No upcoming events to show. <span onclick="toggleTypes('archive-toggle')" class="hover">View our Archived Events!</span></p>
 	<div class="events flex-start-start">
 		<div class="events-summary-list flex-start-start flex-column">
 		
