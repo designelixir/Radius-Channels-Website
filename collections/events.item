@@ -1,9 +1,9 @@
 <script>
-function isDateInFutureOrPast(start, end) {
+function isDateInFutureOrPast(start, end, id) {
 		const today = new Date();
 		const startDate = new Date(start)
 		const endDate = new Date(end)
-		var targetParentId = document.getElementById('eventContainer')
+		var targetParentId = document.getElementById(id)
 		var targetId = document.getElementById('eventType')
 		if (startDate > today) {
 			targetId.insertAdjacentHTML("afterbegin", "Upcoming")
