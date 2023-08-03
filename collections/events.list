@@ -1,83 +1,79 @@
-
-
-
 <script>
-
-function isDateInFutureOrPast(start, end, id) {
-	const today = new Date();
-	var targetParentId = document.getElementById(String(id))
-	var targetId = document.getElementById('eventType-' + String(id))
-	const startDate = new Date(start)
-	const endDate = new Date(end)
-	if (startDate > today) {
-		targetId.insertAdjacentHTML("afterbegin", "Upcoming")
-		targetParentId.classList.add('future-event')
-	} else if (startDate < today && endDate > today){
-		targetId.insertAdjacentHTML("afterbegin", "Upcoming")
-		targetParentId.classList.add('future-event')
-	} else if (startDate < today) {
-		targetParentId.classList.add('past-event')
-		targetId.insertAdjacentHTML("afterbegin", "Archived")
-		targetParentId.classList.add('archived-event')
-	}  else {
-	console.log("no event defined")
-	}
-}
-
-function toggleTypes(toggleType){
-	var typeToggles = document.getElementsByClassName('type-toggle'); 
-	var futureEvents = document.getElementsByClassName('future-event')
-	var archivedEvents = document.getElementsByClassName('archived-event')
-	var allContentDivs = document.getElementsByClassName('events-summary-container')
-	var lastArchiveEventIndex = archivedEvents.length - 1;
-	var lastFutureEventIndex = futureEvents.length - 1;
-
-	for (var i = 0; i < typeToggles.length; i++){
-	typeToggles[i].classList.remove('active-type-toggle')
-	}
-	document.getElementById(toggleType).classList.add('active-type-toggle')
-
-	for (var i = 0; i < allContentDivs.length; i++){
-		allContentDivs[i].classList.remove('visible-event', 'active-event')
-	}
-
-		if (toggleType === 'upcoming-toggle' && futureEvents.length > 0){
-			document.getElementById('noEvents').style.display = "none"
-			document.getElementById('target-iframe').style.display = "block"
-			
-			toggleEvent(futureEvents[lastFutureEventIndex].id, futureEvents[lastFutureEventIndex].dataset.fullUrl)
-			
-			for (var i = 0; i < futureEvents.length; i++){
-				futureEvents[i].classList.add('visible-event')
-			} 
-		} else if (toggleType === 'upcoming-toggle' && futureEvents.length === 0) {
-			document.getElementById('noEvents').style.display = "block"
-			document.getElementById('target-iframe').style.display = "none"
+	function isDateInFutureOrPast(start, end, id) {
+		const today = new Date();
+		var targetParentId = document.getElementById(String(id))
+		var targetId = document.getElementById('eventType-' + String(id))
+		const startDate = new Date(start)
+		const endDate = new Date(end)
+		if (startDate > today) {
+			targetId.insertAdjacentHTML("afterbegin", "Upcoming")
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today && endDate > today){
+			targetId.insertAdjacentHTML("afterbegin", "Upcoming")
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today) {
+			targetParentId.classList.add('past-event')
+			targetId.insertAdjacentHTML("afterbegin", "Archived")
+			targetParentId.classList.add('archived-event')
+		}  else {
+		console.log("no event defined")
 		}
-		else {
-			toggleEvent(archivedEvents[lastArchiveEventIndex].id, archivedEvents[lastArchiveEventIndex].dataset.fullUrl)
-			document.getElementById('noEvents').style.display = "none"
-			document.getElementById('target-iframe').style.display = "block"
-			
-			document.getElementById('eventList').style.justifyContent = "flex-start!important"
-			
-			for (var i = 0; i < archivedEvents.length; i++){
-				archivedEvents[i].classList.add('visible-event')
+	}
+	
+	function toggleTypes(toggleType){
+		var typeToggles = document.getElementsByClassName('type-toggle'); 
+		var futureEvents = document.getElementsByClassName('future-event')
+		var archivedEvents = document.getElementsByClassName('archived-event')
+		var allContentDivs = document.getElementsByClassName('events-summary-container')
+		var lastArchiveEventIndex = archivedEvents.length - 1;
+		var lastFutureEventIndex = futureEvents.length - 1;
+	
+		for (var i = 0; i < typeToggles.length; i++){
+		typeToggles[i].classList.remove('active-type-toggle')
+		}
+		document.getElementById(toggleType).classList.add('active-type-toggle')
+	
+		for (var i = 0; i < allContentDivs.length; i++){
+			allContentDivs[i].classList.remove('visible-event', 'active-event')
+		}
+	
+			if (toggleType === 'upcoming-toggle' && futureEvents.length > 0){
+				document.getElementById('noEvents').style.display = "none"
+				document.getElementById('target-iframe').style.display = "block"
+				
+				toggleEvent(futureEvents[lastFutureEventIndex].id, futureEvents[lastFutureEventIndex].dataset.fullUrl)
+				
+				for (var i = 0; i < futureEvents.length; i++){
+					futureEvents[i].classList.add('visible-event')
+				} 
+			} else if (toggleType === 'upcoming-toggle' && futureEvents.length === 0) {
+				document.getElementById('noEvents').style.display = "block"
+				document.getElementById('target-iframe').style.display = "none"
 			}
-		}
-}
-	console.log("hello?")
-function toggleEvent(target, fullUrl){
-	var targetIframe = document.getElementById('target-iframe');
-	var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
-	var targetDiv = document.getElementById(target);
-	var allDivs = document.getElementsByClassName('active-event')
-	for (i=0; i < allDivs.length; i++){
-		allDivs[i].classList.remove('active-event')
+			else {
+				toggleEvent(archivedEvents[lastArchiveEventIndex].id, archivedEvents[lastArchiveEventIndex].dataset.fullUrl)
+				document.getElementById('noEvents').style.display = "none"
+				document.getElementById('target-iframe').style.display = "block"
+				
+				document.getElementById('eventList').style.justifyContent = "flex-start!important"
+				
+				for (var i = 0; i < archivedEvents.length; i++){
+					archivedEvents[i].classList.add('visible-event')
+				}
+			}
 	}
-	targetDiv.classList.add('active-event')
-	targetIframe.src = targetUrl
-}
+		console.log("hello?")
+	function toggleEvent(target, fullUrl){
+		var targetIframe = document.getElementById('target-iframe');
+		var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
+		var targetDiv = document.getElementById(target);
+		var allDivs = document.getElementsByClassName('active-event')
+		for (i=0; i < allDivs.length; i++){
+			allDivs[i].classList.remove('active-event')
+		}
+		targetDiv.classList.add('active-event')
+		targetIframe.src = targetUrl
+	}
 </script>
 <header class="site-header">
 	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -85,11 +81,12 @@ function toggleEvent(target, fullUrl){
 <div id='site-wrapper'>
 	{.section website}
 	<div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
-	<div class="page-header-content">
-		<div>
-			<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
-			{collection.title}
-			</h1>
+		<div class="page-header-content">
+			<div>
+				<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
+				{collection.title}
+				</h1>
+			</div>
 		</div>
 	</div>
 </div>
@@ -104,56 +101,39 @@ function toggleEvent(target, fullUrl){
 	<div class="events flex-start-start">
 		<div id="eventListWrapper">
 			<div id="eventList">
-			
-			
-			
 				{.repeated section items}
 				<div class="flex-center-center events-summary-container"  id="{id}" data-full-url="{fullUrl}">
 					<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')"  >
 						<div class="events-summary-wrapper flex-center-center">
 							<div class="event-summary-info">
-									<div class="flex-start-start">
-										<div class="event-date-title flex-start-spacebetween">
-											<div class="mobile-event-date">
-												<div class="mobile-event-date-month"> {structuredContent.startDate|date %B}</div>
-												<div class="mobile-event-date-day">{structuredContent.startDate|date %d}</div>
-											</div>
-										</div>
-										
-									</div>
-									
-									
-									<div class="event-summary-title">
-										<div>
-											<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
-											<h3 class="strong hover event-title">{title}</h3>
-										</div>
-										<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
-										
-										<div class="excerpt">
-											<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
-										</div>
-										<div class="flex-start-start">
-											{.repeated section tags}
-											<p class="tag" onclick="window.open('/vendors/{@|slugify}')">{@}</p>
-											{.alternates with}&nbsp;
-											{.end}
-											
-										</div>
-										<div class="mobile-button">
-											<a>View Event &rarr;</a>
-										</div>
-									</div>
-									
+								<div class="mobile-event-date">
+									<div class="mobile-event-date-month"> {structuredContent.startDate|date %B}</div>
+									<div class="mobile-event-date-day">{structuredContent.startDate|date %d}</div>
 								</div>
-								
+								<div class="event-summary-title">
+									<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
+									<h3 class="strong hover event-title">{title}</h3>
+									<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
+									<div class="excerpt">
+										<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
+									</div>
+									<div class="flex-start-start">
+										{.repeated section tags}
+										<p class="tag" onclick="window.open('/vendors/{@|slugify}')">{@}</p>
+										{.alternates with}&nbsp;
+										{.end}
+									</div>
+									<div class="mobile-button">
+										<a>View Event &rarr;</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
-				{.end}	
 			</div>
+			<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
+			{.end}	
 		</div>
 		<div class="events-full-size">
 			<div class="full-size-event" id="full-size-iframe">
@@ -162,13 +142,11 @@ function toggleEvent(target, fullUrl){
 		</div>
 	</div>
 </div>
-</div>
 <script>
-var futureEventsLength = document.getElementsByClassName('future-event')
-if (futureEventsLength.length > 0){
-	toggleTypes('upcoming-toggle')
-} else {
-	document.getElementById('noEvents').style.display = "block"
-}
-	
+	var futureEventsLength = document.getElementsByClassName('future-event')
+	if (futureEventsLength.length > 0){
+		toggleTypes('upcoming-toggle')
+	} else {
+		document.getElementById('noEvents').style.display = "block"
+	}
 </script>
