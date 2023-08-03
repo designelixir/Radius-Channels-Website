@@ -132,13 +132,13 @@ function toggleEvent(target, fullUrl){
 										</div>
 										<div class="flex-start-start">
 											{.repeated section tags}
-											<p class="tag">{@}</p>
+											<p class="tag" onclick="window.open('/vendors/{@}')">{@}</p>
 											{.alternates with}&nbsp;
 											{.end}
 											
 										</div>
 										<div class="mobile-button">
-											<button>View Event &rarr;</button>
+											<a>View Event &rarr;</a>
 										</div>
 									</div>
 									
