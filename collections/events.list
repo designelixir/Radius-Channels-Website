@@ -17,7 +17,7 @@ function isDateInFutureOrPast(start, end, id) {
 		targetParentId.classList.add('future-event')
 	} else if (startDate < today) {
 		targetParentId.classList.add('past-event')
-	targetId.insertAdjacentHTML("afterbegin", "Archived Event")
+		targetId.insertAdjacentHTML("afterbegin", "Archived")
 		targetParentId.classList.add('archived-event')
 	}  else {
 	console.log("no event defined")
