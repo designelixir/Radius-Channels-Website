@@ -1,7 +1,7 @@
 
 <div class="fullEvent">
 {.section item}
-      <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl}); background-size: cover;" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
+      <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl});" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
         <div class="full-size-event" id="{title}-fullpage-event"  >
 
 
