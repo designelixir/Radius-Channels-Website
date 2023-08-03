@@ -31,7 +31,7 @@
 </style>
 
 
-<div class="site-navigation flex-start-spacebetween box-shadow">
+<div class="site-navigation flex-start-spacebetween box-shadow" id="topNav">
 	<img src={website.logoImageUrl} onclick="window.open('/', '_self')" alt="Radius Channels Logo" class="logo hover">
 	<div class="site-navigation-list flex-center-end" id="site-navs">
 		{.repeated section items}
