@@ -21,11 +21,13 @@
 		{.repeated section tags}
               <p class="tag">{@}</p>{.alternates with}&nbsp;
             {.end}
-        {.end}    <p class="strong">Sponsored by: &nbsp;</p>
+        {.end}</div>
+		{.if categories}
+		    <p class="strong">Tags: &nbsp;</p>
 		{.repeated section categories}
-              <span class="tag">{@}</span>{.alternates with}&nbsp;
+              <span class="tag" style="background-color: var(--orange)!important">{@}</span>{.alternates with}&nbsp;
             {.end}
-		</div>
+		{.end}
     
 	</div>
 	<div style="margin: 25px; ">

@@ -144,7 +144,7 @@ button:hover {transform: scale(1.1)}
 .event-type-toggles {color: gray;}
 .event-type-toggles .active-type-toggle {color: black!important;}
 .events { height: 100%; overflow-y: scroll;}
-#eventList { height: 900px; width: 40%; max-height: 100vh; overflow-y: scroll; flex-direction: column;}
+#eventList { height: 900px; width: 40%; max-height: 100vh; overflow-y: scroll; flex-direction: column-reverse;}
 
 .events-summary-container {opacity: 0.2; background-color: var(--lightgray); display: none; border: 0.25px solid black;}
 .events-summary {overflow-y: scroll;  z-index: 2; background-color: white; }
@@ -175,7 +175,7 @@ button:hover {transform: scale(1.1)}
 @media screen and (max-width: 1025px) {
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
-  .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
+  .events-summary-list {flex-direction: unset!important; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
   .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 350px; max-height: unset!important; height: 100%;}
   .events-summary {height: 100%;}
   .event-summary-info {height: 100%;}
