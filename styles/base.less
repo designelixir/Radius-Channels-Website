@@ -41,6 +41,8 @@ strong {font-weight: 600;}
 button {padding: 10px 25px; font-size: 24px; margin: 10px 0px!important;  border: 2px solid var(--orange); cursor: pointer;}
 .button {padding: 10px 25px; font-size: 24px; text-decoration: none; margin: 10px 0px!important;  border: 2px solid var(--orange); cursor: pointer;}
 
+.small-button {padding: 5px 12.5px!important; font-size: 18px;}
+
 button:hover {transform: scale(1.1)}
 .solid-button {background: var(--orange);  color: white;}
 .inverted-button { background-color: white; color: var(--orange)}
@@ -155,6 +157,7 @@ button:hover {transform: scale(1.1)}
 .event-selected {width: 25px; height: 100%; margin-right: -25px;z-index: 3;}
 .tag {text-decoration: none;  color: white; background-color: var(--lightblue); border-radius: 15px; padding: 5px 8px; font-size: 14px; }
 .archived-event .event-status {background-color: var(--offwhite)!important; color: black!important;}
+.archived-event .mobile-event-date-month {background-color: gray;}
 .event-status {text-decoration: none; border-radius: 15px; font-size: 14px; }
 .event-summary-title h3 {line-height: 24px; margin: 5px 0px; padding-left: 10px; border-left: 3px solid var(--lightblue)}
 .event-summary-image-wrapper {padding-right: 10px; border-right: 5px solid var(--lightblue); margin-right: 10px;}
@@ -181,19 +184,19 @@ button:hover {transform: scale(1.1)}
   .event-title {margin: 10px 0px;}
 // EVENTS
 @media screen and (max-width: 1025px) {
-  
+  #eventList {height: unset; display: flex; align-items: flex-start; justify-content: flex-start; }
+  #eventListWrapper {width: 100%; }
   .mobile-button {opacity: 1; pointer-events: unset;}
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
-  
+  .events-full-size {display: none;}
   .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
   .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 100%; max-height: unset!important; height: 100%;}
   .events-summary {height: 100%;}
   .mobile-button {display: block;}
   .event-summary-info {height: 100%; width: 100%; }
-  .events-full-size {display: none;}
-  #eventList {height: unset; display: flex; align-items: flex-start; justify-content: flex-start; }
-#eventListWrapper {width: 100%; }
+  
+  
 
   .event-summary-wrapper {height: 100%;}
   .excerpt {display: none;}

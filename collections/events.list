@@ -112,7 +112,7 @@
 										<div class="mobile-event-date-day">{structuredContent.startDate|date %d}</div>
 									</div>
 									<div>
-										<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
+										<span id="eventType-{id}" class="event-status">{.if customContent.eventType} Virtual Event{.or}- In-Person Event{.end}</span>
 										<h3 class="strong hover event-title">{title}</h3>
 									</div>
 								</div>
@@ -127,7 +127,7 @@
 											{.end}
 										</div>
 										<div class="mobile-button">
-											<a>View Event &rarr;</a>
+											<button class="small-button">View Event &rarr;</button>
 										</div>
 									</div>
 								</div>
@@ -141,7 +141,7 @@
 		</div>
 		<div class="events-full-size">
 			<div class="full-size-event" id="full-size-iframe">
-				<iframe id="target-iframe" width="100%" height="100%"></iframe>	
+				<iframe id="target-iframe" class="fade-in" width="100%" height="100%"></iframe>	
 			</div>
 		</div>
 	</div>
