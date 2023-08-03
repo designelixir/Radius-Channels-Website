@@ -114,26 +114,22 @@
 									<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
 									<h3 class="strong hover event-title">{title}</h3>
 									<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
-									<div class="excerpt">
-										<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
-									</div>
+									<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
+									
 									<div class="flex-start-start">
 										{.repeated section tags}
 										<p class="tag" onclick="window.open('/vendors/{@|slugify}')">{@}</p>
 										{.alternates with}&nbsp;
 										{.end}
 									</div>
-									<div class="mobile-button">
-										<a>View Event &rarr;</a>
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
-			{.end}	
+				<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
+				{.end}
+			</div>	
 		</div>
 		<div class="events-full-size">
 			<div class="full-size-event" id="full-size-iframe">
