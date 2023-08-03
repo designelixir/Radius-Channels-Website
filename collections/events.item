@@ -22,12 +22,14 @@
               <p class="tag">{@}</p>{.alternates with}&nbsp;
             {.end}
         {.end}</div>
+		<div class="flex-center-start">
 		{.if categories}
 		    <p class="strong">Tags: &nbsp;</p>
 		{.repeated section categories}
               <p class="tag" style="background-color: var(--orange)!important">{@}</p>{.alternates with}&nbsp;
             {.end}
 		{.end}
+		</div>
     
 	</div>
 	<div style="margin: 25px; ">
