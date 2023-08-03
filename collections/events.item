@@ -5,14 +5,16 @@
 
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
-            {.repeated section categories}
-              <span class="tag">{@}</span>{.alternates with}&nbsp;
-            {.end}
+            {.if customContent.eventType}
+			<span class="tag">Virtual Event</p>
+			{.or}
+			<p class="tag">In-Person Event</p>
+			{.end}
             
 			<h2>{title}</h2>
       
 			<h3 style="color: var(--lightblue); margin: 5px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
-      
+			<p>{customContent.eventTimeZone}</p>
       <div class="flex-center-start">
       {.if tags}
       <p class="strong">Sponsored by: &nbsp;</p>
@@ -21,11 +23,9 @@
             {.end}
         {.end}    
 		</div>
-    {.if customContent.eventType}
-			<p>Virtual Event</p>
-			{.or}
-			<p>In-Person Event</p>
-			{.end}
+    {.repeated section categories}
+              <span class="tag">{@}</span>{.alternates with}&nbsp;
+            {.end}
 	</div>
 	<div style="margin: 25px; ">
   
