@@ -20,7 +20,7 @@
 </div>
 <div id="upcomingEvents" style="padding: 25px;">
 	<h3>Upcoming &amp; Past Events by {title}</h3>
-	<squarespace:query collection="events2" limit="5" tag="{title}">
+	<squarespace:query collection="events" limit="5" tag="{title}">
 		<div class="calendar-collection-upcoming flex-start-start"> {.repeated section items} <div class="calendar-event box-shadow" onclick="window.open('{fullUrl}')" id="{id}">
 				<div>
 					<div style="background: var(--lightblue); padding: 10px;" class="flex-center-center flex-column calendar-summary">
