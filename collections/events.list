@@ -97,7 +97,7 @@ function toggleEvent(target, fullUrl){
 	</div>
 	<p id="noEvents" style="display: none">No upcoming events to show. <span onclick="toggleTypes('archive-toggle')" class="hover">View our Archived Events!</span></p>
 	<div class="events flex-start-start">
-		<div class="events-summary-list flex-start-start flex-column">
+		<div class="events-summary-list flex-start-start">
 		
 		
 		
