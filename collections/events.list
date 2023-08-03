@@ -72,12 +72,8 @@
 			allDivs[i].classList.remove('active-event')
 		}
 		targetDiv.classList.add('active-event')
-		heroHeight = $('#drop-down div').height()
-	
-	
-		
 		targetIframe.src = targetUrl
-		navTop = $('topNav').offset().top
+		navTop = $('#topNav').offset().top
 		$('#target-iframe').css("margin-top", -1 * navTop)
 
 	}
