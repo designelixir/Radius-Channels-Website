@@ -138,10 +138,11 @@ function toggleEvent(target, fullUrl){
 											
 										</div>
 									</div>
-								</div>
-								<div class="mobile-button">
+									<div class="mobile-button">
 									<button>View Event &rarr;</button>
 								</div>
+								</div>
+								
 							</div>
 						</div>
 					</div>

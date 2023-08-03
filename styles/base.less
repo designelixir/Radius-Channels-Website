@@ -175,15 +175,19 @@ button:hover {transform: scale(1.1)}
 .mobile-button {display: none;}
 // EVENTS
 @media screen and (max-width: 1025px) {
-  .event-date {display: none;}
-  .event-status {padding-bottom: 15px}
+  .mobile-event-date {border: 1px solid black; max-width: 125px;}
+  .mobile-event-date-month {background-color: var(--lightblue); text-align: center; padding: 10px; color: white;}
+  .mobile-event-date-day {font-size: 32px; text-align: center; padding: 25px;}
+  .event-date, .event-status {display: none;}
+  .event-title {margin-top: 25px}
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
+  
   .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
   .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 100%; max-height: unset!important; height: 100%;}
   .events-summary {height: 100%;}
   .mobile-button {display: block;}
-  .event-summary-info {height: 100%; width: 100%; }
+  .event-summary-info {height: 100%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start;}
   .events-full-size {display: none;}
   #eventList {height: unset; display: flex;
 align-items: flex-start; 
