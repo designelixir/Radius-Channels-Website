@@ -43,7 +43,8 @@ function toggleTypes(toggleType){
 		if (toggleType === 'upcoming-toggle' && futureEvents.length > 0){
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
-			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
+			document.getElementById('eventList').style.flexDirection = "column"
+			toggleEvent(futureEvents[(futureEventsLength - 1)].id, futureEvents[(futureEventsLength - 1)].dataset.fullUrl)
 			
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
@@ -56,7 +57,7 @@ function toggleTypes(toggleType){
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
-			
+			document.getElementById('eventList').style.flexDirection = "column-reverse"
 			
 			for (var i = 0; i < archivedEvents.length; i++){
 				archivedEvents[i].classList.add('visible-event')

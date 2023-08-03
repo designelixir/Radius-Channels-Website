@@ -17,15 +17,16 @@
 			<p style="color: gray"><i>{customContent.eventTimeZone}</i></p>
       <div class="flex-center-start">
       {.if tags}
-      <p class="strong">Sponsored by: &nbsp;</p>
-      {.repeated section tags}
+		<p class="strong">Sponsored by: &nbsp;</p>
+		{.repeated section tags}
               <p class="tag">{@}</p>{.alternates with}&nbsp;
             {.end}
-        {.end}    
-		</div>
-    {.repeated section categories}
+        {.end}    <p class="strong">Sponsored by: &nbsp;</p>
+		{.repeated section categories}
               <span class="tag">{@}</span>{.alternates with}&nbsp;
             {.end}
+		</div>
+    
 	</div>
 	<div style="margin: 25px; ">
   
