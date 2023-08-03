@@ -106,7 +106,12 @@ function toggleEvent(target, fullUrl){
 						<div class="event-summary-info">
 							<div class="event-summary-wrapper flex-start-start">
 								<div class="event-summary-title">
-									<p id="eventType-{id}"></p>
+									<div class="flex-center-start tag"><p id="eventType-{id}"></p> {.if customContent.eventType}
+										&nbsp;
+										<p class="tag">Virtual Event</p>
+										{.or}
+										<p class="tag">In-Person Event</p>
+										{.end}</div>
 									<p>{structuredContent.startDate|date %B %d, %Y}</p>
 									<h3 class="strong hover">{title}</h3>
 									<div class="excerpt">
