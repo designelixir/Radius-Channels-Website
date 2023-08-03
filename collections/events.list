@@ -117,12 +117,7 @@ function toggleEvent(target, fullUrl){
 										<p class="tag">{@}</p>
 										{.alternates with}&nbsp;
 										{.end}
-										{.if customContent.eventType}
-										&nbsp;
-										<p class="tag">Virtual Event</p>
-										{.or}
-										<p class="tag">In-Person Event</p>
-										{.end}
+										
 									</div>
 								</div>
 							</div>
