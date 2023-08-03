@@ -72,7 +72,8 @@
 			allDivs[i].classList.remove('active-event')
 		}
 		targetDiv.classList.add('active-event')
-		targetIframe.src = targetUrl
+		$('#target-iframe').load(targetUrl + '#fullEvent');
+		
 	}
 </script>
 
