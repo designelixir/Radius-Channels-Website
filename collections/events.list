@@ -19,8 +19,7 @@
 		console.log("no event defined")
 		}
 	}
-	navTop = $('#topNav').offset().top
-	$('#target-iframe').css("margin-top", -1 * navTop + "px")
+
 
 
 	function toggleTypes(toggleType){
