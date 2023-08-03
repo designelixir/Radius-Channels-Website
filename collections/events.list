@@ -29,6 +29,7 @@ function toggleTypes(toggleType){
 	var futureEvents = document.getElementsByClassName('future-event')
 	var archivedEvents = document.getElementsByClassName('archived-event')
 	var allContentDivs = document.getElementsByClassName('events-summary-container')
+	var eventsSummaryList = document.getElementsByClassName('events-summary-list')
 
 	for (var i = 0; i < typeToggles.length; i++){
 	typeToggles[i].classList.remove('active-type-toggle')
@@ -43,7 +44,7 @@ function toggleTypes(toggleType){
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
 			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
-			$('.events-summary-list').css("flex-direction", "column")
+			eventsSummaryList.style.flexDirection = "column!important"
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
 			} 
@@ -55,7 +56,8 @@ function toggleTypes(toggleType){
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
-			$('.events-summary-list').css("flex-direction", "column-reverse!important")
+			eventsSummaryList.style.flexDirection = "column-reverse!important"
+			
 			for (var i = 0; i < archivedEvents.length; i++){
 				archivedEvents[i].classList.add('visible-event')
 			}

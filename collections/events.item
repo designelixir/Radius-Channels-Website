@@ -6,9 +6,9 @@
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
             {.if customContent.eventType}
-			<span class="tag">Virtual Event</p>
+			<span class="tag">Virtual Event</span>
 			{.or}
-			<p class="tag">In-Person Event</p>
+			<span class="tag">In-Person Event</span>
 			{.end}
             
 			<h2>{title}</h2>
