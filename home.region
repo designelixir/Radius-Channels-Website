@@ -58,6 +58,8 @@ window.addEventListener('resize', positionHero())
 
 function positionHero(){
 	heroHeight = $('#drop-down div').height()
+	
+	
 	heroTop = $('#drop-down').offset().top
 	$('#hero-video').css("top", heroTop)
 	$('#hero').css('top', heroTop)

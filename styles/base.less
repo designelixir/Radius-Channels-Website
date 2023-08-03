@@ -82,7 +82,7 @@ button:hover {transform: scale(1.1)}
 
 // HOMEPAGE
 #hero {max-height: 900px; height: 80vh; width: 100%; }
-#homeHero { min-height: 600px; opacity: 0.8; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; position: absolute; top: 105px; overflow-y: clip;}
+#homeHero { min-height: 600px; z-index: -1; opacity: 0.8; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; position: absolute; top: 105px; overflow-y: clip;}
 #homeHero .video-player .plyr video {object-fit: cover; overflow-y: clip;}
 .sqs-native-video .native-video-player {height: 80vh; max-height: 900px;}
 .home-section:nth-child(odd) {background-color: var(--fadedblue);}
@@ -94,8 +94,11 @@ button:hover {transform: scale(1.1)}
 .home-section-content { padding: 20px;}
 #homeSection4-Title {width: 20vw; min-width: 250px; float: right;}
 @media screen and (max-width: 1025px) {
-.home-section {flex-direction: column;}
-  .home-section-title {width: 100%; }
+h1 {font-size: 36px;}
+h3 {font-size: 22px;}
+  .home-section {flex-direction: column; padding: 1vh 2vw;}
+  .home-section-title {width: 100%;}
+  
   .home-section-content {margin: 0;}
   .home-section:nth-child(even) .home-section-content {order: 2;}
   #homeSection5-vendors {justify-content: flex-start;}
