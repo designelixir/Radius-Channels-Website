@@ -76,7 +76,7 @@ function toggleEvent(target, fullUrl){
 		allDivs[i].classList.remove('active-event')
 	}
 	targetDiv.classList.add('active-event')
-	{#  targetIframe.src = targetUrl  }
+	targetIframe.src = targetUrl
 }
 </script>
 <header class="site-header">
@@ -132,6 +132,9 @@ function toggleEvent(target, fullUrl){
 										
 									</div>
 								</div>
+							</div>
+							<div class="mobile-button">
+								<button>Click me</button>
 							</div>
 						</div>
 					</div>

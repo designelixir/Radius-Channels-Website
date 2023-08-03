@@ -177,13 +177,17 @@ button:hover {transform: scale(1.1)}
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
   .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
-  .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 350px; max-height: unset!important; height: 100%;}
+  .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 100%; max-height: unset!important; height: 100%;}
   .events-summary {height: 100%;}
-  .event-summary-info {height: 100%;}
-  .events-full-size {width: 100%!important;}
+  .event-summary-info {height: 100%; width: 100%;}
+  .events-full-size {display: none;}
+  #eventList {width: 100%!important; max-width: unset; height: unset; display: flex;
+align-items: flex-start; 
+justify-content: flex-start; }
+
   .event-summary-wrapper {height: 100%;}
   .excerpt {display: none;}
-  
+  .visible-event {opacity: 1!important;}
   }
 
 // Animations
