@@ -58,14 +58,15 @@ function toggleTypes(toggleType){
 			toggleEvent(archivedEvents[lastArchiveEventIndex].id, archivedEvents[lastArchiveEventIndex].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
-			document.getElementById('eventList').style.flexDirection = "column-reverse"
+			document.getElementById('eventList').style.flexDirection = "column"
+			document.getElementById('eventList').style.justifyContent = "flex-start!important"
 			
 			for (var i = 0; i < archivedEvents.length; i++){
 				archivedEvents[i].classList.add('visible-event')
 			}
 		}
 }
-	
+	console.log("hello?")
 function toggleEvent(target, fullUrl){
 	var targetIframe = document.getElementById('target-iframe');
 	var targetUrl = "https://radiuschannels2.squarespace.com" + String(fullUrl)
