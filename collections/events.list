@@ -112,6 +112,11 @@ function toggleEvent(target, fullUrl){
 					<div class="events-summary" onclick="toggleEvent('{id}', '{fullUrl}')"  >
 						<div class="events-summary-wrapper flex-center-center">
 							<div class="event-summary-info">
+								<div class="mobile-event-date">
+									<div class="mobile-event-date-month"> {structuredContent.startDate|date %B}</div>
+									<div class="mobile-event-date-day">{structuredContent.startDate|date %d}</div>
+								</div>
+
 								<div class="event-summary-wrapper flex-start-start">
 									<div class="event-summary-title">
 										<span id="eventType-{id}" class="event-status">
@@ -120,7 +125,7 @@ function toggleEvent(target, fullUrl){
 											{.or}
 											- In-Person Event
 											{.end}</span>
-										<p>{structuredContent.startDate|date %B %d, %Y}</p>
+										<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
 										<h3 class="strong hover">{title}</h3>
 										<div class="excerpt">
 											<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
