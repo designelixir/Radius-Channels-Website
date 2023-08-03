@@ -10,14 +10,14 @@ function isDateInFutureOrPast(start, end, id) {
 	const startDate = new Date(start)
 	const endDate = new Date(end)
 	if (startDate > today) {
-		targetId.innerHTML = "Upcoming"
+		targetId.insertAdjacentHTML("afterbegin", "Upcoming")
 		targetParentId.classList.add('future-event')
 	} else if (startDate < today && endDate > today){
-		targetId.innerHTML = "Upcoming"
+		targetId.insertAdjacentHTML("afterbegin", "Upcoming")
 		targetParentId.classList.add('future-event')
 	} else if (startDate < today) {
 		targetParentId.classList.add('past-event')
-	targetId.innerHTML = "Archived Event"
+	targetId.insertAdjacentHTML("afterbegin", "Archived Event")
 		targetParentId.classList.add('archived-event')
 	}  else {
 	console.log("no event defined")
@@ -106,11 +106,11 @@ function toggleEvent(target, fullUrl){
 						<div class="event-summary-info">
 							<div class="event-summary-wrapper flex-start-start">
 								<div class="event-summary-title">
-									<p id="eventType-{id}" class="event-status">-{.if customContent.eventType}
+									<p id="eventType-{id}" class="tag"></p><p> -{.if customContent.eventType}
 										&nbsp;
-										<span>Virtual Event</span>
+										Virtual Event
 										{.or}
-										<span>In-Person Event</span>
+										In-Person Event
 										{.end}</p>
 									<p>{structuredContent.startDate|date %B %d, %Y}</p>
 									<h3 class="strong hover">{title}</h3>
