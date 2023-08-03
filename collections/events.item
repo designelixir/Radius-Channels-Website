@@ -1,16 +1,34 @@
+<script>
+function isDateInFutureOrPast(start, end) {
+		const today = new Date();
+		const startDate = new Date(start)
+		const endDate = new Date(end)
+		var targetParentId = document.getElementById('eventContainer')
+		var targetId = document.getElementById('eventType')
+		if (startDate > today) {
+			targetId.insertAdjacentHTML("afterbegin", "Upcoming")
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today && endDate > today){
+			targetId.insertAdjacentHTML("afterbegin", "Upcoming")
+			targetParentId.classList.add('future-event')
+		} else if (startDate < today) {
+			targetParentId.classList.add('past-event')
+			targetId.insertAdjacentHTML("afterbegin", "Archived")
+			targetParentId.classList.add('archived-event')
+		}  else {
+		console.log("no event defined")
+		}
+	}
+</script>
 
 <div class="fullEvent">
 {.section item}
       <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl});" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
-        <div  id="{title}-fullpage-event"  >
+        <div  id="{title}-fullpage-event">
 
 
-		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
-            {.if customContent.eventType}
-			<span class="tag">Virtual Event</span>
-			{.or}
-			<span class="tag">In-Person Event</span>
-			{.end}
+		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)" id="eventContainer">
+            <span id="eventType" class="event-status">{.if customContent.eventType} Virtual Event{.or}- In-Person Event{.end}</span>
             
 			<h2>{title}</h2>
       
