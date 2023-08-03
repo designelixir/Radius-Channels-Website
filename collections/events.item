@@ -62,7 +62,7 @@ function isDateInFutureOrPast(start, end) {
 		{.end}
 	</div>
 </div>
-<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{id}')</script>
+<script>isDateInFutureOrPast(`{structuredContent.startDate|date %Y-%m-%dT%T}`, `{structuredContent.endDate|date %Y-%m-%dT%T}`, '{title}-fullpage-event')</script>
 {.end}
 
 
