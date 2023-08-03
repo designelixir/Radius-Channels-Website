@@ -84,7 +84,7 @@ video {object-fit: cover;}
 
 // HOMEPAGE
 #hero {max-height: 900px; height: 80vh; width: 100%; }
-#homeHero { min-height: 600px; z-index: -1; opacity: 0.8; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; position: absolute; top: 105px; overflow-y: clip;}
+#homeHero { min-height: 600px; z-index: -1!important; opacity: 0.8; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; position: absolute; top: 105px; overflow-y: clip;}
 #homeHero .video-player .plyr video {object-fit: cover; overflow-y: clip;}
 .sqs-native-video .native-video-player {height: 80vh; max-height: 900px;}
 .home-section:nth-child(odd) {background-color: var(--fadedblue);}
@@ -107,6 +107,7 @@ h3 a {font-size: 22px;}
   #homeSection5-vendors {justify-content: flex-start;}
 } 
 @media screen and (max-width: 825px) {
+  #homeHero { padding-top: 85px;}
   #ourFormula {flex-wrap: wrap;}
   #ourFormula svg {order: 2;}
   #hero {height: 74vh!important;}
