@@ -2,7 +2,7 @@
 <div class="fullEvent">
 {.section item}
       <div class="full-size-event-header-full-page box-shadow" {.if assetUrl} style="background-image: url({assetUrl});" {.or} style="background-image: url('../assets/event-bg.png');"{.end}></div>
-        <div class="full-size-event" id="{title}-fullpage-event"  >
+        <div  id="{title}-fullpage-event"  >
 
 
 		<div style="margin: 25px; border-bottom: 3px solid var(--darkblue)">
