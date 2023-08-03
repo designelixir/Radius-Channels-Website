@@ -119,15 +119,15 @@ function toggleEvent(target, fullUrl){
 												<div class="mobile-event-date-day">{structuredContent.startDate|date %d}</div>
 											</div>
 										</div>
-										<div>
-											<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
-											<h3 class="strong hover event-title">{title}</h3>
-										</div>
+										
 									</div>
 									
 									
 									<div class="event-summary-title">
-										
+										<div>
+											<span id="eventType-{id}" class="event-status">{.if customContent.eventType}- Virtual Event{.or}- In-Person Event{.end}</span>
+											<h3 class="strong hover event-title">{title}</h3>
+										</div>
 										<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
 										
 										<div class="excerpt">
@@ -155,7 +155,7 @@ function toggleEvent(target, fullUrl){
 				{.end}	
 			</div>
 		</div>
-		<div class="events-full-size" style="width: 60%;">
+		<div class="events-full-size">
 			<div class="full-size-event" id="full-size-iframe">
 				<iframe id="target-iframe" width="100%" height="100%"></iframe>	
 			</div>
