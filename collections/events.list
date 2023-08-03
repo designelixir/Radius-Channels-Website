@@ -45,7 +45,7 @@ function toggleTypes(toggleType){
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
 			document.getElementById('eventList').style.flexDirection = "column"
-			toggleEvent(futureEvents[-1].id, futureEvents[-1].dataset.fullUrl)
+			toggleEvent(futureEvents[lastFutureEventIndex].id, futureEvents[lastFutureEventIndex].dataset.fullUrl)
 			
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
