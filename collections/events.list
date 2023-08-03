@@ -127,7 +127,7 @@
 											{.end}
 										</div>
 										<div class="mobile-button">
-											<button class="small-button">View Event &rarr;</button>
+											<button class="small-button" onclick="window.open('{url}')">View Event &rarr;</button>
 										</div>
 									</div>
 								</div>
