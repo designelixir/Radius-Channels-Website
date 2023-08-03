@@ -56,7 +56,7 @@ function isDateInFutureOrPast(start, end, id) {
 		<p>{excerpt}</p>
 		<p>{body}</p>
 		{.if sourceUrl}
-		<div class="flex-center-center">
+		<div class="flex-center-center register-button">
 			<button class="solid-button" onclick="window.open('{sourceUrl}', '_self')">Register Now</button>
 		</div>
 		{.end}
