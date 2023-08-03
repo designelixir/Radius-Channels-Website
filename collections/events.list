@@ -55,7 +55,7 @@ function toggleTypes(toggleType){
 			document.getElementById('target-iframe').style.display = "none"
 		}
 		else {
-			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
+			toggleEvent(archivedEvents[lastArchiveEventIndex].id, archivedEvents[lastArchiveEventIndex].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
 			
