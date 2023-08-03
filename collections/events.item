@@ -14,7 +14,7 @@
 			<h2>{title}</h2>
       
 			<h3 style="color: var(--lightblue); margin: 5px;">{structuredContent.startDate|date %B %d, %Y %I:%M %p} - {structuredContent.endDate|date %B %d, %Y %I:%M %p }</h3>
-			<p>{customContent.eventTimeZone}</p>
+			<p style="color: gray"><i>{customContent.eventTimeZone}</i></p>
       <div class="flex-center-start">
       {.if tags}
       <p class="strong">Sponsored by: &nbsp;</p>

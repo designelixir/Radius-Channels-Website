@@ -29,7 +29,7 @@ function toggleTypes(toggleType){
 	var futureEvents = document.getElementsByClassName('future-event')
 	var archivedEvents = document.getElementsByClassName('archived-event')
 	var allContentDivs = document.getElementsByClassName('events-summary-container')
-	var eventsSummaryList = document.getElementsByClassName('events-summary-list')
+	var eventsSummaryList = document.getElementById('eventList')
 
 	for (var i = 0; i < typeToggles.length; i++){
 	typeToggles[i].classList.remove('active-type-toggle')
@@ -99,7 +99,7 @@ function toggleEvent(target, fullUrl){
 	</div>
 	<p id="noEvents" style="display: none">No upcoming events to show. <span onclick="toggleTypes('archive-toggle')" class="hover">View our Archived Events!</span></p>
 	<div class="events flex-start-start">
-		<div class="events-summary-list flex-start-start">
+		<div class="events-summary-list flex-start-start" id="eventList">
 		
 		
 		
