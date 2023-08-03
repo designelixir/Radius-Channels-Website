@@ -58,7 +58,7 @@ function toggleTypes(toggleType){
 			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
-			document.getElementById('eventList').style.flexDirection = "column"
+			document.getElementById('eventList').style.flexDirection = "column-reverse"
 			document.getElementById('eventList').style.justifyContent = "flex-start!important"
 			
 			for (var i = 0; i < archivedEvents.length; i++){
@@ -134,7 +134,7 @@ function toggleEvent(target, fullUrl){
 								</div>
 							</div>
 							<div class="mobile-button">
-								<button>Click me</button>
+								<button>View Event &rarr;</button>
 							</div>
 						</div>
 					</div>
