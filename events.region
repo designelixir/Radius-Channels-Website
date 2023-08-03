@@ -6,7 +6,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-
+<header class="site-header">
+	<squarespace:navigation navigationId="siteNav" template="site-navigation" />
+</header>
+<div id='site-wrapper'>
+	{.section website}
+	<div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
+		<div class="page-header-content">
+			<div>
+				<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
+				{collection.title}
+				</h1>
+			</div>
+		</div>
+	</div>
+</div>
+{.end}
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
       <main role="main" data-content-field="main-content">
