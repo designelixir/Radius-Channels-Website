@@ -14,9 +14,7 @@
 	<div {.if collection.mainImage} style="background-image: url({collection.mainImage.assetUrl})" class="user-set-bg page-header"{.or} class="page-header" {.end}>
 		<div class="page-header-content">
 			<div>
-				<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}>
-				{collection.title}
-				</h1>
+				<h1 class="site-title-heading" data-content-field="site-title" {.if collection.mainImage} style="color: white" {.end}> {collection.title} </h1> {.if item.title} <a href="{collection.fullUrl}" style="color: white;">&larr; Back to {collection.title}</a> {.end} 
 			</div>
 		</div>
 	</div>
