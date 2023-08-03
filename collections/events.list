@@ -29,8 +29,8 @@ function toggleTypes(toggleType){
 	var futureEvents = document.getElementsByClassName('future-event')
 	var archivedEvents = document.getElementsByClassName('archived-event')
 	var allContentDivs = document.getElementsByClassName('events-summary-container')
-	var lastFutureEventIndex = futureEvents.length - 1;
-	console.log('last index is ' + lastFutureEventIndex)
+	var lastArchiveEventIndex = archivedEvents.length - 1;
+	
 
 	for (var i = 0; i < typeToggles.length; i++){
 	typeToggles[i].classList.remove('active-type-toggle')
@@ -45,7 +45,7 @@ function toggleTypes(toggleType){
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
 			document.getElementById('eventList').style.flexDirection = "column"
-			toggleEvent(futureEvents[lastFutureEventIndex].id, futureEvents[lastFutureEventIndex].dataset.fullUrl)
+			toggleEvent(futureEvents[0].id, futureEvents[0].dataset.fullUrl)
 			
 			for (var i = 0; i < futureEvents.length; i++){
 				futureEvents[i].classList.add('visible-event')
@@ -55,7 +55,7 @@ function toggleTypes(toggleType){
 			document.getElementById('target-iframe').style.display = "none"
 		}
 		else {
-			toggleEvent(archivedEvents[0].id, archivedEvents[0].dataset.fullUrl)
+			toggleEvent(archivedEvents[lastArchiveEventIndex].id, archivedEvents[lastArchiveEventIndex].dataset.fullUrl)
 			document.getElementById('noEvents').style.display = "none"
 			document.getElementById('target-iframe').style.display = "block"
 			document.getElementById('eventList').style.flexDirection = "column-reverse"
