@@ -79,8 +79,8 @@ button:hover {transform: scale(1.1)}
 .content-container {padding: 25px;}
 
 // HOMEPAGE
-#hero {max-height: 900px; height: 80vh;   width: 100%; background: rgba(255,255,255,0.35); }
-#homeHero { min-height: 600px; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; z-index: -1; position: absolute; top: 105px; overflow-y: clip;}
+#hero {max-height: 900px; height: 80vh; width: 100%; }
+#homeHero { min-height: 600px; opacity: 0.8; max-height: 900px; height: calc(80vh - 105px); width: 100vw; height: 80vh; position: absolute; top: 105px; overflow-y: clip;}
 #homeHero .video-player .plyr video {object-fit: cover; overflow-y: clip;}
 .sqs-native-video .native-video-player {height: 80vh; max-height: 900px;}
 .home-section:nth-child(odd) {background-color: var(--fadedblue);}
@@ -173,13 +173,15 @@ button:hover {transform: scale(1.1)}
 .full-size-event-header-full-page {max-height: 300px;  z-index: 1;   width: 100vw; height: 500px; } 
 .event-summary-info {padding: 25px; border: 0.25px solid black;}
 .mobile-button {display: none;}
-// EVENTS
-@media screen and (max-width: 1025px) {
-  .mobile-event-date {border: 1px solid black; width: 125px; margin-right: 15px; max-height: 125px;}
+.mobile-event-date {border: 1px solid black; width: 125px; margin-right: 15px; height: 100px;}
   .mobile-event-date-month {background-color: var(--lightblue); text-align: center; padding: 10px; color: white;}
   .mobile-event-date-day {font-size: 32px; text-align: center; padding: 15px 25px;}
   .event-date, .event-status {display: none;}
-  .event-title {margin-top: 25px}
+  
+// EVENTS
+@media screen and (max-width: 1025px) {
+  
+  .event-title {margin-top: 25px; font-size: 18px;}
   .event-type-toggles h2 {font-size: 18px;}
   .events {display: block;}
   
