@@ -119,16 +119,16 @@
 
 								<div class="event-summary-title">
 									<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
-									<div class="flex-center-start">
-									<div class="flex-start-start">
-										{.repeated section tags}
-										<p class="tag" onclick="window.open('/vendors/{@|slugify}')">{@}</p>
-										{.alternates with}&nbsp;
-										{.end}
-									</div>
-									<div class="mobile-button">
-										<a>View Event</a>
-									</div>
+									<div class="flex-center-spacebetween">
+										<div class="flex-start-start">
+											{.repeated section tags}
+											<p class="tag" onclick="window.open('/vendors/{@|slugify}')">{@}</p>
+											{.alternates with}&nbsp;
+											{.end}
+										</div>
+										<div class="mobile-button">
+											<a>View Event &rarr;</a>
+										</div>
 									</div>
 								</div>
 							</div>
