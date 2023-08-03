@@ -38,7 +38,9 @@
 		<p>{excerpt}</p>
 		<p>{body}</p>
 		{.if sourceUrl}
-		<button class="solid-button" onclick="window.open('{sourceUrl}', '_self')">Register Now</button>
+		<div class="flex-center-center">
+			<button class="solid-button" onclick="window.open('{sourceUrl}', '_self')">Register Now</button>
+		</div>
 		{.end}
 	</div>
 </div>
