@@ -126,7 +126,7 @@ function toggleEvent(target, fullUrl){
 											- In-Person Event
 											{.end}</span>
 										<p class="event-date">{structuredContent.startDate|date %B %d, %Y}</p>
-										<h3 class="strong hover">{title}</h3>
+										<h3 class="strong hover event-title">{title}</h3>
 										<div class="excerpt">
 											<p id="trimmed-excerpt">{excerpt|truncate 220}</p>
 										</div>
