@@ -11,7 +11,7 @@
 	</head>
 	
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
-	<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+	<body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-content-field="main-content" >
 	   
    			
       <section id="hero">
