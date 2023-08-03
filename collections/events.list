@@ -76,7 +76,7 @@ function toggleEvent(target, fullUrl){
 		allDivs[i].classList.remove('active-event')
 	}
 	targetDiv.classList.add('active-event')
-	targetIframe.src = targetUrl
+	{#  targetIframe.src = targetUrl  }
 }
 </script>
 <header class="site-header">
@@ -102,7 +102,7 @@ function toggleEvent(target, fullUrl){
 	</div>
 	<p id="noEvents" style="display: none">No upcoming events to show. <span onclick="toggleTypes('archive-toggle')" class="hover">View our Archived Events!</span></p>
 	<div class="events flex-start-start">
-		<div class="events-summary-list flex-start-end" id="eventList">
+		<div id="eventList">
 		
 		
 		
