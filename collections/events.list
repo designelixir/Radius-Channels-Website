@@ -110,8 +110,8 @@ function toggleEvent(target, fullUrl){
 						<div class="event-summary-info">
 							<div class="event-summary-wrapper flex-start-start">
 								<div class="event-summary-title">
-									<span id="eventType-{id}" class="event-status">{.if customContent.eventType}
-										
+									<span id="eventType-{id}" class="event-status">
+									{.if customContent.eventType}
 										- Virtual Event
 										{.or}
 										- In-Person Event
