@@ -151,8 +151,8 @@ h3 a {font-size: 22px;}
 .event-type-toggles {color: gray;}
 .event-type-toggles .active-type-toggle {color: black!important;}
 .events { max-height: 100vh;}
-#eventListWrapper {max-height: 100vh; overflow-y: scroll;width: 40%; }
-#eventList { height: unset; border: 1px solid black; overflow-y: scroll; display: flex; align-items: flex-start; justify-content: flex-end; flex-direction: column-reverse;}
+#eventListWrapper {height: 100vh; overflow-y: scroll;width: 40%; }
+#eventList { height: unset; border: 1px solid black; overflow-y: scroll!important; display: flex; align-items: flex-start; justify-content: flex-end; flex-direction: column-reverse;}
 
 .events-summary-container {opacity: 0.2; background-color: var(--lightgray); display: none; border: 0.25px solid black;}
 .events-summary {overflow-y: scroll;  z-index: 2; background-color: white; }
@@ -190,11 +190,11 @@ h3 a {font-size: 22px;}
   // EVENTS
 #target-iframe {margin-top: -300px;}
 @media screen and (max-width: 1025px) {
-  #eventList {height: unset; max-height: unset; display: flex; align-items: flex-start; justify-content: flex-start; overflow-y:visible}
-  #eventListWrapper {width: 100%; max-height: unset; height: unset; overflow-y:visible}
+  #eventList {height: unset; display: flex; align-items: flex-start; justify-content: flex-start; }
+  #eventListWrapper {width: 100%; height: unset;}
   .mobile-button {opacity: 1; pointer-events: unset;}
   .event-type-toggles h2 {font-size: 18px;}
-  .events {display: block;}
+  .events {display: block; max-height: unset;}
   .events-full-size {display: none;}
   .events-summary-list {flex-direction: unset; max-height: unset!important; height: unset!important; min-width: 100%!important; overflow-x: scroll!important;  }
   .events-summary-container {border: 0px solid black!important; border-right: 0.25px solid black!important; min-width: 275px; width: 100%; max-height: unset!important; height: 100%;}
