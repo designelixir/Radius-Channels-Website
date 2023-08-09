@@ -42,9 +42,11 @@
 				<div class="home-section-title"><squarespace:block-field id="homeSection5-Title" columns="12"/></div>
 				<div class="home-section-content" >
 					<squarespace:query collection="vendors" limit="10" featured="true">
-						<div class="flex-center-end flex-wrap" id="homeSection5-vendors">
+						<div class="flex-center-start flex-wrap" id="homeSection5-vendors" style="padding: 0px!important;">
 							{.repeated section items}
-								<a href="{fullUrl}"><img class="nav-vendor hover" src="{assetUrl}" alt="{title} logo"/></a>
+								<div onclick="window.open({fullUrl}, '_self')" class="nav-vendor hover" style="background-image: url({assetUrl});"></div>
+								
+								<div style="width: calc(80vw / 6);" class="nav-vendor-spacer"></div> 
 							{.end}
 						</div>
 					</squarespace:query>
