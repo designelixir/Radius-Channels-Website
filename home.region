@@ -7,7 +7,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		
 	</head>
 	
 		<squarespace:navigation navigationId="siteNav" template="site-navigation" />
@@ -15,12 +15,13 @@
 	   
    			
       <section id="hero" class="fade-in-slow">
-	  <squarespace:block-field id="homeHero" columns="12"/>
-        {@|apply textRotation.block}
-        
+	  	<squarespace:block-field id="homeHero" columns="12"/>
       </section>
-{@|apply downArrow.block}
-<br>
+	  <section id="heroContent" class="fade-in-slow">
+	  {@|apply textRotation.block}
+	  </section>
+	{@|apply downArrow.block}
+	<br>
 		<section id="home-sections-wrapper">	
 			<div class="home-section flex-center-spacebetween">
 				<div class="home-section-title"><squarespace:block-field id="homeSection1-Title" columns="12"/></div>
@@ -56,25 +57,6 @@
 		
 		
 		{@|apply footer.block}
-		<script>
-window.addEventListener('resize', positionHero())
-
-function positionHero(){
-	heroHeight = $('#drop-down div').height()
-	
-	
-	heroTop = $('#drop-down').offset().top
-	$('#hero-video').css("top", heroTop)
-	$('#hero').css('top', heroTop)
-	if(document.getElementsByClassName('open').length > 0){
-		var openTarget = document.querySelector('.open').id
-		toggle(openTarget)
-	}	
-}
-
-
-
-		</script>
 		<squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 		{squarespace-footers}
 	</body>

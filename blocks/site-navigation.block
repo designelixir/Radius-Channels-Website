@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <style>
 .site-navigation { padding: 15px 20px; background-color: white; }
 .logo {max-height: 75px; }
@@ -6,7 +7,7 @@
 
 #drop-down {width: 100vw; z-index: 4000000;}
 .section-nav { width: 100vw; display: none; }
-.drop-down-wrapper {background: white; border: 2px solid var(--darkblue)}
+.drop-down-wrapper {background: white; border: 2px solid var(--darkblue); z-index: 40000;}
 .nav-drop-down-description p a {background: rgba(0,0,0,0); border: 2px solid white; color: white; padding: 10px 25px; text-decoration: none; font-size: 18px; margin-top: 20px!important; cursor: pointer;}
 .nav-drop-down-description br {height: 25px;}
 .nav-drop-down-title {width: 34vw; background-color: #4e72be; padding: 20px; color: white; border-right: 2px solid black; }
@@ -101,13 +102,12 @@
 </div>
 
 <script>
-var heroTop = $('#drop-down').offset().top
-$('#hero-video').css("top", heroTop)
+
 function toggle(targetWindow){
 	
 	target = document.getElementById(targetWindow)
 	targetArrow = document.getElementById(targetWindow + "-arrow")
-	heroHeight = $('#drop-down div').height()
+	heroHeight = $('.section-nav').height()
 	heroTop = $('#drop-down').offset().top
 	if (target.style.display === "block"){
 		target.classList.remove('open')
@@ -115,7 +115,7 @@ function toggle(targetWindow){
 		target.style.display = "none"
 		$('#homeHero').css("top", heroTop)
 		$('.nav-arrow').css('opacity', '0')
-		targetArrow.style.opacity = "0"
+		
 	} else {
 		
 		$('.section-nav').css('display', 'none')
@@ -124,16 +124,17 @@ function toggle(targetWindow){
 		
 		$('#homeHero').css("top", heroHeight + heroTop)
 		$('.nav-arrow').css('opacity', '0')
-		targetArrow.style.opacity = "1"
+		
 	}
-	
+	var heroTop = $('#homeHero').offset()
+	$('#heroContent').css("top", heroTop.top)
 	
 
 }
 
   const currentURLPath = window.location.pathname;
   const trimmedString = currentURLPath.replace(/^\/|\/$/g, '');
-  $('#' + trimmedString).css({'color': 'var(--orange)', 'font-style': 'normal'})
+  $(trimmedString).css({'color': 'var(--orange)', 'font-style': 'normal'})
 
 
 </script>
