@@ -14,9 +14,7 @@
 	<body id="{squarespace.page-id}" class="{squarespace.page-classes}" data-content-field="main-content" >
 	   
    			
-      <section id="hero" class="fade-in-slow">
-	  	<squarespace:block-field id="homeHero" columns="12"/>
-      </section>
+      
 	  <section id="heroContent" class="fade-in-slow">
 	  {@|apply textRotation.block}
 	  </section>
