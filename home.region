@@ -43,9 +43,9 @@
 					<squarespace:query collection="vendors" limit="10" featured="true">
 						<div class="flex-center-start flex-wrap" id="homeSection5-vendors" style="padding: 0px!important;">
 							{.repeated section items}
-								<div onclick="window.open({fullUrl}, '_self')" class="nav-vendor hover" style="background-image: url({assetUrl});"></div>
+								<img onclick="window.open({fullUrl}, '_self')" class="nav-vendor-2 hover" src="{assetUrl}">
 								
-								<div style="width: calc(80vw / 6);" class="nav-vendor-spacer"></div> 
+								
 							{.end}
 						</div>
 					</squarespace:query>
